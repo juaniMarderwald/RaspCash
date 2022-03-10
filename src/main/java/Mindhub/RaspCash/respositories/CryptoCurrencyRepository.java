@@ -1,4 +1,4 @@
-package Mindhub.RaspCash.Respositories;
+package Mindhub.RaspCash.respositories;
 
 public interface CryptoCurrencyRepository {
 }

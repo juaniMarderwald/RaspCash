@@ -1,4 +1,4 @@
-package Mindhub.RaspCash.DTOS;
+package Mindhub.RaspCash.dto;
 
 public class CryptoCurrencyDTO {
 }
