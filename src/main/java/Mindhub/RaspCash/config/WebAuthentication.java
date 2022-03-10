@@ -1,7 +1,5 @@
 package Mindhub.RaspCash.config;
 
-import com.mindhub.homebancking.models.Client;
-import com.mindhub.homebancking.repositories.ClientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -17,19 +15,19 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 public class WebAuthentication extends GlobalAuthenticationConfigurerAdapter {
 
     @Autowired
-    ClientRepository clientRepository;
+    userRepository userRepository;
 
     @Override
     public void init(AuthenticationManagerBuilder auth) throws Exception {
         auth.userDetailsService(inputName -> {
-            Client client = clientRepository.findByEmail(inputName);
+            User user = userRepository.findByEmail(inputName);
 
-            if (client != null){
-                if (client.getEmail().equals("admin")) {
-                    return new User(client.getEmail(), client.getPassword(),
+            if (user != null){
+                if (user.getEmail().equals("admin")) {
+                    return new User(user.getEmail(), client.getPassword(),
                             AuthorityUtils.createAuthorityList("ADMIN"));
                 }else{
-                    return new User(client.getEmail(), client.getPassword(),
+                    return new User(user.getEmail(), client.getPassword(),
                             AuthorityUtils.createAuthorityList("USER"));
                 }
             }else {
