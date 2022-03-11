@@ -1,4 +1,4 @@
-package Mindhub.RaspCash.Controllers;
+package Mindhub.RaspCash.controllers;
 
 public class UsuarioControl {
 }

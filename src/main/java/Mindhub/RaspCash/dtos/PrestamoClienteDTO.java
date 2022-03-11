@@ -1,4 +1,4 @@
-package Mindhub.RaspCash.dto;
+package Mindhub.RaspCash.dtos;
 
 public class PrestamoClienteDTO {
 }

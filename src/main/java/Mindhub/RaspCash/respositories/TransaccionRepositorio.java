@@ -1,4 +1,4 @@
-package Mindhub.RaspCash.Respositories;
+package Mindhub.RaspCash.respositories;
 
 import Mindhub.RaspCash.models.Transaccion;
 import org.springframework.data.jpa.repository.JpaRepository;

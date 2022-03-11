@@ -1,4 +1,4 @@
-package Mindhub.RaspCash.Respositories;
+package Mindhub.RaspCash.respositories;
 
 import Mindhub.RaspCash.models.Prestamo;
 import org.springframework.data.jpa.repository.JpaRepository;
