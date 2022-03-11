@@ -61,6 +61,10 @@ public class Usuario {
         return apodo;
     }
 
+    public long getId(){
+        return id;
+    }
+
     public Carrito getCarrito() {
         return carrito;
     }
