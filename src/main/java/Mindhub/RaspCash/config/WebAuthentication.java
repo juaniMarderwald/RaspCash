@@ -11,25 +11,23 @@ import org.springframework.security.core.userdetails.UsernameNotFoundException;
 import org.springframework.security.crypto.factory.PasswordEncoderFactories;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
-import Mindhub.RaspCash.respositories.UsuarioRepositorio;
-
 @Configuration
 public class WebAuthentication extends GlobalAuthenticationConfigurerAdapter {
 
     @Autowired
-    UsuarioRepositorio usuarioRepositorio;
+    userRepository userRepository;
 
     @Override
     public void init(AuthenticationManagerBuilder auth) throws Exception {
         auth.userDetailsService(inputName -> {
-            Usuario usuario = usuarioRepositorio.findByEmail(inputName);
+            User user = userRepository.findByEmail(inputName);
 
-            if (usuario != null){
-                if (usuario.getEmail().equals("admin")) {
-                    return new User(usuario.getEmail(), client.getPassword(),
+            if (user != null){
+                if (user.getEmail().equals("admin")) {
+                    return new User(user.getEmail(), client.getPassword(),
                             AuthorityUtils.createAuthorityList("ADMIN"));
                 }else{
-                    return new User(usuario.getEmail(), client.getPassword(),
+                    return new User(user.getEmail(), client.getPassword(),
                             AuthorityUtils.createAuthorityList("USER"));
                 }
             }else {
