@@ -2,12 +2,11 @@ package Mindhub.RaspCash.models;
 
 import org.hibernate.annotations.GenericGenerator;
 
-import javax.persistence.Entity;
+import javax.persistence.*;
 
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 public class Usuario {
@@ -17,20 +16,32 @@ public class Usuario {
     private long id;
     private String correo;
     private String contraseña;
-    private List<Producto> productos;
+
+
+
+    @OneToOne
     private Carrito carrito;
-    private List<PrestamoUsuario> prestamo;
+
+    @OneToOne
     private Billetera billetera;
-    private List<Producto> NFTs;
+
+    @OneToMany(mappedBy = "duenioPrestamo", fetch = FetchType.EAGER)
+    private List<PrestamoUsuario> prestamo;
+
+    private List<Producto> productos;
+
+    @OneToMany(mappedBy = "", fetch = FetchType.EAGER)
+    private Set<Producto> NFTs= new HashSet<>();
 
     public Usuario() {
     }
 
 
-    public Usuario(long id, String correo, String contraseña) {
+    public Usuario(long id, String correo, String contraseña, Carrito carrito) {
         this.id = id;
         this.correo = correo;
         this.contraseña = contraseña;
+        this.carrito = carrito;
     }
 
     public long getId() {

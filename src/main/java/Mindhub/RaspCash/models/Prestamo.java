@@ -2,10 +2,9 @@ package Mindhub.RaspCash.models;
 
 import org.hibernate.annotations.GenericGenerator;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 public class Prestamo {
@@ -15,17 +14,17 @@ public class Prestamo {
     private long id ;
 
     private String nombre;
-    private double rendimiento;
+    private double interes;
+    private double montoMaximo;
+
+    @OneToMany(mappedBy = "duenioPrestamo", fetch = FetchType.EAGER)
+    Set<PrestamoUsuario> prestamoUsuario = new HashSet<>();
+
+
 
     public Prestamo() {
     }
 
-
-    public Prestamo(long id, String nombre, double rendimiento) {
-        this.id = id;
-        this.nombre = nombre;
-        this.rendimiento = rendimiento;
-    }
 
     public long getId() {
         return id;
@@ -43,11 +42,4 @@ public class Prestamo {
         this.nombre = nombre;
     }
 
-    public double getRendimiento() {
-        return rendimiento;
-    }
-
-    public void setRendimiento(double rendimiento) {
-        this.rendimiento = rendimiento;
-    }
 }

@@ -24,7 +24,8 @@ public class Producto {
     @OneToMany(mappedBy = "opinion", fetch = FetchType.EAGER)
     private Set<Opinion> opiniones=new HashSet<>();
 
-
+    @ManyToOne()
+    private Usuario usuario;
 
 
     public Producto() {
