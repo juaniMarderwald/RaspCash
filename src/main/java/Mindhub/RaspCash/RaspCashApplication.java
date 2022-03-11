@@ -12,7 +12,7 @@ public class RaspCashApplication {
 	public static void main(String[] args) {
 		SpringApplication.run(RaspCashApplication.class, args);
 	}
-@Bean
+	@Bean
 	public CommandLineRunner initData(UsuarioRepositorio usuarioRepositorio, BilleteraRepositorio billeteraRepositorio,
 									  CarritoRepositorio carritoRepositorio, CriptoMonedaRepositorio criptoMonedaRepositorio,
 									  PrestamoRespositorio prestamoRespositorio, PrestamoUsuarioRespositorio prestamoUsuarioRespositorio,

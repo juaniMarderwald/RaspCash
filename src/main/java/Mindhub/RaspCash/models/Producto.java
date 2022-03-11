@@ -2,11 +2,10 @@ package Mindhub.RaspCash.models;
 
 import org.hibernate.annotations.GenericGenerator;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 public class Producto {
@@ -20,8 +19,14 @@ public class Producto {
     private double valor;
     private String descripcion;
     private String nombre;
-    private List<Opinion> opiniones;
     private  String tipo;
 
+    @OneToMany(mappedBy = "opinion", fetch = FetchType.EAGER)
+    private Set<Opinion> opiniones=new HashSet<>();
 
+
+
+
+    public Producto() {
+    }
 }

@@ -2,10 +2,7 @@ package Mindhub.RaspCash.models;
 
 import org.hibernate.annotations.GenericGenerator;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 
 @Entity
 public class Opinion {
@@ -18,6 +15,11 @@ public class Opinion {
     private int puntuacion;
 
     private Usuario usuarioOpinion;
+
+    // Declaro la relacion Muchos a uno, quiere decir que muchas tarjetas pueden pertenecer a un Cliente
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "opinion_id")
+    private Opinion opinion;
 
     public Opinion() {
     }
