@@ -17,4 +17,5 @@ public class Carrito {
     private Usuario usuario;
     private List<Producto> productos;
     private  double total;
+
 }

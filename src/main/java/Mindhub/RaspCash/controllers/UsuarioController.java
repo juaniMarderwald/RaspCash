@@ -1,4 +1,4 @@
 package Mindhub.RaspCash.controllers;
 
-public class ProductosControl {
+public class UsuarioController {
 }

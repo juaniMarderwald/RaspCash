@@ -22,4 +22,5 @@ public class Producto {
     private List<opinion> opiniones;
     private  String tipo;
 
+
 }

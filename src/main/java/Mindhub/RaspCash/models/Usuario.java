@@ -26,6 +26,7 @@ public class Usuario {
     public Usuario() {
     }
 
+
     public Usuario(long id, String correo, String contraseña) {
         this.id = id;
         this.correo = correo;

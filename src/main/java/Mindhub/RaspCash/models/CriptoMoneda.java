@@ -16,6 +16,7 @@ public class CriptoMoneda {
     private String nombre;
     private double cotizacion;
 
+
     public CriptoMoneda() {
     }
 

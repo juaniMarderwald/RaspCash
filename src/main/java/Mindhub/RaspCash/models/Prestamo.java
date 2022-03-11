@@ -19,6 +19,7 @@ public class Prestamo {
     public Prestamo() {
     }
 
+
     public Prestamo(long id, String nombre, double rendimiento) {
         this.id = id;
         this.nombre = nombre;

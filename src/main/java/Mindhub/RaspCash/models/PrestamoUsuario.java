@@ -16,5 +16,6 @@ public class PrestamoUsuario {
     private  String nombre;
     private double monto;
     private  Usuario dueñoPrestamo;
+
 }
 
