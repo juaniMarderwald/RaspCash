@@ -1,4 +1,4 @@
 package Mindhub.RaspCash.DTOS;
 
-public class CartDTO {
+public class ProductoDTO {
 }

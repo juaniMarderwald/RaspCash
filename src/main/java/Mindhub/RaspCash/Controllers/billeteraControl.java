@@ -1,4 +1,4 @@
 package Mindhub.RaspCash.Controllers;
 
-public class CryptoCurrencyControllers {
+public class billeteraControl {
 }

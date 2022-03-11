@@ -1,4 +1,4 @@
 package Mindhub.RaspCash.models;
 
-public class Product {
+public class Transaccion {
 }

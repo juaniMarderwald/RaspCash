@@ -1,4 +1,4 @@
 package Mindhub.RaspCash.Controllers;
 
-public class LoanCOntrollers {
+public class TransaccionControl {
 }

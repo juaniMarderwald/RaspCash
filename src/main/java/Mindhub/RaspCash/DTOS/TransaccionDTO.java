@@ -1,4 +1,4 @@
 package Mindhub.RaspCash.DTOS;
 
-public class LoanUserDTO {
+public class TransaccionDTO {
 }

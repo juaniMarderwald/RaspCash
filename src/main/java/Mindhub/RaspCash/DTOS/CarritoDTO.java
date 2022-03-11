@@ -1,4 +1,4 @@
 package Mindhub.RaspCash.DTOS;
 
-public class CryptoCurrencyDTO {
+public class CarritoDTO {
 }

@@ -1,4 +1,4 @@
 package Mindhub.RaspCash.Controllers;
 
-public class CartControllers {
+public class CriptoMonedaControl {
 }
