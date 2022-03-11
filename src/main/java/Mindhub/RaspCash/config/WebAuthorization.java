@@ -22,32 +22,18 @@ public class WebAuthorization extends WebSecurityConfigurerAdapter {
 
         http.authorizeRequests()
 
-                .antMatchers(HttpMethod.PATCH, "/api/nightmode").hasAuthority("USER")
-
-                .antMatchers(HttpMethod.PATCH, "/api/cards/deletecard").hasAuthority("USER")
-
-                .antMatchers(HttpMethod.PATCH, "/api/accounts/**").hasAuthority("USER")
-
-                .antMatchers(HttpMethod.POST, "/api/clients/accounts").hasAuthority("USER")
-
-                .antMatchers(HttpMethod.POST, "/api/transactions").hasAuthority("USER")
-
-                .antMatchers(HttpMethod.POST, "/api/loans").hasAuthority("USER")
-
                 .antMatchers(HttpMethod.POST, "/api/clients").permitAll()
 
-                .antMatchers("/rest/**", "/web/manager.html", "/h2-console", "/h2-console/**", "/api/clients", "/api/accounts").hasAuthority("ADMIN")
+                .antMatchers("/rest/**", "/h2-console").hasAuthority("ADMIN")
 
-                .antMatchers("/web/accounts.html", "/web/transactions.html", "/web/cards.html", "web/loans.html", "web/create-cards.html", "web/create-loans.html", "/api/clients/current", "api/accounts").hasAuthority("USER")
-
-                .antMatchers("/web/index.html", "/web/js/**", "/web/css/**", "/web/assets/**", "/web/favicon.ico").permitAll();
+                .antMatchers("/api/login","/rest/**").permitAll();
 
 
         http.formLogin()
 
                 .usernameParameter("email")
 
-                .passwordParameter("password")
+                .passwordParameter("contraseña")
 
                 .loginPage("/api/login");
 

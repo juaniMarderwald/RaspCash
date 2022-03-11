@@ -14,12 +14,11 @@ public class Opinion {
     private String descripcion;
     private int puntuacion;
 
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "usuario")
     private Usuario usuarioOpinion;
 
-    // Declaro la relacion Muchos a uno, quiere decir que muchas tarjetas pueden pertenecer a un Cliente
-    @ManyToOne(fetch = FetchType.EAGER)
-    @JoinColumn(name = "opinion_id")
-    private Opinion opinion;
+
 
     public Opinion() {
     }

@@ -2,10 +2,7 @@ package Mindhub.RaspCash.models;
 
 import org.hibernate.annotations.GenericGenerator;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.List;
 
 @Entity
@@ -14,9 +11,16 @@ public class Billetera {
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
     @GenericGenerator(name = "native", strategy = "native")
     private long id;
+
+    @OneToOne
+    @JoinColumn(name = "usuario_id")
     private Usuario usuario;
-    private List<CriptoMoneda>criptoMonedas;
+
+    public Usuario getUsuario() {
+        return usuario;
+    }
 
 
-
+    public Billetera() {
+    }
 }

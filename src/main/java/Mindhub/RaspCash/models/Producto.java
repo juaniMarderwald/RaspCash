@@ -19,14 +19,14 @@ public class Producto {
     private double valor;
     private String descripcion;
     private String nombre;
-    private  String tipo;
+    private  TipoProducto tipo;
 
-    @OneToMany(mappedBy = "opinion", fetch = FetchType.EAGER)
+    @OneToMany(mappedBy = "", fetch = FetchType.EAGER)
     private Set<Opinion> opiniones=new HashSet<>();
 
-    @ManyToOne()
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name ="usuario_id")
     private Usuario usuario;
-
 
     public Producto() {
     }

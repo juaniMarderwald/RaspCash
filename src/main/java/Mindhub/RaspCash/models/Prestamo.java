@@ -21,7 +21,6 @@ public class Prestamo {
     Set<PrestamoUsuario> prestamoUsuario = new HashSet<>();
 
 
-
     public Prestamo() {
     }
 
@@ -40,6 +39,12 @@ public class Prestamo {
 
     public void setNombre(String nombre) {
         this.nombre = nombre;
+    }
+
+    public Prestamo(String nombre, double interes, double montoMaximo) {
+        this.nombre = nombre;
+        this.interes = interes;
+        this.montoMaximo = montoMaximo;
     }
 
 }
