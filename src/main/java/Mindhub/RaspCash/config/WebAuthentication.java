@@ -1,5 +1,7 @@
 package Mindhub.RaspCash.config;
 
+import Mindhub.RaspCash.models.Usuario;
+import Mindhub.RaspCash.respositories.UsuarioRepositorio;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -15,23 +17,21 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 public class WebAuthentication extends GlobalAuthenticationConfigurerAdapter {
 
     @Autowired
-    userRepository userRepository;
+    UsuarioRepositorio usuarioRepositorio;
 
     @Override
     public void init(AuthenticationManagerBuilder auth) throws Exception {
         auth.userDetailsService(inputName -> {
-            User user = userRepository.findByEmail(inputName);
+            Usuario usuario = usuarioRepositorio.findByEmail(inputName);
 
-            if (user != null){
-                if (user.getEmail().equals("admin")) {
-                    return new User(user.getEmail(), client.getPassword(),
-                            AuthorityUtils.createAuthorityList("ADMIN"));
+            if (usuario != null){
+                if (usuario.getCorreo().equals("admin")) {
+                    return new User(usuario.getCorreo(),usuario.getContraseña(), AuthorityUtils.createAuthorityList("ADMIN"));
                 }else{
-                    return new User(user.getEmail(), client.getPassword(),
-                            AuthorityUtils.createAuthorityList("USER"));
+                    return new User(usuario.getCorreo(),usuario.getContraseña(), AuthorityUtils.createAuthorityList("USER"));
                 }
             }else {
-                throw new UsernameNotFoundException("Unknown user: " + inputName);
+                throw new UsernameNotFoundException("Usuario desconocido: " + inputName);
             }
         });
     }
