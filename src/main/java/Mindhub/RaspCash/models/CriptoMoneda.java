@@ -32,37 +32,7 @@ public @Data class CriptoMoneda {
         this.logo=logo;
     }
 
-    public String getLogo() {
-        return logo;
-    }
 
-    public void setLogo(String logo) {
-        this.logo = logo;
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public double getCotizacion() {
-        return cotizacion;
-    }
-
-    public void setCotizacion(double cotizacion) {
-        this.cotizacion = cotizacion;
-    }
 
     public CriptoMoneda(long id, String nombre, double cotizacion) {
         this.id = id;
