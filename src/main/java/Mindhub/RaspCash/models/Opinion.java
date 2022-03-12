@@ -2,10 +2,12 @@ package Mindhub.RaspCash.models;
 
 import org.hibernate.annotations.GenericGenerator;
 
+import lombok.Data;
+
 import javax.persistence.*;
 
 @Entity
-public class Opinion {
+public @Data class Opinion {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
     @GenericGenerator(name = "native", strategy = "native")

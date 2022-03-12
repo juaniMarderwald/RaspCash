@@ -2,10 +2,12 @@ package Mindhub.RaspCash.models;
 
 import org.hibernate.annotations.GenericGenerator;
 
+import lombok.Data;
+
 import javax.persistence.*;
 
 @Entity
-public class CriptoMoneda {
+public @Data class CriptoMoneda {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
