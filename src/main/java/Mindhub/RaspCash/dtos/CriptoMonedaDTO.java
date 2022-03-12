@@ -1,8 +1,9 @@
 package Mindhub.RaspCash.dtos;
 
 import Mindhub.RaspCash.models.CriptoMoneda;
+import lombok.Data;
 
-public class CriptoMonedaDTO {
+public @Data class CriptoMonedaDTO {
 
     private long id;
     private String nombre, logo;
@@ -13,21 +14,5 @@ public class CriptoMonedaDTO {
         this.nombre= criptoMoneda.getNombre();
         this.logo= criptoMoneda.getLogo();
         this.cotizacion= criptoMoneda.getCotizacion();
-    }
-
-    public long getId() {
-        return id;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public String getLogo() {
-        return logo;
-    }
-
-    public double getCotizacion() {
-        return cotizacion;
     }
 }

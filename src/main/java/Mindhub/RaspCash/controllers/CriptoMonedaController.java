@@ -5,6 +5,7 @@ import Mindhub.RaspCash.models.CriptoMoneda;
 import Mindhub.RaspCash.servicios.ServicioCriptomoneda;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -22,4 +23,8 @@ public class CriptoMonedaController {
         return servicioCriptomoneda.obtenerTodasLasCriptomonedas();
     }
 
+    @GetMapping("/criptomonedas/{nombre}")
+    public List<CriptoMonedaDTO> obtenerCriptoMonedasPorNombre(@PathVariable String nombre) {
+    	return servicioCriptomoneda.obtenerCriptoMonedasPorNombre(nombre);
+    }
 }

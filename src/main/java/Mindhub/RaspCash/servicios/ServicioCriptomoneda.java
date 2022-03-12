@@ -10,4 +10,6 @@ import java.util.List;
 public interface ServicioCriptomoneda {
 
     public List<CriptoMonedaDTO> obtenerTodasLasCriptomonedas();
+    
+    public List<CriptoMonedaDTO> obtenerCriptoMonedasPorNombre(String nombre);
 }
