@@ -60,7 +60,7 @@ public class ImplementacionServicioUsuario implements ServicioUsuario {
 
 			usuarioRepositorio.save(new Usuario(correo, passwordEncoder.encode(password), nombre, apellido, apodo));
 
-			 return new ResponseEntity<>("Registro finalizado", HttpStatus.CREATED);
+			return new ResponseEntity<>("Registro finalizado", HttpStatus.CREATED);
 	}
     
     public UsuarioDTO obtenerUsuarioPorId(long id){

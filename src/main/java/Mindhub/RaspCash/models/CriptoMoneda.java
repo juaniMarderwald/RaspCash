@@ -5,6 +5,8 @@ import org.hibernate.annotations.GenericGenerator;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
 public @Data class CriptoMoneda {
@@ -17,6 +19,9 @@ public @Data class CriptoMoneda {
     private String nombre;
     private double cotizacion;
     private String logo;
+
+    @OneToMany(mappedBy = "criptomoneda",fetch = FetchType.EAGER)
+    Set<CriptomonedaUsuario> criptomonedasUsuario= new HashSet<>();
 
     public CriptoMoneda() {
     }
