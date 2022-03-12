@@ -21,7 +21,8 @@ public class WebAuthorization extends WebSecurityConfigurerAdapter {
 
        http.authorizeRequests()
    //             .antMatchers("/rest/**").hasAuthority("ADMIN")
-                .antMatchers("/h2-console/**").hasAuthority("ADMIN");
+    //            .antMatchers("/h2-console/**").hasAuthority("ADMIN")
+                  .antMatchers("/web/**").permitAll();
 
         http.formLogin()
                 .usernameParameter("email")
