@@ -20,7 +20,7 @@ public class WebAuthorization extends WebSecurityConfigurerAdapter {
     protected void configure(HttpSecurity http) throws Exception {
 
        http.authorizeRequests()
-                .antMatchers("/rest/**").hasAuthority("ADMIN")
+   //             .antMatchers("/rest/**").hasAuthority("ADMIN")
                 .antMatchers("/h2-console/**").hasAuthority("ADMIN");
 
         http.formLogin()
