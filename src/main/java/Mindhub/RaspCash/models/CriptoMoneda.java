@@ -14,11 +14,28 @@ public class CriptoMoneda {
 
     private String nombre;
     private double cotizacion;
-
-    @ManyToOne
-    private Billetera billetera;
+    private String logo;
 
     public CriptoMoneda() {
+    }
+
+    public CriptoMoneda(String nombre, double cotizacion) {
+        this.nombre = nombre;
+        this.cotizacion = cotizacion;
+    }
+
+    public CriptoMoneda(String nombre, double cotizacion, String logo){
+        this.nombre=nombre;
+        this.cotizacion=cotizacion;
+        this.logo=logo;
+    }
+
+    public String getLogo() {
+        return logo;
+    }
+
+    public void setLogo(String logo) {
+        this.logo = logo;
     }
 
     public long getId() {
