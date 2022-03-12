@@ -1,4 +1,4 @@
-package Mindhub.RaspCash.Servicios;
+package Mindhub.RaspCash.servicios;
 
 import Mindhub.RaspCash.dtos.UsuarioDTO;
 import org.springframework.stereotype.Service;

@@ -1,4 +1,4 @@
 package Mindhub.RaspCash.controllers;
 
-public class billeteraController {
+public class AppController {
 }

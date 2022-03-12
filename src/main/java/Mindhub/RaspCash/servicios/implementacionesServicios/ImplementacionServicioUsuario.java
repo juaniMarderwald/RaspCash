@@ -1,6 +1,6 @@
-package Mindhub.RaspCash.Servicios.ImplementacionesServicios;
+package Mindhub.RaspCash.servicios.implementacionesServicios;
 
-import Mindhub.RaspCash.Servicios.ServicioUsuario;
+import Mindhub.RaspCash.servicios.ServicioUsuario;
 import Mindhub.RaspCash.dtos.UsuarioDTO;
 import Mindhub.RaspCash.respositories.UsuarioRepositorio;
 import org.springframework.beans.factory.annotation.Autowired;

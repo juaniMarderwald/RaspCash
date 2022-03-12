@@ -8,14 +8,20 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
+
 @Entity
 public class Usuario {
+	
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
     @GenericGenerator(name = "native", strategy = "native")
     private long id;
 
-    private String email, password, nombre, apellido, apodo;
+    private String email;
+    private String password;
+    private String nombre;
+    private String apellido;
+    private String apodo;
 
     @OneToOne
     @JoinColumn(name = "carrito_id")
@@ -34,55 +40,90 @@ public class Usuario {
     public Usuario() {
     }
 
-    public Usuario(String correo, String contraseña, String nombre, String apellido, String apodo) {
+    public Usuario(String correo, String contrasenia, String nombre, String apellido, String apodo) {
         this.email = correo;
-        this.password = contraseña;
+        this.password = contrasenia;
         this.nombre = nombre;
         this.apellido = apellido;
         this.apodo = apodo;
     }
 
-    public String getEmail() {
-        return email;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public String getNombre() {
-        return nombre;
-    }
-
-    public String getApellido() {
-        return apellido;
-    }
-
-    public String getApodo() {
-        return apodo;
-    }
-
-    public long getId(){
-        return id;
-    }
-
-    public Carrito getCarrito() {
-        return carrito;
-    }
-
-    public Billetera getBilletera() {
-        return billetera;
-    }
-
-    public List<PrestamoUsuario> getPrestamo() {
-        return prestamo;
-    }
-
-    public Set<Producto> getNfts() {
-        return nfts;
-    }
-
     public void addNft(Producto producto){
+    }
 
+	public String getEmail() {
+		return null;
+	}
+
+	public String getPassword() {
+		return null;
+	}
+
+	public long getId() {
+		return id;
+	}
+
+	public String getNombre() {
+		return nombre;
+	}
+
+	public String getApellido() {
+		return apellido;
+	}
+
+	public String getApodo() {
+		return apodo;
+	}
+
+	public Carrito getCarrito() {
+		return carrito;
+	}
+
+	public Billetera getBilletera() {
+		return billetera;
+	}
+
+	public List<PrestamoUsuario> getPrestamo() {
+		return prestamo;
+	}
+
+	public Set<Producto> getNfts() {
+		return nfts;
+	}
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public void setNombre(String nombre) {
+        this.nombre = nombre;
+    }
+
+    public void setApellido(String apellido) {
+        this.apellido = apellido;
+    }
+
+    public void setApodo(String apodo) {
+        this.apodo = apodo;
+    }
+
+    public void setCarrito(Carrito carrito) {
+        this.carrito = carrito;
+    }
+
+    public void setBilletera(Billetera billetera) {
+        this.billetera = billetera;
+    }
+
+    public void setPrestamo(List<PrestamoUsuario> prestamo) {
+        this.prestamo = prestamo;
+    }
+
+    public void setNfts(Set<Producto> nfts) {
+        this.nfts = nfts;
     }
 }
