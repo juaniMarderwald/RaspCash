@@ -62,5 +62,13 @@ public class ImplementacionServicioUsuario implements ServicioUsuario {
 			return new ResponseEntity<>("Registro finalizado", HttpStatus.CREATED);
 	}
     
-    
+    public UsuarioDTO obtenerUsuarioPorId(long id) throws Exception {
+    	
+    	Usuario usuario = usuarioRepositorio.buscarPorId(id);
+    	
+    	if(usuario == null) 
+    		throw new Exception("El usuario no fue encontrado.");
+    		
+    	return new UsuarioDTO(usuario);
+    };
 }

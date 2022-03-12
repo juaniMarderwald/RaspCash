@@ -127,6 +127,4 @@ public class Usuario {
     public void setNfts(Set<Producto> nfts) {
         this.nfts = nfts;
     }
-
-
 }

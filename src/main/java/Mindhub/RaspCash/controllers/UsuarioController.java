@@ -5,6 +5,7 @@ import Mindhub.RaspCash.dtos.UsuarioDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -25,5 +26,8 @@ public class UsuarioController {
         return servicioUsuario.obtenerUsuarios();
     }
 
-
+    @GetMapping("/usuarios/{id}")
+    public UsuarioDTO obtenerUsuarioPorId(@PathVariable long id) throws Exception {
+    	return servicioUsuario.obtenerUsuarioPorId(id);
+    }
 }
