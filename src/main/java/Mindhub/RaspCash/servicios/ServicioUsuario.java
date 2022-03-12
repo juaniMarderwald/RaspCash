@@ -7,5 +7,6 @@ import java.util.List;
 
 @Service
 public interface ServicioUsuario {
+
     public List<UsuarioDTO> obtenerUsuarios();
 }

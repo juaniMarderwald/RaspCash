@@ -6,6 +6,7 @@ import javax.persistence.*;
 
 @Entity
 public class CriptoMoneda {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
     @GenericGenerator(name = "native", strategy = "native")

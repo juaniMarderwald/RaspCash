@@ -2,9 +2,8 @@ package Mindhub.RaspCash;
 
 import Mindhub.RaspCash.models.Usuario;
 import Mindhub.RaspCash.respositories.*;
-import Mindhub.RaspCash.servicios.implementacionesServicios.EmailSenderService;
+import Mindhub.RaspCash.servicios.implementacionesServicios.EmailSenderServiceImplementation;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -18,7 +17,7 @@ public class RaspCashApplication {
 	@Autowired
 	private PasswordEncoder passwordEncoder;
 	@Autowired
-	private EmailSenderService senderService;
+	private EmailSenderServiceImplementation senderService;
 
 	public static void main(String[] args) {
 		SpringApplication.run(RaspCashApplication.class, args);
