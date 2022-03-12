@@ -17,35 +17,25 @@ import javax.servlet.http.HttpSession;
 public class WebAuthorization extends WebSecurityConfigurerAdapter {
 
     @Override
-
     protected void configure(HttpSecurity http) throws Exception {
 
-        http.authorizeRequests()
+       http.authorizeRequests()
+                .antMatchers("/rest/**").hasAuthority("ADMIN")
+                .antMatchers("/h2-console/**").hasAuthority("ADMIN")
 
-                .antMatchers(HttpMethod.POST, "/api/clients").permitAll()
+                .antMatchers("/api/usuarios").hasAuthority("USER")
 
-                .antMatchers("/rest/**", "/h2-console").hasAuthority("ADMIN")
-
-                .antMatchers("/api/**","/rest/**").permitAll();
+                .antMatchers("/api/login").permitAll();
 
 
         http.formLogin()
-
                 .usernameParameter("email")
-
-                .passwordParameter("contraseña")
-
-                .loginPage("/api/login");
-
-
+                .passwordParameter("password")
+                .loginPage("/api/login").permitAll();
 
         http.logout().logoutUrl("/api/logout");
 
-
-        // turn off checking for CSRF tokens
-
         http.csrf().disable();
-
 
         //disabling frameOptions so h2-console can be accessed
 
@@ -74,9 +64,7 @@ public class WebAuthorization extends WebSecurityConfigurerAdapter {
         HttpSession session = request.getSession(false);
 
         if (session != null) {
-
             session.removeAttribute(WebAttributes.AUTHENTICATION_EXCEPTION);
-
         }
     }
 

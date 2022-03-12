@@ -27,10 +27,15 @@ public class RaspCashApplication {
 
 	return (args) -> {
 
-			Usuario usuario1= new Usuario("jmarderwald87@gmail.com","123456","Juan Ignacio","Mardewrwald","Juani");
-			Usuario usuario2 = new Usuario("melba@mindhub.com","123456","Melba","Morel","Melbita");
+			String contrasenia1=passwordEncoder.encode("123456");
+			String contraseniaAdmin=passwordEncoder.encode("admin");
+			Usuario usuario1= new Usuario("jmarderwald87@gmail.com",contrasenia1,"Juan Ignacio","Mardewrwald","Juani");
+			Usuario usuario2 = new Usuario("melba@mindhub.com",contrasenia1,"Melba","Morel","Melbita");
+			Usuario usuarioAdmin = new Usuario("admin",contraseniaAdmin,"admin","admin","admin");
+
 			usuarioRepositorio.save(usuario1);
 			usuarioRepositorio.save(usuario2);
+			usuarioRepositorio.save(usuarioAdmin);
 
 
 

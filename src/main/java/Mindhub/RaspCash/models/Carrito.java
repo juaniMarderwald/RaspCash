@@ -25,4 +25,8 @@ public class Carrito {
         return usuario;
     }
 
+    public void agregarProductoAlCarrito(Producto producto){
+        this.productos.add(producto);
+    }
+
 }

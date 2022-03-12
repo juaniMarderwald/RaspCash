@@ -19,16 +19,21 @@ public class WebAuthentication extends GlobalAuthenticationConfigurerAdapter {
     @Autowired
     UsuarioRepositorio usuarioRepositorio;
 
+    @Bean
+    public PasswordEncoder passwordEncoder() {
+        return PasswordEncoderFactories.createDelegatingPasswordEncoder();
+    }
+
     @Override
     public void init(AuthenticationManagerBuilder auth) throws Exception {
         auth.userDetailsService(inputName -> {
             Usuario usuario = usuarioRepositorio.findByEmail(inputName);
 
             if (usuario != null){
-                if (usuario.getCorreo().equals("admin")) {
-                    return new User(usuario.getCorreo(),usuario.getContraseña(), AuthorityUtils.createAuthorityList("ADMIN"));
+                if (usuario.getEmail().equals("admin")) {
+                    return new User(usuario.getEmail(),usuario.getPassword(), AuthorityUtils.createAuthorityList("ADMIN"));
                 }else{
-                    return new User(usuario.getCorreo(),usuario.getContraseña(), AuthorityUtils.createAuthorityList("USER"));
+                    return new User(usuario.getEmail(),usuario.getPassword(), AuthorityUtils.createAuthorityList("USER"));
                 }
             }else {
                 throw new UsernameNotFoundException("Usuario desconocido: " + inputName);
@@ -36,8 +41,5 @@ public class WebAuthentication extends GlobalAuthenticationConfigurerAdapter {
         });
     }
 
-    @Bean
-    public PasswordEncoder passwordEncoder() {
-        return PasswordEncoderFactories.createDelegatingPasswordEncoder();
-    }
+
 }

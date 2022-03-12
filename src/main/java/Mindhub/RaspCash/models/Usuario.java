@@ -14,7 +14,8 @@ public class Usuario {
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
     @GenericGenerator(name = "native", strategy = "native")
     private long id;
-    private String email, contraseña, nombre, apellido, apodo;
+
+    private String email, password, nombre, apellido, apodo;
 
     @OneToOne
     @JoinColumn(name = "carrito_id")
@@ -35,18 +36,18 @@ public class Usuario {
 
     public Usuario(String correo, String contraseña, String nombre, String apellido, String apodo) {
         this.email = correo;
-        this.contraseña = contraseña;
+        this.password = contraseña;
         this.nombre = nombre;
         this.apellido = apellido;
         this.apodo = apodo;
     }
 
-    public String getCorreo() {
+    public String getEmail() {
         return email;
     }
 
-    public String getContraseña() {
-        return contraseña;
+    public String getPassword() {
+        return password;
     }
 
     public String getNombre() {

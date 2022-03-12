@@ -4,13 +4,18 @@ import Mindhub.RaspCash.models.Usuario;
 
 public class UsuarioDTO {
     private long id;
-    private String nombre,apellido,apodo;
+    private String nombre,apellido,apodo, email;
 
     public UsuarioDTO(Usuario usuario) {
         this.id=usuario.getId();
         this.nombre = usuario.getNombre();
         this.apellido= usuario.getApellido();
         this.apodo= usuario.getApodo();
+        this.email= usuario.getEmail();
+    }
+
+    public long getId(){
+        return id;
     }
 
     public String getNombre() {
@@ -23,5 +28,9 @@ public class UsuarioDTO {
 
     public String getApodo() {
         return apodo;
+    }
+
+    public String getEmail(){
+        return email;
     }
 }
