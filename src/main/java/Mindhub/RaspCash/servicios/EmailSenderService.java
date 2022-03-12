@@ -1,6 +1,5 @@
 package Mindhub.RaspCash.servicios;
 
-import Mindhub.RaspCash.servicios.implementacionesServicios.EmailSenderServiceImplementation;
 import org.springframework.stereotype.Service;
 
 @Service
