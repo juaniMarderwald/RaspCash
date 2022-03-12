@@ -2,22 +2,38 @@ package Mindhub.RaspCash;
 
 import Mindhub.RaspCash.models.Usuario;
 import Mindhub.RaspCash.respositories.*;
+import Mindhub.RaspCash.servicios.implementacionesServicios.EmailSenderService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.beans.factory.annotation.Qualifier;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
+import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.event.EventListener;
 import org.springframework.security.crypto.password.PasswordEncoder;
 
 @SpringBootApplication
 public class RaspCashApplication {
+	@Autowired
+	private PasswordEncoder passwordEncoder;
+	@Autowired
+	private EmailSenderService senderService;
 
 	public static void main(String[] args) {
 		SpringApplication.run(RaspCashApplication.class, args);
 	}
 
-	@Autowired
-	private PasswordEncoder passwordEncoder;
+
+	@EventListener(ApplicationReadyEvent.class)
+	public void triggerMail(){                //PARA QUE SEA MAS DINAMICO LO IDEAL SERIA HACER UNA VARIABLE PARA QUE SEA UN EMAIL DIFERENTE
+												// O QUE ENGLOBE ESTE SERVICIO ENTONCES QUEDA CONECTADO
+												//hablando del receptor del email
+
+ 			senderService.senSimpleEmailTo("gelneryus20@gmail.com",
+					"Para el registro, usted ha sido registrado con éxito y el mail del usuario",
+					"RASPCASH");
+	}
 
 	@Bean
 	public CommandLineRunner initData(UsuarioRepositorio usuarioRepositorio, BilleteraRepositorio billeteraRepositorio,
