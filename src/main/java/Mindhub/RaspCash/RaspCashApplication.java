@@ -1,5 +1,6 @@
 package Mindhub.RaspCash;
 
+import Mindhub.RaspCash.models.CriptoMoneda;
 import Mindhub.RaspCash.models.Usuario;
 import Mindhub.RaspCash.respositories.*;
 import Mindhub.RaspCash.servicios.implementacionesServicios.EmailSenderServiceImplementation;
@@ -14,8 +15,10 @@ import org.springframework.security.crypto.password.PasswordEncoder;
 
 @SpringBootApplication
 public class RaspCashApplication {
+
 	@Autowired
 	private PasswordEncoder passwordEncoder;
+
 	@Autowired
 	private EmailSenderServiceImplementation senderService;
 
@@ -29,9 +32,9 @@ public class RaspCashApplication {
 												// O QUE ENGLOBE ESTE SERVICIO ENTONCES QUEDA CONECTADO
 												//hablando del receptor del email
 
- 			senderService.senSimpleEmailTo("gelneryus20@gmail.com",
+ 		/*	senderService.senSimpleEmailTo("gelneryus20@gmail.com",
 					"Para el registro, usted ha sido registrado con éxito y el mail del usuario",
-					"RASPCASH");
+					"RASPCASH");*/
 	}
 
 	@Bean
@@ -52,8 +55,28 @@ public class RaspCashApplication {
 			usuarioRepositorio.save(usuario2);
 			usuarioRepositorio.save(usuarioAdmin);
 
+			//Creacion de algunas criptomonedas de prueba
 
-
+			CriptoMoneda criptoBTC= new CriptoMoneda("Bitcoin",4255459);
+			CriptoMoneda criptoETH= new CriptoMoneda("Ethereum",282029);
+			CriptoMoneda criptoUSDT = new CriptoMoneda("Thether",108);
+			CriptoMoneda criptoBNB= new CriptoMoneda("Binance Coin",41046);
+			CriptoMoneda criptoUSDC= new CriptoMoneda("USD Coin", 108);
+			CriptoMoneda criptoXRP = new CriptoMoneda("XRP",86);
+			CriptoMoneda criptoTerra=new CriptoMoneda("Luna",9715);
+			CriptoMoneda criptoADA= new CriptoMoneda("Cardano",86);
+			CriptoMoneda criptoSOL = new CriptoMoneda("Solana",8924);
+			CriptoMoneda criptoAVAX = new CriptoMoneda("Avalanche",7830);
+			criptoMonedaRepositorio.save(criptoBTC);
+			criptoMonedaRepositorio.save(criptoETH);
+			criptoMonedaRepositorio.save(criptoBNB);
+			criptoMonedaRepositorio.save(criptoUSDT);
+			criptoMonedaRepositorio.save(criptoUSDC);
+			criptoMonedaRepositorio.save(criptoXRP);
+			criptoMonedaRepositorio.save(criptoTerra);
+			criptoMonedaRepositorio.save(criptoADA);
+			criptoMonedaRepositorio.save(criptoSOL);
+			criptoMonedaRepositorio.save(criptoAVAX);
 
 
 		};
