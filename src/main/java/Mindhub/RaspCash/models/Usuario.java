@@ -2,6 +2,8 @@ package Mindhub.RaspCash.models;
 
 import org.hibernate.annotations.GenericGenerator;
 
+import lombok.Data;
+
 import javax.persistence.*;
 
 import java.util.HashSet;
@@ -10,7 +12,7 @@ import java.util.Set;
 
 
 @Entity
-public class Usuario {
+public @Data class Usuario {
 	
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
@@ -51,79 +53,4 @@ public class Usuario {
     public void addNft(Producto producto){
     }
 
-	public String getEmail() {
-		return null;
-	}
-
-	public String getPassword() {
-		return null;
-	}
-
-	public long getId() {
-		return id;
-	}
-
-	public String getNombre() {
-		return nombre;
-	}
-
-	public String getApellido() {
-		return apellido;
-	}
-
-	public String getApodo() {
-		return apodo;
-	}
-
-	public Carrito getCarrito() {
-		return carrito;
-	}
-
-	public Billetera getBilletera() {
-		return billetera;
-	}
-
-	public List<PrestamoUsuario> getPrestamo() {
-		return prestamo;
-	}
-
-	public Set<Producto> getNfts() {
-		return nfts;
-	}
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
-    }
-
-    public void setApellido(String apellido) {
-        this.apellido = apellido;
-    }
-
-    public void setApodo(String apodo) {
-        this.apodo = apodo;
-    }
-
-    public void setCarrito(Carrito carrito) {
-        this.carrito = carrito;
-    }
-
-    public void setBilletera(Billetera billetera) {
-        this.billetera = billetera;
-    }
-
-    public void setPrestamo(List<PrestamoUsuario> prestamo) {
-        this.prestamo = prestamo;
-    }
-
-    public void setNfts(Set<Producto> nfts) {
-        this.nfts = nfts;
-    }
 }
