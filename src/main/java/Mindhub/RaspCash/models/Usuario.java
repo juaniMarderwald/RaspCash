@@ -40,9 +40,9 @@ public class Usuario {
     public Usuario() {
     }
 
-    public Usuario(String correo, String password, String nombre, String apellido, String apodo) {
+    public Usuario(String correo, String contrasenia, String nombre, String apellido, String apodo) {
         this.email = correo;
-        this.password = password;
+        this.password = contrasenia;
         this.nombre = nombre;
         this.apellido = apellido;
         this.apodo = apodo;
@@ -52,11 +52,11 @@ public class Usuario {
     }
 
 	public String getEmail() {
-		return this.email;
+		return null;
 	}
 
 	public String getPassword() {
-		return this.password;
+		return null;
 	}
 
 	public long getId() {
