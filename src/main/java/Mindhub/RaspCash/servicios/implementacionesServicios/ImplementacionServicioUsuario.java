@@ -1,6 +1,7 @@
 package Mindhub.RaspCash.servicios.implementacionesServicios;
 
 import Mindhub.RaspCash.servicios.ServicioUsuario;
+import excepciones.ConflictException;
 import Mindhub.RaspCash.dtos.UsuarioDTO;
 import Mindhub.RaspCash.models.Usuario;
 import Mindhub.RaspCash.respositories.UsuarioRepositorio;
@@ -62,13 +63,13 @@ public class ImplementacionServicioUsuario implements ServicioUsuario {
 			 return new ResponseEntity<>("Registro finalizado", HttpStatus.CREATED);
 	}
     
-    public UsuarioDTO obtenerUsuarioPorId(long id) throws Exception {
+    public UsuarioDTO obtenerUsuarioPorId(long id){
     	
     	Usuario usuario = usuarioRepositorio.buscarPorId(id);
     	
-    	if(usuario == null) 
-    		throw new Exception("El usuario no fue encontrado.");
-    		
+    	if(usuario == null)
+    		throw new ConflictException("No se encontro el usuario.");
+    	
     	return new UsuarioDTO(usuario);
     };
 }

@@ -1,7 +1,6 @@
 package Mindhub.RaspCash.servicios;
 
 import Mindhub.RaspCash.dtos.UsuarioDTO;
-
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
@@ -14,5 +13,5 @@ public interface ServicioUsuario {
     
     public ResponseEntity<Object> registro(String nombre, String apellido, String apodo, String correo, String password);
     
-    public UsuarioDTO obtenerUsuarioPorId(long Id) throws Exception;
+    public UsuarioDTO obtenerUsuarioPorId(long Id);
 }
