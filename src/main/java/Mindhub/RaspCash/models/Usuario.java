@@ -49,6 +49,7 @@ public class Usuario {
     }
 
     public void addNft(Producto producto){
+        this.nfts.add(producto);
     }
 
 	public String getEmail() {
@@ -126,4 +127,6 @@ public class Usuario {
     public void setNfts(Set<Producto> nfts) {
         this.nfts = nfts;
     }
+
+
 }
