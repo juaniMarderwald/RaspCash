@@ -36,13 +36,4 @@ public @Data class CriptoMoneda {
         this.cotizacion=cotizacion;
         this.logo=logo;
     }
-
-
-
-    public CriptoMoneda(long id, String nombre, double cotizacion) {
-        this.id = id;
-        this.nombre = nombre;
-        this.cotizacion = cotizacion;
-
-    }
 }

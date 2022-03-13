@@ -7,6 +7,8 @@ import Mindhub.RaspCash.servicios.ServicioCriptomoneda;
 import excepciones.ConflictException;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -34,5 +36,12 @@ public class ImplementacionServicioCriptomoneda implements ServicioCriptomoneda 
 	public List<CriptoMonedaDTO> filtrarCriptoMonedasPorCotizacion(double precioMinimo, double precioMaximo) {
 		List<CriptoMoneda> criptoMonedas = criptoMonedaRepositorio.filtrarCriptoMonedasPorCotizacion(precioMinimo, precioMaximo);
 		return criptoMonedas.stream().map(CriptoMonedaDTO::new).collect(Collectors.toList());
+	}
+
+	@Override
+	public ResponseEntity<Object> agregarCriptoMoneda(CriptoMonedaDTO criptoMonedaDto) {
+		//Agregar excepciones
+		criptoMonedaRepositorio.save(new CriptoMoneda(criptoMonedaDto.getNombre(), criptoMonedaDto.getCotizacion(), criptoMonedaDto.getLogo()));
+		return new ResponseEntity<>("CriptoMoneda agregada con exito", HttpStatus.CREATED);
 	}
 }

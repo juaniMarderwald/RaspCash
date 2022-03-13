@@ -2,6 +2,8 @@ package Mindhub.RaspCash.servicios;
 
 import Mindhub.RaspCash.dtos.CriptoMonedaDTO;
 import Mindhub.RaspCash.models.CriptoMoneda;
+
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -14,4 +16,6 @@ public interface ServicioCriptomoneda {
     public List<CriptoMonedaDTO> obtenerCriptoMonedasPorNombre(String nombre);
     
     public List<CriptoMonedaDTO> filtrarCriptoMonedasPorCotizacion(double precioMinimo, double precioMaximo);
+    
+    public ResponseEntity<Object> agregarCriptoMoneda(CriptoMonedaDTO criptoMonedaDto);
 }
