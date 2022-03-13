@@ -57,16 +57,16 @@ public class RaspCashApplication {
 			//Creacion de algunas criptomonedas de prueba
 
 
-			CriptoMoneda criptoBTC= new CriptoMoneda(NombreCriptomoneda.BTC,4255459);
-			CriptoMoneda criptoETH= new CriptoMoneda(NombreCriptomoneda.ETH,282029);
-			CriptoMoneda criptoUSDT = new CriptoMoneda(NombreCriptomoneda.USDT,108);
-			CriptoMoneda criptoBNB= new CriptoMoneda(NombreCriptomoneda.BNB,41046);
-			CriptoMoneda criptoUSDC= new CriptoMoneda(NombreCriptomoneda.USDC, 108);
-			CriptoMoneda criptoXRP = new CriptoMoneda(NombreCriptomoneda.XRP,86);
-			CriptoMoneda criptoTerra=new CriptoMoneda(NombreCriptomoneda.TERRA,9715);
-			CriptoMoneda criptoADA= new CriptoMoneda(NombreCriptomoneda.ADA,86);
-			CriptoMoneda criptoSOL = new CriptoMoneda(NombreCriptomoneda.SOL,8924);
-			CriptoMoneda criptoAVAX = new CriptoMoneda(NombreCriptomoneda.AXAX,7830);
+			CriptoMoneda criptoBTC= new CriptoMoneda(NombreCriptomoneda.BITCOIN,SimboloCriptomoneda.BTC,4255459);
+			CriptoMoneda criptoETH= new CriptoMoneda(NombreCriptomoneda.ETHEREUM,SimboloCriptomoneda.ETH,282029);
+			CriptoMoneda criptoUSDT = new CriptoMoneda(NombreCriptomoneda.THETER,SimboloCriptomoneda.USDT,108);
+			CriptoMoneda criptoBNB= new CriptoMoneda(NombreCriptomoneda.BNB,SimboloCriptomoneda.BNB,41046);
+			CriptoMoneda criptoUSDC= new CriptoMoneda(NombreCriptomoneda.USD_COIN,SimboloCriptomoneda.USDC, 108);
+			CriptoMoneda criptoXRP = new CriptoMoneda(NombreCriptomoneda.RIPPLE,SimboloCriptomoneda.XRP,86);
+			CriptoMoneda criptoTerra=new CriptoMoneda(NombreCriptomoneda.LUNA,SimboloCriptomoneda.TERRA,9715);
+			CriptoMoneda criptoADA= new CriptoMoneda(NombreCriptomoneda.CARDANO,SimboloCriptomoneda.ADA,86);
+			CriptoMoneda criptoSOL = new CriptoMoneda(NombreCriptomoneda.SOLANA,SimboloCriptomoneda.SOL,8924);
+			CriptoMoneda criptoAVAX = new CriptoMoneda(NombreCriptomoneda.AVALANCHE,SimboloCriptomoneda.AVAX,7830);
 			criptoMonedaRepositorio.save(criptoBTC);
 			criptoMonedaRepositorio.save(criptoETH);
 			criptoMonedaRepositorio.save(criptoBNB);

@@ -53,11 +53,11 @@ public class Usuario {
     }
 
 	public String getEmail() {
-		return null;
+		return this.email;
 	}
 
 	public String getPassword() {
-		return null;
+		return this.password;
 	}
 
 	public long getId() {

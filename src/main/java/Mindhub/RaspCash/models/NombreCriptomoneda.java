@@ -1,5 +1,5 @@
 package Mindhub.RaspCash.models;
 
 public enum NombreCriptomoneda {
-    BTC,ETH,USDT,BNB,USDC,XRP,TERRA,ADA,SOL,AXAX
-}
+        BITCOIN,ETHEREUM,THETER,BNB,USD_COIN,RIPPLE,LUNA,CARDANO,SOLANA,AVALANCHE
+ }

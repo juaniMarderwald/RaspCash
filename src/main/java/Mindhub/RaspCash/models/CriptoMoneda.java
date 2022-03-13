@@ -17,6 +17,7 @@ public @Data class CriptoMoneda {
     private long id;
 
     private NombreCriptomoneda nombre;
+    private SimboloCriptomoneda simboloCriptomoneda;
     private double cotizacion;
     private String logo;
 
@@ -26,14 +27,36 @@ public @Data class CriptoMoneda {
     public CriptoMoneda() {
     }
 
-    public CriptoMoneda(NombreCriptomoneda nombre, double cotizacion) {
+    public CriptoMoneda(NombreCriptomoneda nombre,SimboloCriptomoneda simboloCriptomoneda, double cotizacion) {
         this.nombre = nombre;
+        this.simboloCriptomoneda=simboloCriptomoneda;
         this.cotizacion = cotizacion;
     }
 
-    public CriptoMoneda(NombreCriptomoneda nombre, double cotizacion, String logo){
+    public CriptoMoneda(NombreCriptomoneda nombre, SimboloCriptomoneda simboloCriptomoneda, double cotizacion, String logo){
         this.nombre=nombre;
+        this.simboloCriptomoneda=simboloCriptomoneda;
         this.cotizacion=cotizacion;
         this.logo=logo;
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public NombreCriptomoneda getNombre() {
+        return nombre;
+    }
+
+    public double getCotizacion() {
+        return cotizacion;
+    }
+
+    public String getLogo() {
+        return logo;
+    }
+
+    public SimboloCriptomoneda getSimboloCriptomoneda() {
+        return simboloCriptomoneda;
     }
 }

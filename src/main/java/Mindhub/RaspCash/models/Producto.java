@@ -41,4 +41,16 @@ public @Data class Producto {
         this.descripcion=descripcion;
         this.tipo=tipo;
     }
+
+    public void reducirStock(int cantidad){
+        //Reduzco la cantidad del stock del producto
+        if (stock>cantidad){
+            this.stock -=cantidad;
+        }
+
+    }
+    public void agregarAlStock(int cantidad){
+        //Aumento la cantidad del stock del producto
+        this.stock+=cantidad;
+    }
 }

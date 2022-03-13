@@ -15,9 +15,6 @@ import java.util.Set;
 @Entity
 public @Data class Billetera {
 
-    @Autowired
-    Utilidades utilidades;
-
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
     @GenericGenerator(name = "native", strategy = "native")
@@ -41,8 +38,8 @@ public @Data class Billetera {
     public Billetera() {
     }
 
-    public Billetera(Usuario usuario){
-        this.direccion=utilidades.obtenerDireccionBilletera();
+    public Billetera(Usuario usuario, String direccion){
+        this.direccion=direccion;
         this.usuario=usuario;
     }
     public void agregarTransaccion(Transaccion transaccion){

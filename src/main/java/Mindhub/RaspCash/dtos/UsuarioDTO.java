@@ -18,4 +18,24 @@ public class UsuarioDTO {
         this.apodo= usuario.getApodo();
         this.email= usuario.getEmail();
     }
+
+    public long getId() {
+        return id;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public String getApellido() {
+        return apellido;
+    }
+
+    public String getApodo() {
+        return apodo;
+    }
+
+    public String getEmail() {
+        return email;
+    }
 }

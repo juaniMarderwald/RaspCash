@@ -41,7 +41,7 @@ public class ImplementacionServicioCriptomoneda implements ServicioCriptomoneda 
 	@Override
 	public ResponseEntity<Object> agregarCriptoMoneda(CriptoMonedaDTO criptoMonedaDto) {
 		//Agregar excepciones
-		criptoMonedaRepositorio.save(new CriptoMoneda(criptoMonedaDto.getNombre(), criptoMonedaDto.getCotizacion(), criptoMonedaDto.getLogo()));
-		return new ResponseEntity<>("CriptoMoneda agregada con exito", HttpStatus.CREATED);
+		criptoMonedaRepositorio.save(new CriptoMoneda(criptoMonedaDto.getNombre(),criptoMonedaDto.getSimboloCriptomoneda(), criptoMonedaDto.getCotizacion(), criptoMonedaDto.getLogo()));
+		return new ResponseEntity<>("Criptomoneda agregada con exito", HttpStatus.CREATED);
 	}
 }

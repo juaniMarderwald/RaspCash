@@ -4,6 +4,9 @@ import java.nio.charset.Charset;
 import java.util.Random;
 
 public class Utilidades {
+    //Clase con utilidades necesarias para diferentes procesos, por ejemplo creacion aleatoria de direccion de billetara
+    public Utilidades() {
+    }
 
     public String obtenerDireccionBilletera(){
 
