@@ -14,4 +14,9 @@ public interface CriptoMonedaRepositorio extends JpaRepository<CriptoMoneda,Long
 	@Query(value = "select c from CriptoMoneda c "
 			+ " where c.nombre LIKE %:nombre% ")
 	List<CriptoMoneda> buscarCriptoMonedasPorNombre(@Param("nombre") String nombre);
+
+	@Query(value = "select c from CriptoMoneda c "
+			+ " where c.cotizacion <= :precioMaximo "
+			+ " and c.cotizacion >= :precioMinimo ")
+	List<CriptoMoneda> filtrarCriptoMonedasPorCotizacion(@Param("precioMinimo") double precioMinimo, @Param("precioMaximo") double precioMaximo);
 }

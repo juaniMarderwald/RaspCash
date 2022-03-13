@@ -12,4 +12,6 @@ public interface ServicioCriptomoneda {
     public List<CriptoMonedaDTO> obtenerTodasLasCriptomonedas();
     
     public List<CriptoMonedaDTO> obtenerCriptoMonedasPorNombre(String nombre);
+    
+    public List<CriptoMonedaDTO> filtrarCriptoMonedasPorCotizacion(double precioMinimo, double precioMaximo);
 }

@@ -29,4 +29,10 @@ public class ImplementacionServicioCriptomoneda implements ServicioCriptomoneda 
 		
 		return criptoMonedas.stream().map(CriptoMonedaDTO::new).collect(Collectors.toList());
 	}
+
+	@Override
+	public List<CriptoMonedaDTO> filtrarCriptoMonedasPorCotizacion(double precioMinimo, double precioMaximo) {
+		List<CriptoMoneda> criptoMonedas = criptoMonedaRepositorio.filtrarCriptoMonedasPorCotizacion(precioMinimo, precioMaximo);
+		return criptoMonedas.stream().map(CriptoMonedaDTO::new).collect(Collectors.toList());
+	}
 }
