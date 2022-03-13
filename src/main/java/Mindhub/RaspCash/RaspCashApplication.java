@@ -1,7 +1,6 @@
 package Mindhub.RaspCash;
 
-import Mindhub.RaspCash.models.CriptoMoneda;
-import Mindhub.RaspCash.models.Usuario;
+import Mindhub.RaspCash.models.*;
 import Mindhub.RaspCash.respositories.*;
 import Mindhub.RaspCash.servicios.implementacionesServicios.EmailSenderServiceImplementation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -57,16 +56,17 @@ public class RaspCashApplication {
 
 			//Creacion de algunas criptomonedas de prueba
 
-			CriptoMoneda criptoBTC= new CriptoMoneda("Bitcoin",4255459);
-			CriptoMoneda criptoETH= new CriptoMoneda("Ethereum",282029);
-			CriptoMoneda criptoUSDT = new CriptoMoneda("Thether",108);
-			CriptoMoneda criptoBNB= new CriptoMoneda("Binance Coin",41046);
-			CriptoMoneda criptoUSDC= new CriptoMoneda("USD Coin", 108);
-			CriptoMoneda criptoXRP = new CriptoMoneda("XRP",86);
-			CriptoMoneda criptoTerra=new CriptoMoneda("Luna",9715);
-			CriptoMoneda criptoADA= new CriptoMoneda("Cardano",86);
-			CriptoMoneda criptoSOL = new CriptoMoneda("Solana",8924);
-			CriptoMoneda criptoAVAX = new CriptoMoneda("Avalanche",7830);
+
+			CriptoMoneda criptoBTC= new CriptoMoneda(NombreCriptomoneda.BTC,4255459);
+			CriptoMoneda criptoETH= new CriptoMoneda(NombreCriptomoneda.ETH,282029);
+			CriptoMoneda criptoUSDT = new CriptoMoneda(NombreCriptomoneda.USDT,108);
+			CriptoMoneda criptoBNB= new CriptoMoneda(NombreCriptomoneda.BNB,41046);
+			CriptoMoneda criptoUSDC= new CriptoMoneda(NombreCriptomoneda.USDC, 108);
+			CriptoMoneda criptoXRP = new CriptoMoneda(NombreCriptomoneda.XRP,86);
+			CriptoMoneda criptoTerra=new CriptoMoneda(NombreCriptomoneda.TERRA,9715);
+			CriptoMoneda criptoADA= new CriptoMoneda(NombreCriptomoneda.ADA,86);
+			CriptoMoneda criptoSOL = new CriptoMoneda(NombreCriptomoneda.SOL,8924);
+			CriptoMoneda criptoAVAX = new CriptoMoneda(NombreCriptomoneda.AXAX,7830);
 			criptoMonedaRepositorio.save(criptoBTC);
 			criptoMonedaRepositorio.save(criptoETH);
 			criptoMonedaRepositorio.save(criptoBNB);
@@ -77,8 +77,6 @@ public class RaspCashApplication {
 			criptoMonedaRepositorio.save(criptoADA);
 			criptoMonedaRepositorio.save(criptoSOL);
 			criptoMonedaRepositorio.save(criptoAVAX);
-
-
 		};
 	}
 

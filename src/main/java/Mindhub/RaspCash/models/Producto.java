@@ -32,4 +32,13 @@ public @Data class Producto {
 
     public Producto() {
     }
+
+    public Producto(String nombre, int stock,String imagen,double valor,String descripcion,TipoProducto tipo){
+        this.nombre=nombre;
+        this.stock=stock;
+        this.imagen=imagen;
+        this.valor=valor;
+        this.descripcion=descripcion;
+        this.tipo=tipo;
+    }
 }

@@ -1,12 +1,14 @@
 package Mindhub.RaspCash.dtos;
 
 import Mindhub.RaspCash.models.CriptoMoneda;
+import Mindhub.RaspCash.models.NombreCriptomoneda;
 import lombok.Data;
 
 public @Data class CriptoMonedaDTO {
 
     private long id;
-    private String nombre, logo;
+    private String logo;
+    private NombreCriptomoneda nombre;
     private double cotizacion;
 
     public CriptoMonedaDTO(CriptoMoneda criptoMoneda) {

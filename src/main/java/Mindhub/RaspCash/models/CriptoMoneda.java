@@ -16,7 +16,7 @@ public @Data class CriptoMoneda {
     @GenericGenerator(name = "native", strategy = "native")
     private long id;
 
-    private String nombre;
+    private NombreCriptomoneda nombre;
     private double cotizacion;
     private String logo;
 
@@ -26,12 +26,12 @@ public @Data class CriptoMoneda {
     public CriptoMoneda() {
     }
 
-    public CriptoMoneda(String nombre, double cotizacion) {
+    public CriptoMoneda(NombreCriptomoneda nombre, double cotizacion) {
         this.nombre = nombre;
         this.cotizacion = cotizacion;
     }
 
-    public CriptoMoneda(String nombre, double cotizacion, String logo){
+    public CriptoMoneda(NombreCriptomoneda nombre, double cotizacion, String logo){
         this.nombre=nombre;
         this.cotizacion=cotizacion;
         this.logo=logo;
