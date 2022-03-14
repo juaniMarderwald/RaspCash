@@ -15,7 +15,6 @@ public class Transaccion {
     @GenericGenerator(name = "native", strategy = "native")
     private long id;
 
-
     private double amount;
     private String descripcion;
     private LocalDateTime date;

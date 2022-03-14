@@ -71,7 +71,7 @@ public class Billetera {
 
         if (tipoDeTransaccion.equals(TipoDeTransaccion.DEBITO)){
             if (tipoDeMoneda.equals(TipoDeMoneda.PESOS)){
-                if (transaccion.getAmount()<this.montoPesos){
+                if (transaccion.getAmount()<=this.montoPesos){
                     this.montoPesos=this.montoPesos-transaccion.getAmount();
                 }
                 else
@@ -80,7 +80,7 @@ public class Billetera {
                 }
             }
             if (tipoDeMoneda.equals(TipoDeMoneda.BITCOIN)){
-                if(transaccion.getAmount()>this.montoBTC){
+                if(transaccion.getAmount()<=this.montoBTC){
                     this.montoBTC=this.montoBTC- transaccion.getAmount();
                 }
             }

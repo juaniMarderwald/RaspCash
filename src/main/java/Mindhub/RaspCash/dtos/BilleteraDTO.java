@@ -1,8 +1,13 @@
 package Mindhub.RaspCash.dtos;
 
 import Mindhub.RaspCash.models.Billetera;
+import Mindhub.RaspCash.models.Transaccion;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
+
+import java.util.HashSet;
+import java.util.Set;
+import java.util.stream.Collectors;
 
 @Getter
 public class BilleteraDTO {
@@ -12,6 +17,7 @@ public class BilleteraDTO {
     //private UsuarioDTO usuarioDTO;
     private double montoPesos;
     private double montoBTC;
+    private Set<TransaccionDTO> transacciones=new HashSet<>();
 
     public BilleteraDTO(Billetera billetera) {
         this.id= billetera.getId();
@@ -19,6 +25,7 @@ public class BilleteraDTO {
        // this.usuarioDTO=new UsuarioDTO(billetera.getUsuario());
         this.montoPesos=billetera.getMontoPesos();
         this.montoBTC= billetera.getMontoBTC();
+        this.transacciones=billetera.getTransacciones().stream().map(TransaccionDTO::new).collect(Collectors.toSet());
     }
 
     public long getId() {
@@ -39,5 +46,9 @@ public class BilleteraDTO {
 
     public double getMontoBTC() {
         return montoBTC;
+    }
+
+    public Set<TransaccionDTO> getTransacciones() {
+        return transacciones;
     }
 }
