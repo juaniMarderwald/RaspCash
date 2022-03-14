@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registración</title>
+</head>
+
+<body>
+
+    <div id="app">
+        <h1>
+            Inicia una nueva cuenta
+        </h1>
+
+
+        <div>
+            <input v-model="form.Nombre" type="text" required>
+            <label>
+                    <span class="text-nomb">Nombre</span>
+                </label>
+        </div>
+
+        <div>
+            <input v-model="form.apellido" type="text" required>
+            <label class="lbl-nombre">
+                    <span class="text-nomb">Apellido</span>
+                </label>
+        </div>
+        <div>
+            <input v-model="form.apodo" type="text" required>
+            <label class="lbl-nombre">
+                    <span class="text-nomb">apodo</span>
+                </label>
+        </div>
+
+
+        <div>
+            <input v-model="form.correo" type="emails" required>
+            <label>
+                    <span class="text-nomb">correo</span>
+                </label>
+        </div>
+
+        <div>
+            <input v-model="form.password" type="password" required>
+            <label>
+                    <span class="text-nomb">Password</span>
+                </label>
+        </div>
+
+        <button type="button" v-on:click="crearNuevoUsuario" class="btn"> Crear Cuenta </button>
+
+        <p>¿Ya tienes una cuenta?</p>
+        <a href="login.html" class="btn"> Iniciar sesión </a>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+
+    <script src="./js/register.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+</head>
+
+<body>
+    <div id="app1">
+        <H1>Inicio de sesión</H1>
+
+
+        <h2> Completa tus datos </h2>
+        <div class="form">
+            <input v-model="correo" type="text" required>
+            <label>
+                <span class="text-nomb">correo</span>
+            </label>
+        </div>
+        <div class="form">
+            <input v-model="password" type="password" required>
+            <label class="lbl-nombre">
+                <span class="text-nomb">Contraseña</span>
+            </label>
+        </div>
+
+        <button v-on:click="iniciarSesion()" class="btn"> Iniciar Sesión </button>
+
+        <p>¿Aun no estás registrado?</p>
+        <a href="registracion.html" class="btn"> Registrarse </a>
+
+
+    </div>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+    <script src="js/Login.js"></script>
+
+
+</body>
+
+</html>
