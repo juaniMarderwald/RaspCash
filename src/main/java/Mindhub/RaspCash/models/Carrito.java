@@ -15,20 +15,22 @@ public @Data class Carrito {
     private long id;
 
     @OneToOne
-    @JoinColumn(name = "usuario_id")
     private Usuario usuario;
 
-    @OneToMany(mappedBy = "", fetch = FetchType.EAGER)
-    private List<Producto> productos;
+    //private List<Producto> productos;
 
     private  double total;
+
+    public Carrito() {
+    }
 
     public Usuario getUsuario() {
         return usuario;
     }
 
-    public void agregarProductoAlCarrito(Producto producto){
+   /* public void agregarProductoAlCarrito(Producto producto){
         this.productos.add(producto);
-    }
+    }*/
+
 
 }

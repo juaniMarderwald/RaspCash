@@ -1,6 +1,7 @@
 package Mindhub.RaspCash.dtos;
 
 import Mindhub.RaspCash.models.Billetera;
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 
 @Getter
@@ -8,12 +9,16 @@ public class BilleteraDTO {
 
     private long id;
     private String direccion;
-    private UsuarioDTO usuario;
+    //private UsuarioDTO usuarioDTO;
+    private double montoPesos;
+    private double montoBTC;
 
     public BilleteraDTO(Billetera billetera) {
         this.id= billetera.getId();
         this.direccion= billetera.getDireccion();
-        this.usuario=new UsuarioDTO(billetera.getUsuario());
+       // this.usuarioDTO=new UsuarioDTO(billetera.getUsuario());
+        this.montoPesos=billetera.getMontoPesos();
+        this.montoBTC= billetera.getMontoBTC();
     }
 
     public long getId() {
@@ -23,8 +28,16 @@ public class BilleteraDTO {
     public String getDireccion() {
         return direccion;
     }
+    /*@JsonIgnore
+    public UsuarioDTO getUsuarioDTO() {
+        return usuarioDTO;
+    }*/
 
-    public UsuarioDTO getUsuario() {
-        return usuario;
+    public double getMontoPesos() {
+        return montoPesos;
+    }
+
+    public double getMontoBTC() {
+        return montoBTC;
     }
 }

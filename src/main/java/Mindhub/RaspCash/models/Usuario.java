@@ -4,6 +4,7 @@ import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
 
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -23,19 +24,19 @@ public class Usuario {
     private String apellido;
     private String apodo;
 
-    @OneToOne
+   /* @OneToOne
     @JoinColumn(name = "carrito_id")
-    private Carrito carrito;
-
+    private Carrito carrito = new Carrito();
+*/
     @OneToOne
     @JoinColumn(name = "billetera_id")
     private Billetera billetera;
 
     @OneToMany(mappedBy = "duenioPrestamo", fetch = FetchType.EAGER)
-    private List<PrestamoUsuario> prestamo;
+    private List<PrestamoUsuario> prestamo=new ArrayList<>();
 
-    @OneToMany(mappedBy = "usuario" , fetch = FetchType.EAGER)
-    private Set<Producto> nfts= new HashSet<>();
+    /*@OneToMany(mappedBy = "usuario" , fetch = FetchType.EAGER)
+    private Set<Producto> nfts= new HashSet<>();*/
 
     public Usuario() {
     }
@@ -55,11 +56,12 @@ public class Usuario {
         this.apellido = apellido;
         this.apodo = apodo;
         this.billetera=billetera;
+        billetera.setUsuario(this);
     }
 
-    public void addNft(Producto producto){
+    /*public void addNft(Producto producto){
         this.nfts.add(producto);
-    }
+    }*/
 
 	public String getEmail() {
 		return this.email;
@@ -85,9 +87,9 @@ public class Usuario {
 		return apodo;
 	}
 
-	public Carrito getCarrito() {
+	/*public Carrito getCarrito() {
 		return carrito;
-	}
+	}*/
 
 	public Billetera getBilletera() {
 		return billetera;
@@ -97,9 +99,9 @@ public class Usuario {
 		return prestamo;
 	}
 
-	public Set<Producto> getNfts() {
+	/*public Set<Producto> getNfts() {
 		return nfts;
-	}
+	}*/
 
     public void setEmail(String email) {
         this.email = email;
@@ -121,9 +123,9 @@ public class Usuario {
         this.apodo = apodo;
     }
 
-    public void setCarrito(Carrito carrito) {
+    /*public void setCarrito(Carrito carrito) {
         this.carrito = carrito;
-    }
+    }*/
 
     public void setBilletera(Billetera billetera) {
         billetera.setUsuario(this);
@@ -134,9 +136,9 @@ public class Usuario {
         this.prestamo = prestamo;
     }
 
-    public void setNfts(Set<Producto> nfts) {
+   /* public void setNfts(Set<Producto> nfts) {
         this.nfts = nfts;
-    }
+    }*/
 
 
 }

@@ -13,7 +13,7 @@ import java.util.List;
 import java.util.Set;
 
 @Entity
-public @Data class Billetera {
+public class Billetera {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
@@ -21,13 +21,12 @@ public @Data class Billetera {
     private long id;
 
     private String direccion;
+    private double montoBTC;
+    private double montoPesos;
 
     @OneToOne
     @JoinColumn(name = "usuario_id")
     private Usuario usuario;
-
-    @OneToMany(mappedBy = "billeteraOwner",fetch = FetchType.EAGER)
-    private Set<CriptomonedaUsuario> criptomonedaUsuarios = new HashSet<>();
 
     @OneToMany(mappedBy = "billetera", fetch = FetchType.EAGER)
     Set<Transaccion> transacciones=new HashSet<>();
@@ -39,9 +38,20 @@ public @Data class Billetera {
     public Billetera() {
     }
 
-    public Billetera(String direccion) {
+    public Billetera(String direccion, double montoBTC, double montoPesos) {
         this.direccion=direccion;
+        this.montoBTC=montoBTC;
+        this.montoPesos=montoPesos;
     }
+
+    public Billetera(String direccion, double montoBTC, double montoPesos, Usuario usuario) {
+        this.direccion=direccion;
+        this.montoBTC=montoBTC;
+        this.montoPesos=montoPesos;
+        this.usuario=usuario;
+        usuario.setBilletera(this);
+    }
+
 
     public void agregarTransaccion(Transaccion transaccion){
         //Agregar toda la logica de los montos, de si es credito o debito, y de que tipo de Cripto es la transaccion
@@ -56,9 +66,6 @@ public @Data class Billetera {
         return direccion;
     }
 
-    public Set<CriptomonedaUsuario> getCriptomonedaUsuarios() {
-        return criptomonedaUsuarios;
-    }
 
     public Set<Transaccion> getTransacciones() {
         return transacciones;
@@ -66,5 +73,13 @@ public @Data class Billetera {
 
     public void setUsuario(Usuario usuario) {
         this.usuario = usuario;
+    }
+
+    public double getMontoBTC() {
+        return montoBTC;
+    }
+
+    public double getMontoPesos() {
+        return montoPesos;
     }
 }

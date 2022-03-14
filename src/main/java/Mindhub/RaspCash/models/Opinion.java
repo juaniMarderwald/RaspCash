@@ -8,6 +8,7 @@ import javax.persistence.*;
 
 @Entity
 public @Data class Opinion {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
     @GenericGenerator(name = "native", strategy = "native")
@@ -19,7 +20,6 @@ public @Data class Opinion {
     @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "usuario")
     private Usuario usuarioOpinion;
-
 
 
     public Opinion() {

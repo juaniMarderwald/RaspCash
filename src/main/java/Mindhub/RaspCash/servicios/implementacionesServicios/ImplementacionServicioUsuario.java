@@ -68,19 +68,25 @@ public class ImplementacionServicioUsuario implements ServicioUsuario {
 	            }
 	        }
 
-			Billetera billetera=new Billetera(utilidades.obtenerDireccionBilletera());
+
 
 
 			Usuario usuario=new Usuario(correo, passwordEncoder.encode(password), nombre, apellido, apodo);
-
-
-
-			//System.out.println("*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-");
-			//System.out.println(billetera.getUsuario().getNombre());
-			//System.out.println(billetera.getDireccion());
-			//System.out.println("*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-");
-
+			//usuario.setBilletera(billetera);
+			//billetera.setUsuario(usuario);
 			usuarioRepositorio.save(usuario);
+
+			Billetera billetera=new Billetera(utilidades.obtenerDireccionBilletera(),0,0);
+			usuario.setBilletera(billetera);
+
+			billeteraRepositorio.save(billetera);
+
+			System.out.println("*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-");
+			System.out.println(billetera.getUsuario().getNombre());
+			System.out.println(billetera.getDireccion());
+			System.out.println("*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-");
+
+
 
 			return new ResponseEntity<>("Registro de usuario realizado con éxito", HttpStatus.CREATED);
 	}
