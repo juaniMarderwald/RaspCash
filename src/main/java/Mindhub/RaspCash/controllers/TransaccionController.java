@@ -25,7 +25,7 @@ public class TransaccionController {
     ServicioBilletera servicioBilletera;
 
     @PostMapping("/transaccion")
-    public ResponseEntity<Object> hacerTransaccion(@RequestParam String tipoDeMoneda, @RequestParam String monto, @RequestParam String direccionBilleteraEmisora,@RequestParam String direccionBilleteraReceptora,@RequestParam String descripcion){
+    public ResponseEntity<Object> realizarTransaccion(@RequestParam String tipoDeMoneda, @RequestParam String monto, @RequestParam String direccionBilleteraEmisora,@RequestParam String direccionBilleteraReceptora,@RequestParam String descripcion){
         //Las transacciones son de billetera a billetera
 
         //Faltan agregar los if de las comprobaciones, y en la billetera, resolveer el metodo agregarTransaccion, ahi está toda la logica
@@ -72,5 +72,7 @@ public class TransaccionController {
         return new ResponseEntity<>(HttpStatus.CREATED);
 
     }
+
+
 
 }

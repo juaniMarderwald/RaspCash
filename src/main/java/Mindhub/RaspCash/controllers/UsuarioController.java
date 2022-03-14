@@ -3,6 +3,7 @@ package Mindhub.RaspCash.controllers;
 import Mindhub.RaspCash.servicios.ServicioUsuario;
 import Mindhub.RaspCash.dtos.UsuarioDTO;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -26,4 +27,10 @@ public class UsuarioController {
     public UsuarioDTO obtenerUsuarioPorId(@PathVariable long id)  {
     	return servicioUsuario.obtenerUsuarioPorId(id);
     }
+
+    @GetMapping("/usuario/current")
+    public UsuarioDTO obtenerUsuarioActual(Authentication authentication){
+        return servicioUsuario.findByEmail(authentication.getName());
+    }
+
 }

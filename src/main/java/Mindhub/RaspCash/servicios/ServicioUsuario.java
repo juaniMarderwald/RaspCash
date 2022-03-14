@@ -14,4 +14,7 @@ public interface ServicioUsuario {
     public ResponseEntity<Object> registro(String nombre, String apellido, String apodo, String correo, String password);
     
     public UsuarioDTO obtenerUsuarioPorId(long Id);
+
+    public UsuarioDTO findByEmail(String email);
+
 }

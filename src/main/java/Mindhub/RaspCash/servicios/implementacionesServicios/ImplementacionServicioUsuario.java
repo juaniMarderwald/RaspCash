@@ -99,5 +99,14 @@ public class ImplementacionServicioUsuario implements ServicioUsuario {
     		throw new ConflictException("No se encontro el usuario.");
     	
     	return new UsuarioDTO(usuario);
-    };
+    }
+
+	@Override
+	public UsuarioDTO findByEmail(String email) {
+		return new UsuarioDTO(usuarioRepositorio.findByEmail(email));
+	}
+
+	;
+
+
 }
