@@ -5,9 +5,7 @@ import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.*;
 
 import java.util.ArrayList;
-import java.util.HashSet;
 import java.util.List;
-import java.util.Set;
 
 
 @Entity
@@ -33,7 +31,7 @@ public class Usuario {
     private Billetera billetera;
 
     @OneToMany(mappedBy = "duenioPrestamo", fetch = FetchType.EAGER)
-    private List<PrestamoUsuario> prestamo=new ArrayList<>();
+    private List<PrestamoUsuario> prestamos =new ArrayList<>();
 
     /*@OneToMany(mappedBy = "usuario" , fetch = FetchType.EAGER)
     private Set<Producto> nfts= new HashSet<>();*/
@@ -95,8 +93,8 @@ public class Usuario {
 		return billetera;
 	}
 
-	public List<PrestamoUsuario> getPrestamo() {
-		return prestamo;
+	public List<PrestamoUsuario> getPrestamos() {
+		return prestamos;
 	}
 
 	/*public Set<Producto> getNfts() {
@@ -132,8 +130,12 @@ public class Usuario {
         this.billetera = billetera;
     }
 
-    public void setPrestamo(List<PrestamoUsuario> prestamo) {
-        this.prestamo = prestamo;
+    public void setPrestamos(List<PrestamoUsuario> prestamos) {
+        this.prestamos = prestamos;
+    }
+
+    public void agregarPrestamo(PrestamoUsuario prestamoUsuario){
+        this.prestamos.add(prestamoUsuario);
     }
 
    /* public void setNfts(Set<Producto> nfts) {

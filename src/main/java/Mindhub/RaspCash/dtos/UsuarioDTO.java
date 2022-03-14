@@ -1,8 +1,13 @@
 package Mindhub.RaspCash.dtos;
 
+import Mindhub.RaspCash.models.PrestamoUsuario;
 import Mindhub.RaspCash.models.Usuario;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
+
+import java.util.ArrayList;
+import java.util.List;
+import java.util.stream.Collectors;
 
 @Getter
 public class UsuarioDTO {
@@ -12,6 +17,7 @@ public class UsuarioDTO {
     private String apodo;
     private String email;
     private BilleteraDTO billetera;
+    private List<PrestamoUsuarioDTO> prestamos=new ArrayList<>();
 
     public UsuarioDTO(Usuario usuario) {
         this.id=usuario.getId();
@@ -20,6 +26,7 @@ public class UsuarioDTO {
         this.apodo= usuario.getApodo();
         this.email= usuario.getEmail();
         this.billetera=new BilleteraDTO(usuario.getBilletera());
+        this.prestamos=usuario.getPrestamos().stream().map(PrestamoUsuarioDTO::new).collect(Collectors.toList());
     }
 
     public long getId() {
@@ -44,5 +51,9 @@ public class UsuarioDTO {
 
     public BilleteraDTO getBilletera() {
         return billetera;
+    }
+
+    public List<PrestamoUsuarioDTO> getPrestamos() {
+        return prestamos;
     }
 }
