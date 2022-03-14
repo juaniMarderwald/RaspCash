@@ -30,6 +30,7 @@ public class ImplementacionServicioUsuario implements ServicioUsuario {
 
 	@Override
 	public ResponseEntity<Object> registro(String nombre, String apellido, String apodo, String correo, String password) {
+
 		 if (correo.isEmpty() || nombre.isEmpty() || apellido.isEmpty() || password.isEmpty() || apodo.isEmpty()) {
 	            return new ResponseEntity<>("Complete los datos solicitados", HttpStatus.FORBIDDEN);
 	        }
