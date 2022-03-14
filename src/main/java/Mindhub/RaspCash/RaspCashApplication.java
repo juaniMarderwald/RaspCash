@@ -2,6 +2,7 @@ package Mindhub.RaspCash;
 
 import Mindhub.RaspCash.models.*;
 import Mindhub.RaspCash.respositories.*;
+import Mindhub.RaspCash.servicios.ServicioPrestamo;
 import Mindhub.RaspCash.servicios.implementacionesServicios.EmailSenderServiceImplementation;
 import Mindhub.RaspCash.utilidades.Utilidades;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +13,9 @@ import org.springframework.boot.context.event.ApplicationReadyEvent;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.event.EventListener;
 import org.springframework.security.crypto.password.PasswordEncoder;
+
+import java.util.ArrayList;
+import java.util.List;
 
 @SpringBootApplication
 public class RaspCashApplication {
@@ -88,7 +92,7 @@ public class RaspCashApplication {
 
 		//Creacion de algunas criptomonedas de prueba
 
-			CriptoMoneda criptoBTC= new CriptoMoneda(NombreCriptomoneda.BITCOIN,SimboloCriptomoneda.BTC,4255459);
+			/*CriptoMoneda criptoBTC= new CriptoMoneda(NombreCriptomoneda.BITCOIN,SimboloCriptomoneda.BTC,4255459);
 			CriptoMoneda criptoETH= new CriptoMoneda(NombreCriptomoneda.ETHEREUM,SimboloCriptomoneda.ETH,282029);
 			CriptoMoneda criptoUSDT = new CriptoMoneda(NombreCriptomoneda.THETER,SimboloCriptomoneda.USDT,108);
 			CriptoMoneda criptoBNB= new CriptoMoneda(NombreCriptomoneda.BNB,SimboloCriptomoneda.BNB,41046);
@@ -108,6 +112,26 @@ public class RaspCashApplication {
 			criptoMonedaRepositorio.save(criptoADA);
 			criptoMonedaRepositorio.save(criptoSOL);
 			criptoMonedaRepositorio.save(criptoAVAX);
+			*/
+
+		//Creacion de dos prestamos de prueba
+
+		List<Integer> cuotasTradicional= new ArrayList<>();
+		List<Integer> cuotasPersonal= new ArrayList<>();
+
+		cuotasTradicional.add(6);
+		cuotasTradicional.add(12);
+		cuotasTradicional.add(18);
+
+		cuotasPersonal.add(6);
+		cuotasPersonal.add(12);
+
+		Prestamo prestamoTradicional = new Prestamo("Tradicional Bitcoin",0.11,0.3,1,cuotasTradicional);
+		Prestamo prestamoTrader=new Prestamo("Trader Bitcoin",0.22,0.6,1.5,cuotasPersonal);
+
+		prestamoRespositorio.save(prestamoTradicional);
+		prestamoRespositorio.save(prestamoTrader);
+
 		};
 	}
 
