@@ -6,5 +6,5 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 
 @RepositoryRestResource
 public interface PrestamoRespositorio extends JpaRepository<Prestamo,Long> {
-    Prestamo findByName(String nombre);
+    Prestamo findByNombre(String nombre);
 }

@@ -18,11 +18,12 @@ import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
 
+@RestController
+@RequestMapping("/api")
 public class PrestamoController {
 
-    @RestController
-    @RequestMapping("/api")
-    public class LoanController {
+
+    /*
         @Autowired
         PrestamoRespositorio prestamoRespositorio;
         @Autowired
@@ -34,13 +35,12 @@ public class PrestamoController {
         @Autowired
         PrestamoUsuarioRespositorio prestamoUsuarioRespositorio;
 
-        @RequestMapping(path = "/prestramos", method = RequestMethod.GET)
+       @RequestMapping(path = "/prestramos", method = RequestMethod.GET)
         public List<PrestamoDTO> obtenerPrestamoUsuarioDTO() {
-            return prestamoRespositorio.findAll().stream().map(prestamo>new PrestamoDTO(prestamo)).collect(Collectors.toList());
+            return prestamoRespositorio.findAll().stream().map(prestamo->new PrestamoDTO(prestamo)).collect(Collectors.toList());
         }
 
-
-        @Transactional
+     @Transactional
         @RequestMapping(value="/loans",method = RequestMethod.POST)
         public <PrestamoUsuarioDTO> ResponseEntity<String> nuevoPrestamo(@RequestBody PrestamoUsuarioDTO prestamoUsuarioDTO, Authentication authentication) {
 
@@ -102,5 +102,5 @@ public class PrestamoController {
             accountDestiny.setmonto(auxDestiny);
 
             return new ResponseEntity<>("SE APLICADO EL PRESTAMO",HttpStatus.CREATED);
-        }
+        }*/
 }
