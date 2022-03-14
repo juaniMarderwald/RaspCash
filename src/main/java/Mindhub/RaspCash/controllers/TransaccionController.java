@@ -28,7 +28,6 @@ public class TransaccionController {
     public ResponseEntity<Object> realizarTransaccion(@RequestParam String tipoDeMoneda, @RequestParam String monto, @RequestParam String direccionBilleteraEmisora,@RequestParam String direccionBilleteraReceptora,@RequestParam String descripcion){
         //Las transacciones son de billetera a billetera
 
-        //Faltan agregar los if de las comprobaciones, y en la billetera, resolveer el metodo agregarTransaccion, ahi está toda la logica
         TipoDeMoneda tipoDeMonedatransaccion=TipoDeMoneda.valueOf(tipoDeMoneda);
         double montoTransaccion = Double.parseDouble(monto);
 
@@ -47,6 +46,15 @@ public class TransaccionController {
         //Si pasa las condiciones iniciales para la transferencia, rescatamos las billeteras de la Base de datos.
         Billetera billeteraEmisora = servicioBilletera.encontrarPorDireccion(direccionBilleteraEmisora);
         Billetera billeteraReceptora= servicioBilletera.encontrarPorDireccion(direccionBilleteraReceptora);
+
+        if (billeteraEmisora==null){
+            return new ResponseEntity<>("No se encuentra la billetera emisora", HttpStatus.FORBIDDEN);
+        }
+
+        if (billeteraReceptora==null){
+            return new ResponseEntity<>("No se encuentra la billetera receptora", HttpStatus.FORBIDDEN);
+        }
+
 
         //Chequeo si el monto en pesos o el monto en BTC de la cuenta emisora es suficiente para realizar la transferencia
         if (tipoDeMonedatransaccion.equals(TipoDeMoneda.PESOS)){
@@ -73,6 +81,60 @@ public class TransaccionController {
 
     }
 
+    @PostMapping("/transaccion/swap")
+    public ResponseEntity<Object> realizarSwap(@RequestParam String direccionBilletera,
+                                               @RequestParam String montoEnPesos,
+                                               @RequestParam String montoEnBTC,
+                                               @RequestParam String tipoDeSwap){
 
+        if (direccionBilletera.equals("")){
+            return new ResponseEntity<>("La Direccion de billetera para realizar el swap se encuentra vacía", HttpStatus.FORBIDDEN);
+        }
+
+        TipoDeSwap tipoDeSwapTransaccion = TipoDeSwap.valueOf(tipoDeSwap);
+        double montoEnBTCTransaccion = Double.parseDouble(montoEnBTC);
+        double montoEnPesosTransaccion = Double.parseDouble(montoEnPesos);
+        //double cotizacionTransaccion = Double.parseDouble(cotizacion);
+
+        Billetera billeteraSwap = servicioBilletera.encontrarPorDireccion(direccionBilletera);
+
+        if(billeteraSwap==null) {
+            return new ResponseEntity<>("No es posible encontrar la billetera para realizar el Swap", HttpStatus.FORBIDDEN);
+        }
+
+        //Puede optar por dos caminos dependiendo el tipo de SWAP, de Bitcoin a Pesos, o de Pesos a Bitcoin
+        if(tipoDeSwapTransaccion.equals(TipoDeSwap.BTC_A_PESOS)){
+            if (billeteraSwap.getMontoBTC()<montoEnBTCTransaccion){
+                return new ResponseEntity<>("El monto en BTC de la billetera es insuficiente para realizar la transaccion", HttpStatus.FORBIDDEN);
+            }
+            Transaccion transaccionDebito = new Transaccion(TipoDeTransaccion.DEBITO,montoEnBTCTransaccion,"Swap`Bitcoin a pesos",LocalDateTime.now(),TipoDeMoneda.BITCOIN,billeteraSwap);
+            Transaccion transaccionCredito = new Transaccion(TipoDeTransaccion.CREDITO,montoEnPesosTransaccion,"Swap`Bitcoin a pesos",LocalDateTime.now(),TipoDeMoneda.PESOS,billeteraSwap);
+
+            billeteraSwap.agregarTransaccion(transaccionDebito);
+            billeteraSwap.agregarTransaccion(transaccionCredito);
+
+            servicioTransaccion.guardarTransaccion(transaccionDebito);
+            servicioTransaccion.guardarTransaccion(transaccionCredito);
+
+        }
+
+        if (tipoDeSwapTransaccion.equals(TipoDeSwap.PESOS_A_BTC)){
+            if (billeteraSwap.getMontoBTC()<montoEnBTCTransaccion){
+                return new ResponseEntity<>("El monto en Pesos de la billetera es insuficiente para realizar la transaccion", HttpStatus.FORBIDDEN);
+            }
+            Transaccion transaccionDebito = new Transaccion(TipoDeTransaccion.DEBITO,montoEnPesosTransaccion,"Swap Pesos a Bitcoin",LocalDateTime.now(),TipoDeMoneda.PESOS,billeteraSwap);
+            Transaccion transaccionCredito = new Transaccion(TipoDeTransaccion.CREDITO,montoEnBTCTransaccion,"Swap pesos a Bitcoin",LocalDateTime.now(),TipoDeMoneda.BITCOIN,billeteraSwap);
+
+            billeteraSwap.agregarTransaccion(transaccionDebito);
+            billeteraSwap.agregarTransaccion(transaccionCredito);
+
+            servicioTransaccion.guardarTransaccion(transaccionDebito);
+            servicioTransaccion.guardarTransaccion(transaccionCredito);
+
+        }
+
+
+        return new ResponseEntity<>(HttpStatus.CREATED);
+    }
 
 }
