@@ -3,6 +3,7 @@ package Mindhub.RaspCash;
 import Mindhub.RaspCash.models.*;
 import Mindhub.RaspCash.respositories.*;
 import Mindhub.RaspCash.servicios.implementacionesServicios.EmailSenderServiceImplementation;
+import Mindhub.RaspCash.utilidades.Utilidades;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.boot.SpringApplication;
@@ -44,11 +45,18 @@ public class RaspCashApplication {
 
 	return (args) -> {
 
+
+
 			String contrasenia1=passwordEncoder.encode("123456");
 			String contraseniaAdmin=passwordEncoder.encode("admin");
 			Usuario usuarioAdmin = new Usuario("admin",contraseniaAdmin,"admin","admin","admin");
 			Usuario usuario1= new Usuario("jmarderwald87@gmail.com",contrasenia1,"Juan Ignacio","Mardewrwald","Juani");
 			Usuario usuario2 = new Usuario("melba@mindhub.com",contrasenia1,"Melba","Morel","Melbita");
+
+			/*billetera1.setUsuario(usuario1);
+			billetera2.setUsuario(usuario2);
+			billetera3.setUsuario(usuarioAdmin);*/
+
 
 			usuarioRepositorio.save(usuario1);
 			usuarioRepositorio.save(usuario2);

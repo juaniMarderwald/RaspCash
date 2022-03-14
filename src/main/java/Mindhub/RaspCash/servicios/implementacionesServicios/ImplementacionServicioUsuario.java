@@ -1,6 +1,9 @@
 package Mindhub.RaspCash.servicios.implementacionesServicios;
 
+import Mindhub.RaspCash.models.Billetera;
+import Mindhub.RaspCash.respositories.BilleteraRepositorio;
 import Mindhub.RaspCash.servicios.ServicioUsuario;
+import Mindhub.RaspCash.utilidades.Utilidades;
 import excepciones.ConflictException;
 import Mindhub.RaspCash.dtos.UsuarioDTO;
 import Mindhub.RaspCash.models.Usuario;
@@ -19,9 +22,15 @@ public class ImplementacionServicioUsuario implements ServicioUsuario {
 
 	@Autowired
 	private PasswordEncoder passwordEncoder;
+
+
+	Utilidades utilidades =new Utilidades();
 	   
     @Autowired
     UsuarioRepositorio usuarioRepositorio;
+
+	@Autowired
+	BilleteraRepositorio billeteraRepositorio;
 
     @Override
     public List<UsuarioDTO> obtenerUsuarios() {
@@ -58,7 +67,19 @@ public class ImplementacionServicioUsuario implements ServicioUsuario {
 	            }
 	        }
 
-			usuarioRepositorio.save(new Usuario(correo, passwordEncoder.encode(password), nombre, apellido, apodo));
+			Billetera billetera=new Billetera(utilidades.obtenerDireccionBilletera());
+
+
+			Usuario usuario=new Usuario(correo, passwordEncoder.encode(password), nombre, apellido, apodo);
+
+
+
+			//System.out.println("*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-");
+			//System.out.println(billetera.getUsuario().getNombre());
+			//System.out.println(billetera.getDireccion());
+			//System.out.println("*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-");
+
+			usuarioRepositorio.save(usuario);
 
 			return new ResponseEntity<>("Registro de usuario realizado con éxito", HttpStatus.CREATED);
 	}

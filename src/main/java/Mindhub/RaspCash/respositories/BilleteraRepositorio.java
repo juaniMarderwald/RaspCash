@@ -7,7 +7,7 @@ import org.springframework.data.rest.core.annotation.RepositoryRestResource;
 @RepositoryRestResource
 public interface BilleteraRepositorio extends JpaRepository<Billetera,Long>{
 
-
-    }
+    public Billetera findByDireccion(String direccion);
+}
 
 

@@ -8,7 +8,7 @@ import javax.persistence.*;
 import java.time.LocalDateTime;
 
 @Entity
-public @Data class Transaccion {
+public class Transaccion {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
@@ -17,9 +17,9 @@ public @Data class Transaccion {
 
     private TipoDeTransaccion tipo;
     private double amount;
-    private String description;
+    private String descripcion;
     private LocalDateTime date;
-    private NombreCriptomoneda nombresCriptomoneda;
+    private NombreCriptomoneda nombreCriptomoneda;
 
     // Declaro la relacion Muchos a uno, quiere decir que una cuenta puede de una a muchas transacciones
     @ManyToOne(fetch = FetchType.EAGER)
@@ -30,8 +30,74 @@ public @Data class Transaccion {
     public Transaccion() {
     }
 
+    public Transaccion(TipoDeTransaccion tipo,double amount, String descripcion,LocalDateTime date,NombreCriptomoneda nombreCriptomoneda){
+        this.tipo=tipo;
+        this.amount=amount;
+        this.descripcion=descripcion;
+        this.date=date;
+        this.nombreCriptomoneda=nombreCriptomoneda;
+    }
+
+    public Transaccion(TipoDeTransaccion tipo,double amount, String descripcion,LocalDateTime date,NombreCriptomoneda nombreCriptomoneda, Billetera billetera ){
+        this.tipo=tipo;
+        this.amount=amount;
+        this.descripcion=descripcion;
+        this.date=date;
+        this.nombreCriptomoneda=nombreCriptomoneda;
+        this.billetera=billetera;
+    }
+
+
     public long getId() {
         return id;
+    }
+
+    public TipoDeTransaccion getTipo() {
+        return tipo;
+    }
+
+    public double getAmount() {
+        return amount;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public LocalDateTime getDate() {
+        return date;
+    }
+
+    public NombreCriptomoneda getNombresCriptomoneda() {
+        return nombreCriptomoneda;
+    }
+
+    public Billetera getBilletera() {
+        return billetera;
+    }
+
+    public void setTipo(TipoDeTransaccion tipo) {
+        this.tipo = tipo;
+    }
+
+    public void setAmount(double amount) {
+        this.amount = amount;
+    }
+
+    public void setDescripcion(String descripcion) {
+        this.descripcion = descripcion;
+    }
+
+    public void setDate(LocalDateTime date) {
+        this.date = date;
+    }
+
+    public void setNombresCriptomoneda(NombreCriptomoneda nombresCriptomoneda) {
+        this.nombreCriptomoneda = nombresCriptomoneda;
+    }
+
+    public void setBilletera(Billetera billetera) {
+        this.billetera = billetera;
     }
 }
 

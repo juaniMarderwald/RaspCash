@@ -1,5 +1,7 @@
 package Mindhub.RaspCash.controllers;
 
+import Mindhub.RaspCash.models.Billetera;
+import Mindhub.RaspCash.utilidades.Utilidades;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -14,6 +16,7 @@ public class AppController {
     @Autowired
     UsuarioRepositorio usuarioRepositorio;
 
+
     @Autowired 
     ServicioUsuario servicioUsuario;
     
@@ -21,7 +24,7 @@ public class AppController {
     public ResponseEntity<Object> register(
             @RequestParam String nombre, @RequestParam String apellido, @RequestParam String apodo,
             @RequestParam String correo, @RequestParam String password) {
-      
-        return servicioUsuario.registro(nombre, apellido, apodo, correo, password) ;
+
+        return servicioUsuario.registro(nombre, apellido, apodo, correo, password);
     }
 }

@@ -48,6 +48,15 @@ public class Usuario {
         this.apodo = apodo;
     }
 
+    public Usuario(String correo, String contrasenia, String nombre, String apellido, String apodo,Billetera billetera) {
+        this.email = correo;
+        this.password = contrasenia;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.apodo = apodo;
+        this.billetera=billetera;
+    }
+
     public void addNft(Producto producto){
         this.nfts.add(producto);
     }
@@ -117,6 +126,7 @@ public class Usuario {
     }
 
     public void setBilletera(Billetera billetera) {
+        billetera.setUsuario(this);
         this.billetera = billetera;
     }
 
@@ -127,4 +137,6 @@ public class Usuario {
     public void setNfts(Set<Producto> nfts) {
         this.nfts = nfts;
     }
+
+
 }

@@ -1,13 +1,17 @@
 package Mindhub.RaspCash.utilidades;
 
+import org.springframework.context.annotation.Bean;
+
 import java.nio.charset.Charset;
 import java.util.Random;
 
 public class Utilidades {
     //Clase con utilidades necesarias para diferentes procesos, por ejemplo creacion aleatoria de direccion de billetara
+
     public Utilidades() {
     }
 
+    @Bean
     public String obtenerDireccionBilletera(){
 
             //Declaro 26 como el tamaño para crear la direccion aleatoria

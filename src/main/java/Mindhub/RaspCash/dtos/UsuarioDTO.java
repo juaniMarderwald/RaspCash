@@ -10,6 +10,7 @@ public class UsuarioDTO {
     private String apellido;
     private String apodo;
     private String email;
+    //private BilleteraDTO billeteraDTO;
 
     public UsuarioDTO(Usuario usuario) {
         this.id=usuario.getId();
@@ -17,6 +18,7 @@ public class UsuarioDTO {
         this.apellido= usuario.getApellido();
         this.apodo= usuario.getApodo();
         this.email= usuario.getEmail();
+        //this.billeteraDTO=new BilleteraDTO(usuario.getBilletera());
     }
 
     public long getId() {
@@ -38,4 +40,8 @@ public class UsuarioDTO {
     public String getEmail() {
         return email;
     }
+
+//    public BilleteraDTO getBilleteraDTO() {
+//        return billeteraDTO;
+//    }
 }

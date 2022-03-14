@@ -19,6 +19,7 @@ public @Data class Billetera {
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
     @GenericGenerator(name = "native", strategy = "native")
     private long id;
+
     private String direccion;
 
     @OneToOne
@@ -38,12 +39,32 @@ public @Data class Billetera {
     public Billetera() {
     }
 
-    public Billetera(Usuario usuario, String direccion){
+    public Billetera(String direccion) {
         this.direccion=direccion;
-        this.usuario=usuario;
     }
+
     public void agregarTransaccion(Transaccion transaccion){
         //Agregar toda la logica de los montos, de si es credito o debito, y de que tipo de Cripto es la transaccion
         this.transacciones.add(transaccion);
+    }
+
+    public long getId() {
+        return id;
+    }
+
+    public String getDireccion() {
+        return direccion;
+    }
+
+    public Set<CriptomonedaUsuario> getCriptomonedaUsuarios() {
+        return criptomonedaUsuarios;
+    }
+
+    public Set<Transaccion> getTransacciones() {
+        return transacciones;
+    }
+
+    public void setUsuario(Usuario usuario) {
+        this.usuario = usuario;
     }
 }
