@@ -55,6 +55,37 @@ public class Billetera {
 
     public void agregarTransaccion(Transaccion transaccion){
         //Agregar toda la logica de los montos, de si es credito o debito, y de que tipo de Cripto es la transaccion
+        // Si la transaccion es de CREDITO, corroboro de que tipo de moneda es la transaccion y sumo el monto
+        TipoDeTransaccion tipoDeTransaccion=transaccion.getTipo();
+        TipoDeMoneda tipoDeMoneda=transaccion.getTipoDeMoneda();
+        if (tipoDeTransaccion.equals(TipoDeTransaccion.CREDITO)){
+            if (tipoDeMoneda.equals(TipoDeMoneda.PESOS)){
+                this.montoPesos+=transaccion.getAmount();
+            }
+            if (tipoDeMoneda.equals(TipoDeMoneda.BITCOIN)){
+                this.montoBTC+=transaccion.getAmount();
+            }
+        }
+
+        // Si la transaccion es de DEBITO, corroboro de que tipo es la transaccion, luego chequeo si el monto es suficiente
+
+        if (tipoDeTransaccion.equals(TipoDeTransaccion.DEBITO)){
+            if (tipoDeMoneda.equals(TipoDeMoneda.PESOS)){
+                if (transaccion.getAmount()<this.montoPesos){
+                    this.montoPesos=this.montoPesos-transaccion.getAmount();
+                }
+                else
+                {
+                    System.out.println("MONTO INSUFICIENTE");
+                }
+            }
+            if (tipoDeMoneda.equals(TipoDeMoneda.BITCOIN)){
+                if(transaccion.getAmount()>this.montoBTC){
+                    this.montoBTC=this.montoBTC- transaccion.getAmount();
+                }
+            }
+        }
+
         this.transacciones.add(transaccion);
     }
 

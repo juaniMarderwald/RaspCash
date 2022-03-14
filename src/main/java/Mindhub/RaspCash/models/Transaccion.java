@@ -15,11 +15,12 @@ public class Transaccion {
     @GenericGenerator(name = "native", strategy = "native")
     private long id;
 
-    private TipoDeTransaccion tipo;
+
     private double amount;
     private String descripcion;
     private LocalDateTime date;
-    private NombreCriptomoneda nombreCriptomoneda;
+    private TipoDeMoneda tipoDeMoneda;
+    private TipoDeTransaccion tipo;
 
     // Declaro la relacion Muchos a uno, quiere decir que una cuenta puede de una a muchas transacciones
     @ManyToOne(fetch = FetchType.EAGER)
@@ -30,21 +31,14 @@ public class Transaccion {
     public Transaccion() {
     }
 
-    public Transaccion(TipoDeTransaccion tipo,double amount, String descripcion,LocalDateTime date,NombreCriptomoneda nombreCriptomoneda){
-        this.tipo=tipo;
-        this.amount=amount;
-        this.descripcion=descripcion;
-        this.date=date;
-        this.nombreCriptomoneda=nombreCriptomoneda;
-    }
 
-    public Transaccion(TipoDeTransaccion tipo,double amount, String descripcion,LocalDateTime date,NombreCriptomoneda nombreCriptomoneda, Billetera billetera ){
+    public Transaccion(TipoDeTransaccion tipo,double amount, String descripcion,LocalDateTime date,TipoDeMoneda tipoDeMoneda, Billetera billetera ){
         this.tipo=tipo;
         this.amount=amount;
         this.descripcion=descripcion;
         this.date=date;
-        this.nombreCriptomoneda=nombreCriptomoneda;
         this.billetera=billetera;
+        this.tipoDeMoneda=tipoDeMoneda;
     }
 
 
@@ -68,10 +62,6 @@ public class Transaccion {
         return date;
     }
 
-    public NombreCriptomoneda getNombresCriptomoneda() {
-        return nombreCriptomoneda;
-    }
-
     public Billetera getBilletera() {
         return billetera;
     }
@@ -92,12 +82,12 @@ public class Transaccion {
         this.date = date;
     }
 
-    public void setNombresCriptomoneda(NombreCriptomoneda nombresCriptomoneda) {
-        this.nombreCriptomoneda = nombresCriptomoneda;
-    }
-
     public void setBilletera(Billetera billetera) {
         this.billetera = billetera;
+    }
+
+    public TipoDeMoneda getTipoDeMoneda() {
+        return tipoDeMoneda;
     }
 }
 
