@@ -20,18 +20,18 @@ public class ProductoUsuario {
 
     @ManyToOne
     @JoinColumn(name = "usuario_dueño")
-    private Usuario usuario;
+    private Usuario usuarioDuenio;
 
     @ManyToOne
-    @JoinColumn(name="carrito_id")
-    private Carrito carrito;
+    @JoinColumn(name="carrito_alojado")
+    private Carrito carrito_id;
 
     public ProductoUsuario() {
     }
 
     public ProductoUsuario(Producto producto,Carrito carrito,EstadoProducto estadoProducto) {
         this.producto=producto;
-        this.carrito=carrito;
+        this.carrito_id=carrito;
         this.estadoProducto=estadoProducto;
     }
 

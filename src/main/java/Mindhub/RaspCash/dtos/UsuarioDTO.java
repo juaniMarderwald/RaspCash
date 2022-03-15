@@ -30,7 +30,7 @@ public class UsuarioDTO {
         this.email= usuario.getEmail();
         this.billetera=new BilleteraDTO(usuario.getBilletera());
         this.prestamos=usuario.getPrestamos().stream().map(PrestamoUsuarioDTO::new).collect(Collectors.toList());
-        this.productosAdquiridos=usuario.getProductos().stream().map(ProductoUsuarioDTO::new).collect(Collectors.toSet());
+       // this.productosAdquiridos=usuario.getProductos().stream().map(ProductoUsuarioDTO::new).collect(Collectors.toSet());
     }
 
     public long getId() {

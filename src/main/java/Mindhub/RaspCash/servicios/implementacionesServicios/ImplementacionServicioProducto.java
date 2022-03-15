@@ -1,6 +1,7 @@
 package Mindhub.RaspCash.servicios.implementacionesServicios;
 
 import Mindhub.RaspCash.dtos.ProductoDTO;
+import Mindhub.RaspCash.models.Producto;
 import Mindhub.RaspCash.respositories.ProductoRepositorio;
 import Mindhub.RaspCash.servicios.ServicioProducto;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,6 +19,11 @@ public class ImplementacionServicioProducto implements ServicioProducto {
     @Override
     public List<ProductoDTO> obtenerTodosLosProductosDTO() {
         return productoRepositorio.findAll().stream().map(ProductoDTO::new).collect(Collectors.toList());
+    }
+
+    @Override
+    public Producto obtenerProductoPorId(long id) {
+        return productoRepositorio.getById(id);
     }
 
 

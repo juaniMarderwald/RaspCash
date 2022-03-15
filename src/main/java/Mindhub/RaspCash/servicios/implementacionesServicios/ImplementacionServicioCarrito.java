@@ -4,7 +4,9 @@ import Mindhub.RaspCash.models.Carrito;
 import Mindhub.RaspCash.respositories.CarritoRepositorio;
 import Mindhub.RaspCash.servicios.ServicioCarrito;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
+@Service
 public class ImplementacionServicioCarrito implements ServicioCarrito {
 
     @Autowired

@@ -24,9 +24,9 @@ public class Usuario {
     private String apellido;
     private String apodo;
 
-    @OneToOne
+   /* @OneToOne
     @JoinColumn(name = "carrito_id")
-    private Carrito carrito = new Carrito();
+    private Carrito carrito = new Carrito();*/
 
     @OneToOne
     @JoinColumn(name = "billetera_id")
@@ -35,8 +35,8 @@ public class Usuario {
     @OneToMany(mappedBy = "duenioPrestamo", fetch = FetchType.EAGER)
     private List<PrestamoUsuario> prestamos =new ArrayList<>();
 
-    @OneToMany(mappedBy = "usuario" , fetch = FetchType.EAGER)
-    private Set<ProductoUsuario> productos= new HashSet<>();
+   /* @OneToMany(mappedBy = "usuario" , fetch = FetchType.EAGER)
+    private List<ProductoUsuario> productos= new ArrayList<>();*/
 
     public Usuario() {
     }
@@ -57,21 +57,21 @@ public class Usuario {
         this.apodo = apodo;
         this.billetera=billetera;
         billetera.setUsuario(this);
-        this.carrito=carrito;
-        carrito.setUsuario(this);
+      //  this.carrito=carrito;
+     //   carrito.setUsuario(this);
     }
 
-    public void agregarProductoAdquirido(ProductoUsuario productoUsuario){
+    /*public void agregarProductoAdquirido(ProductoUsuario productoUsuario){
         this.productos.add(productoUsuario);
-    }
+    }*/
 
-    public Carrito getCarrito() {
+  /*  public Carrito getCarrito() {
         return carrito;
-    }
+    }*/
 
-    public Set<ProductoUsuario> getProductos() {
+    /*public List<ProductoUsuario> getProductos() {
         return productos;
-    }
+    }*/
 
     public String getEmail() {
 		return this.email;
