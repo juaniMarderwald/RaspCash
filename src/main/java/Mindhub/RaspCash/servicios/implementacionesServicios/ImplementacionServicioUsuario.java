@@ -2,6 +2,7 @@ package Mindhub.RaspCash.servicios.implementacionesServicios;
 
 import Mindhub.RaspCash.models.Billetera;
 import Mindhub.RaspCash.respositories.BilleteraRepositorio;
+import Mindhub.RaspCash.servicios.EmailSenderService;
 import Mindhub.RaspCash.servicios.ServicioUsuario;
 import Mindhub.RaspCash.utilidades.Utilidades;
 import Mindhub.excepciones.ConflictException;
@@ -31,6 +32,9 @@ public class ImplementacionServicioUsuario implements ServicioUsuario {
 
 	@Autowired
 	BilleteraRepositorio billeteraRepositorio;
+
+	@Autowired
+	EmailSenderService emailSenderService;
 
     @Override
     public List<UsuarioDTO> obtenerUsuarios() {
@@ -80,6 +84,8 @@ public class ImplementacionServicioUsuario implements ServicioUsuario {
 			usuario.setBilletera(billetera);
 
 			billeteraRepositorio.save(billetera);
+
+			emailSenderService.sendSimpleEmailTo(correo,"Se ha creado el usuario exitosamente","CREACION DE USUARIO EN RASPCASH");
 
 			return new ResponseEntity<>("Registro de usuario realizado con éxito", HttpStatus.CREATED);
 	}

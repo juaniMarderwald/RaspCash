@@ -13,11 +13,12 @@ public class EmailSenderServiceImplementation implements EmailSenderService {
 
     @Autowired
     private JavaMailSender mailSender;
+
     @Autowired
     UsuarioRepositorio usuarioRepositorio;
 
     //Metodo para enviar un mail
-    public void senSimpleEmailTo(String ReceptorEmail,String  MensajeAenviar, String tema){
+    public void sendSimpleEmailTo(String ReceptorEmail,String  MensajeAenviar, String tema){
 
         SimpleMailMessage message= new SimpleMailMessage();
 
@@ -33,8 +34,4 @@ public class EmailSenderServiceImplementation implements EmailSenderService {
 
     }
 
-    @Override
-    public void sendSimpleEmailTo(String ReceptorEmail, String MensajeAenviar, String tema) {
-
-    }
 }

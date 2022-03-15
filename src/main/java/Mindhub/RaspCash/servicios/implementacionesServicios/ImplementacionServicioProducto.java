@@ -19,4 +19,6 @@ public class ImplementacionServicioProducto implements ServicioProducto {
     public List<ProductoDTO> obtenerTodosLosProductosDTO() {
         return productoRepositorio.findAll().stream().map(ProductoDTO::new).collect(Collectors.toList());
     }
+
+
 }
