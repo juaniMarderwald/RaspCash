@@ -3,6 +3,7 @@ package Mindhub.RaspCash.models;
 import org.hibernate.annotations.GenericGenerator;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -13,14 +14,13 @@ public class Carrito {
     @GenericGenerator(name = "native", strategy = "native")
     private long id;
 
-
-
     @OneToMany(mappedBy = "carrito_id", fetch = FetchType.EAGER)
-    private List<ProductoUsuario> productosEnCarrito;
+    private List<ProductoUsuario> productosEnCarrito=new ArrayList<>();
 
     private double total;
 
     public Carrito() {
+        total=0;
     }
 
    // public Usuario getUsuario() {        return usuario;    }

@@ -1,8 +1,11 @@
 package Mindhub.RaspCash.servicios.implementacionesServicios;
 
 import Mindhub.RaspCash.models.Billetera;
+import Mindhub.RaspCash.models.Carrito;
 import Mindhub.RaspCash.respositories.BilleteraRepositorio;
+import Mindhub.RaspCash.respositories.CarritoRepositorio;
 import Mindhub.RaspCash.servicios.EmailSenderService;
+import Mindhub.RaspCash.servicios.ServicioCarrito;
 import Mindhub.RaspCash.servicios.ServicioUsuario;
 import Mindhub.RaspCash.utilidades.Utilidades;
 import Mindhub.excepciones.ConflictException;
@@ -33,6 +36,9 @@ public class ImplementacionServicioUsuario implements ServicioUsuario {
 
 	@Autowired
 	BilleteraRepositorio billeteraRepositorio;
+
+	@Autowired
+	CarritoRepositorio carritoRepositorio;
 
 	@Autowired
 	EmailSenderService emailSenderService;
@@ -77,6 +83,9 @@ public class ImplementacionServicioUsuario implements ServicioUsuario {
 
 
 			Usuario usuario=new Usuario(correo, passwordEncoder.encode(password), nombre, apellido, apodo);
+			Carrito carrito= new Carrito();
+		    carritoRepositorio.save(carrito);
+			usuario.setIdCarritoActual(carrito.getId());
 			//usuario.setBilletera(billetera);
 			//billetera.setUsuario(usuario);
 			usuarioRepositorio.save(usuario);
@@ -86,7 +95,7 @@ public class ImplementacionServicioUsuario implements ServicioUsuario {
 
 			billeteraRepositorio.save(billetera);
 
-			emailSenderService.sendSimpleEmailTo(correo,"Se ha creado el usuario exitosamente","CREACION DE USUARIO EN RASPCASH","\\RaspCash\\src\\main\\resources\\static\\web\\img\\Logo.png");
+			//emailSenderService.sendSimpleEmailTo(correo,"Se ha creado el usuario exitosamente","CREACION DE USUARIO EN RASPCASH","\\RaspCash\\src\\main\\resources\\static\\web\\img\\Logo.png");
 
 			return new ResponseEntity<>("Registro de usuario realizado con éxito", HttpStatus.CREATED);
 	}

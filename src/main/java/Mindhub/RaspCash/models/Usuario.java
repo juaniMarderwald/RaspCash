@@ -23,6 +23,7 @@ public class Usuario {
     private String nombre;
     private String apellido;
     private String apodo;
+    private long idCarritoActual;
 
    /* @OneToOne
     @JoinColumn(name = "carrito_id")
@@ -49,7 +50,7 @@ public class Usuario {
         this.apodo = apodo;
     }
 
-    public Usuario(String correo, String contrasenia, String nombre, String apellido, String apodo,Billetera billetera, Carrito carrito) {
+    public Usuario(String correo, String contrasenia, String nombre, String apellido, String apodo,Billetera billetera) {
         this.email = correo;
         this.password = contrasenia;
         this.nombre = nombre;
@@ -154,5 +155,12 @@ public class Usuario {
         this.nfts = nfts;
     }*/
 
+    public void setIdCarritoActual(long idCarritoActual){
+        this.idCarritoActual=idCarritoActual;
+    }
+
+    public long getIdCarritoActual(){
+        return this.idCarritoActual;
+    }
 
 }

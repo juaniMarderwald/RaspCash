@@ -33,14 +33,14 @@ public class CarritoController {
 
     @Transactional
     @PostMapping("/carrito/agregarproducto/{id}")
-    public ResponseEntity<Object> agregarProductoAlcarrito(Authentication authentication, @PathVariable long idProducto){
+    public ResponseEntity<Object> agregarProductoAlcarrito(Authentication authentication, @PathVariable long idProducto,@RequestParam long idCarrito){
 
         Usuario usuario= servicioUsuario.encontrarUsuarioPorEmail(authentication.getName());
-        //Carrito carrito=usuario.getCarrito();
+        Carrito carrito=servicioCarrito.obtenerCarritoPorId(idCarrito);
         Producto producto=servicioProducto.obtenerProductoPorId(idProducto);
-      //  ProductoUsuario productoUsuarioAlCarrito= new ProductoUsuario(producto,carrito, EstadoProducto.EN_CARRITO);
+        ProductoUsuario productoUsuarioAlCarrito= new ProductoUsuario(producto,carrito, EstadoProducto.EN_CARRITO);
 
-       // carrito.agregarProductoAlCarrito(productoUsuarioAlCarrito);
+        carrito.agregarProductoAlCarrito(productoUsuarioAlCarrito);
 
         return new ResponseEntity<>("Se agregó el producto al carrito",HttpStatus.CREATED);
     }

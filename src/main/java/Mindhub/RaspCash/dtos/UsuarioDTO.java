@@ -21,6 +21,8 @@ public class UsuarioDTO {
     private BilleteraDTO billetera;
     private List<PrestamoUsuarioDTO> prestamos=new ArrayList<>();
     private Set<ProductoUsuarioDTO> productosAdquiridos=new HashSet<>();
+    private long idCarritoActual;
+
 
     public UsuarioDTO(Usuario usuario) {
         this.id=usuario.getId();
@@ -31,6 +33,7 @@ public class UsuarioDTO {
         this.billetera=new BilleteraDTO(usuario.getBilletera());
         this.prestamos=usuario.getPrestamos().stream().map(PrestamoUsuarioDTO::new).collect(Collectors.toList());
        // this.productosAdquiridos=usuario.getProductos().stream().map(ProductoUsuarioDTO::new).collect(Collectors.toSet());
+        this.idCarritoActual=usuario.getIdCarritoActual();
     }
 
     public long getId() {
@@ -64,4 +67,6 @@ public class UsuarioDTO {
     public Set<ProductoUsuarioDTO> getProductosAdquiridos() {
         return productosAdquiridos;
     }
+
+    public long getIdCarritoActual() {return idCarritoActual;}
 }
