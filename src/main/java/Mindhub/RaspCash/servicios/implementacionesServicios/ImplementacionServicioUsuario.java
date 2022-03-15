@@ -15,6 +15,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
+import javax.mail.MessagingException;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -42,7 +43,7 @@ public class ImplementacionServicioUsuario implements ServicioUsuario {
     }
 
 	@Override
-	public ResponseEntity<Object> registro(String nombre, String apellido, String apodo, String correo, String password) {
+	public ResponseEntity<Object> registro(String nombre, String apellido, String apodo, String correo, String password) throws MessagingException {
 
 		 if (correo.isEmpty() || nombre.isEmpty() || apellido.isEmpty() || password.isEmpty() || apodo.isEmpty()) {
 	            return new ResponseEntity<>("Complete los datos solicitados", HttpStatus.FORBIDDEN);
@@ -85,7 +86,7 @@ public class ImplementacionServicioUsuario implements ServicioUsuario {
 
 			billeteraRepositorio.save(billetera);
 
-			emailSenderService.sendSimpleEmailTo(correo,"Se ha creado el usuario exitosamente","CREACION DE USUARIO EN RASPCASH");
+			emailSenderService.sendSimpleEmailTo(correo,"Se ha creado el usuario exitosamente","CREACION DE USUARIO EN RASPCASH","\\RaspCash\\src\\main\\resources\\static\\web\\img\\Logo");
 
 			return new ResponseEntity<>("Registro de usuario realizado con éxito", HttpStatus.CREATED);
 	}

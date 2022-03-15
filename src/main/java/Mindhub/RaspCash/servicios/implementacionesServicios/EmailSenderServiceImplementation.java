@@ -4,9 +4,15 @@ import Mindhub.RaspCash.models.Usuario;
 import Mindhub.RaspCash.respositories.UsuarioRepositorio;
 import Mindhub.RaspCash.servicios.EmailSenderService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.FileSystemResource;
 import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
+import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
+
+import javax.mail.MessagingException;
+import javax.mail.internet.MimeMessage;
+import java.io.File;
 
 @Service
 public class EmailSenderServiceImplementation implements EmailSenderService {
@@ -18,7 +24,7 @@ public class EmailSenderServiceImplementation implements EmailSenderService {
     UsuarioRepositorio usuarioRepositorio;
 
     //Metodo para enviar un mail
-    public void sendSimpleEmailTo(String ReceptorEmail,String  MensajeAenviar, String tema){
+    public void sendSimpleEmailTo(String ReceptorEmail,String  MensajeAenviar, String tema ){
 
         SimpleMailMessage message= new SimpleMailMessage();
 
@@ -27,11 +33,31 @@ public class EmailSenderServiceImplementation implements EmailSenderService {
         message.setText(MensajeAenviar);
         message.setSubject(tema);
 
+
+
         mailSender.send(message);
         System.out.println("Email enviado ...");
 
         Usuario usuario=usuarioRepositorio.findByEmail(ReceptorEmail);
 
     }
+    public void sendSimpleEmailTo(String ReceptorEmail,String  MensajeAenviar, String tema ,String archivoAdjunto) throws MessagingException {
 
+        MimeMessage mimeMessage= mailSender.createMimeMessage();
+
+        MimeMessageHelper mimeMessageHelper=new MimeMessageHelper(mimeMessage,true);
+
+        mimeMessageHelper.setFrom("RaspCashCrypto@gmail.com");
+        mimeMessageHelper.setTo(ReceptorEmail);
+        mimeMessageHelper.setText(MensajeAenviar);
+        mimeMessageHelper.setSubject(tema);
+
+        FileSystemResource fileSystem=new FileSystemResource(new File(archivoAdjunto));
+        mimeMessageHelper.addAttachment(fileSystem.getFilename(),fileSystem);
+
+        mailSender.send(mimeMessage);
+        System.out.println("Email enviado ...");
+
+        Usuario usuario=usuarioRepositorio.findByEmail(ReceptorEmail);
+    }
 }
