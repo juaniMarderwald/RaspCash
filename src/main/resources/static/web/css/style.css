@@ -1657,6 +1657,8 @@ h5 {
 }
 
 @media screen and (max-width: 1024px) {
+  .tv{display:none}
+
   .spacetop0-md {
     margin-top: 0rem;
   }
@@ -2188,6 +2190,8 @@ h5 {
 }
 
 @media screen and (max-width: 768px) {
+  .tv{display:none}
+  
   .spacetop0-s {
     margin-top: 0rem;
   }
@@ -2719,6 +2723,8 @@ h5 {
 }
 
 @media screen and (max-width: 414px) {
+  .tv{display:none}
+
   .spacetop0-xs {
     margin-top: 0rem;
   }
