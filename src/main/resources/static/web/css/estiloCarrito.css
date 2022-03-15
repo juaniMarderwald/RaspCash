@@ -2,7 +2,7 @@ html {
     background: linear-gradient(113.49deg, #6A3C3C -30.3%, #191F42 66.47%);
 }
 
-/*.logo1{
+.logo1{
 width: 100px;
 height: 100px;
 left: -61px;
@@ -12,7 +12,7 @@ background: url(./imagenes/Logo1.png);
 z-index: -1;
 background-position: center;
 border-radius: 20px;
-}*/
+}
 
 .MoonText{
 position: absolute;
@@ -20,7 +20,6 @@ width: 684px;
 height: 216px;
 left: 50px;
 top: 220px;
-margin-left: 100px;
 
 font-family: 'Poppins';
 font-style: normal;
@@ -40,7 +39,6 @@ width: 684px;
 height: 216px;
 left: 195px;
 top: 269px;
-margin-left: 100px;
 
 font-family: 'Poppins';
 font-style: normal;
@@ -60,9 +58,8 @@ z-index: 2;
     height: 635px;
     left: 550px;
     top: 132px;
-    margin-left: 300px;
-
-    background: url("./../img/Recurso\ 1@4x.png");
+    
+    background: url("./imagenes/Recurso\ 1@4x.png");
     background-image: url("./imagenes/unknown.png");
     
     filter:brightness(1.4);
@@ -104,7 +101,6 @@ z-index: 2;
     height: 175px;
     left: 43px;
     top: 553px;
-    margin-left: 100px;
 
     font-family: 'Poppins';
     font-style: normal;
@@ -1729,7 +1725,7 @@ form{
   }
   
   .spacer10 {
-      margin-top: 20rem;
+      margin-top: -5rem;
     padding: 10rem 0;
   }
   
