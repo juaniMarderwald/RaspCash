@@ -2,7 +2,6 @@ package Mindhub.RaspCash;
 
 import Mindhub.RaspCash.models.*;
 import Mindhub.RaspCash.respositories.*;
-import Mindhub.RaspCash.servicios.ServicioPrestamo;
 import Mindhub.RaspCash.servicios.implementacionesServicios.EmailSenderServiceImplementation;
 import Mindhub.RaspCash.utilidades.Utilidades;
 import org.springframework.beans.factory.annotation.Autowired;

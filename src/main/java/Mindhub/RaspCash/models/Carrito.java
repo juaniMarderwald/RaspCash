@@ -5,6 +5,7 @@ import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Optional;
 
 @Entity
 public class Carrito {
@@ -27,6 +28,7 @@ public class Carrito {
 
     public void agregarProductoAlCarrito(ProductoUsuario productoUsuario){
         this.productosEnCarrito.add(productoUsuario);
+        this.total+=productoUsuario.getPrecio();
     }
 
     public long getId() {
