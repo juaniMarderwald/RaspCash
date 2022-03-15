@@ -1,6 +1,7 @@
 package Mindhub.RaspCash.models;
 
 import org.hibernate.annotations.GenericGenerator;
+import org.hibernate.annotations.Parent;
 
 import javax.persistence.*;
 
@@ -34,10 +35,10 @@ public class Usuario {
     private Billetera billetera;
 
     @OneToMany(mappedBy = "duenioPrestamo", fetch = FetchType.EAGER)
-    private List<PrestamoUsuario> prestamos =new ArrayList<>();
+    private Set<PrestamoUsuario> prestamos =new HashSet<>();
 
-   /* @OneToMany(mappedBy = "usuario" , fetch = FetchType.EAGER)
-    private List<ProductoUsuario> productos= new ArrayList<>();*/
+    @OneToMany(mappedBy = "usuarioDuenio" , fetch = FetchType.EAGER)
+    private Set<ProductoUsuario> productos= new HashSet<>();
 
     public Usuario() {
     }
@@ -58,21 +59,8 @@ public class Usuario {
         this.apodo = apodo;
         this.billetera=billetera;
         billetera.setUsuario(this);
-      //  this.carrito=carrito;
-     //   carrito.setUsuario(this);
     }
 
-    /*public void agregarProductoAdquirido(ProductoUsuario productoUsuario){
-        this.productos.add(productoUsuario);
-    }*/
-
-  /*  public Carrito getCarrito() {
-        return carrito;
-    }*/
-
-    /*public List<ProductoUsuario> getProductos() {
-        return productos;
-    }*/
 
     public String getEmail() {
 		return this.email;
@@ -98,21 +86,22 @@ public class Usuario {
 		return apodo;
 	}
 
-	/*public Carrito getCarrito() {
-		return carrito;
-	}*/
 
 	public Billetera getBilletera() {
 		return billetera;
 	}
 
-	public List<PrestamoUsuario> getPrestamos() {
+	public Set<PrestamoUsuario> getPrestamos() {
 		return prestamos;
 	}
 
 	/*public Set<Producto> getNfts() {
 		return nfts;
 	}*/
+
+    public Set<ProductoUsuario> getProductosComprados() {
+        return productos;
+    }
 
     public void setEmail(String email) {
         this.email = email;
@@ -143,7 +132,7 @@ public class Usuario {
         this.billetera = billetera;
     }
 
-    public void setPrestamos(List<PrestamoUsuario> prestamos) {
+    public void setPrestamos(Set<PrestamoUsuario> prestamos) {
         this.prestamos = prestamos;
     }
 
@@ -155,6 +144,10 @@ public class Usuario {
         this.nfts = nfts;
     }*/
 
+    public void agregarProductoComprado(ProductoUsuario productoUsuario){
+        this.productos.add(productoUsuario);
+    }
+
     public void setIdCarritoActual(long idCarritoActual){
         this.idCarritoActual=idCarritoActual;
     }
@@ -162,5 +155,6 @@ public class Usuario {
     public long getIdCarritoActual(){
         return this.idCarritoActual;
     }
+
 
 }

@@ -62,7 +62,20 @@ public class ProductoUsuario {
     public double getPrecio(){
         return this.producto.getValor();
     }
+
     public long getId(){
         return this.id;
+    }
+
+    public void setUsuarioDuenio(Usuario usuarioDuenio) {
+        this.usuarioDuenio = usuarioDuenio;
+    }
+
+    public void setEstadoProducto(EstadoProducto estadoProducto) {
+        this.estadoProducto = estadoProducto;
+    }
+
+    public void setCarrito(Carrito carrito){
+        this.carrito_id=carrito;
     }
 }
