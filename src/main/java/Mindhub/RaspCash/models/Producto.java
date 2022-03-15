@@ -54,6 +54,10 @@ public @Data class Producto {
         this.stock+=cantidad;
     }
 
+    public void disminuirStock(int cantidad){
+        this.stock-=cantidad;
+    }
+
     public long getId() {
         return id;
     }

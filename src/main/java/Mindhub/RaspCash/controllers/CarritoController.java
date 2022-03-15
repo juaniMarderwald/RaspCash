@@ -15,6 +15,7 @@ import org.springframework.web.bind.annotation.*;
 
 import javax.transaction.Transactional;
 import java.util.List;
+import java.util.Objects;
 
 @RestController
 @RequestMapping("/api")
@@ -46,15 +47,41 @@ public class CarritoController {
     @PostMapping("/carrito/agregarproducto")
     public ResponseEntity<Object> agregarProductoAlcarrito(Authentication authentication,@RequestParam long idProducto,@RequestParam long idCarrito){
 
-        Usuario usuario= servicioUsuario.encontrarUsuarioPorEmail(authentication.getName());
+       // Usuario usuario= servicioUsuario.encontrarUsuarioPorEmail(authentication.getName());
         Carrito carrito=servicioCarrito.obtenerCarritoPorId(idCarrito);
         Producto producto=servicioProducto.obtenerProductoPorId(idProducto);
 
+        if (Objects.isNull(producto)){
+            return new ResponseEntity<>("No es posible encontrar el producto seleccionado",HttpStatus.FORBIDDEN);
+        }
+
+        if (producto.getStock()==0){
+            return new ResponseEntity<>("No hay stock disponible para el producto que intenta añadir al carrito",HttpStatus.FORBIDDEN);
+        }
+
+        //No debería entrar nunca a este error
+        if (Objects.isNull(carrito)){
+            return new ResponseEntity<>("No es posible encontrar el carrito",HttpStatus.FORBIDDEN);
+        }
+
         ProductoUsuario productoUsuarioAlCarrito= new ProductoUsuario(producto,carrito, EstadoProducto.EN_CARRITO);
+
         servicioProductoUsuario.guardarProductoUsuario(productoUsuarioAlCarrito);
+
+        producto.disminuirStock(1);
 
         carrito.agregarProductoAlCarrito(productoUsuarioAlCarrito);
 
         return new ResponseEntity<>("Se agregó el producto al carrito",HttpStatus.CREATED);
+    }
+
+    @Transactional
+    @PostMapping("carrito/realizarCompra")
+    public ResponseEntity<Object> realizarCompra(Authentication authentication,@RequestParam long idCarrito){
+
+        Usuario usuario= servicioUsuario.encontrarUsuarioPorEmail(authentication.getName());
+
+
+        return new ResponseEntity<>("La compra fue realizada con éxito",HttpStatus.CREATED);
     }
 }
