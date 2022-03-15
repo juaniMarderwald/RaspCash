@@ -81,13 +81,6 @@ public class ImplementacionServicioUsuario implements ServicioUsuario {
 
 			billeteraRepositorio.save(billetera);
 
-			System.out.println("*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-");
-			System.out.println(billetera.getUsuario().getNombre());
-			System.out.println(billetera.getDireccion());
-			System.out.println("*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-*-");
-
-
-
 			return new ResponseEntity<>("Registro de usuario realizado con éxito", HttpStatus.CREATED);
 	}
     
@@ -104,6 +97,11 @@ public class ImplementacionServicioUsuario implements ServicioUsuario {
 	@Override
 	public UsuarioDTO findByEmail(String email) {
 		return new UsuarioDTO(usuarioRepositorio.findByEmail(email));
+	}
+
+	@Override
+	public Usuario encontrarUsuarioPorEmail(String email) {
+		return usuarioRepositorio.findByEmail(email);
 	}
 
 	;
