@@ -1,6 +1,7 @@
 package Mindhub.RaspCash.servicios;
 
 import Mindhub.RaspCash.dtos.UsuarioDTO;
+import Mindhub.RaspCash.models.Usuario;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
@@ -16,5 +17,7 @@ public interface ServicioUsuario {
     public UsuarioDTO obtenerUsuarioPorId(long Id);
 
     public UsuarioDTO findByEmail(String email);
+
+    public Usuario encontrarUsuarioPorEmail(String email);
 
 }

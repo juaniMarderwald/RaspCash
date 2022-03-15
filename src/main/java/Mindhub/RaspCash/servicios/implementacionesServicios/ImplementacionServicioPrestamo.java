@@ -25,4 +25,11 @@ public class ImplementacionServicioPrestamo implements ServicioPrestamo {
     public void guardarPrestamo(Prestamo prestamo) {
         prestamoRespositorio.save(prestamo);
     }
+
+    @Override
+    public Prestamo encontrarPrestamoPorNombre(String nombre) {
+        return prestamoRespositorio.findByNombre(nombre);
+    }
+
+
 }

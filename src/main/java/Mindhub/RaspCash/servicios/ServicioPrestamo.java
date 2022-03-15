@@ -11,4 +11,5 @@ public interface ServicioPrestamo {
 
     public List<PrestamoDTO> obtenerPrestamos();
     public void guardarPrestamo(Prestamo prestamo);
+    public Prestamo encontrarPrestamoPorNombre(String nombre);
 }
