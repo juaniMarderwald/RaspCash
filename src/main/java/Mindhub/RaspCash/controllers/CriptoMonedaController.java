@@ -1,7 +1,6 @@
 package Mindhub.RaspCash.controllers;
 
 import Mindhub.RaspCash.dtos.CriptoMonedaDTO;
-import Mindhub.RaspCash.models.CriptoMoneda;
 import Mindhub.RaspCash.servicios.ServicioCriptomoneda;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

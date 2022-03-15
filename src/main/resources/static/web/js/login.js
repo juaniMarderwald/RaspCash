@@ -18,25 +18,26 @@ var app = new Vue({
             //Función a modificar
         },
         iniciarSesion() {
-            axios.
-                post('/api/login', "email=" + this.correo + "&password=" + this.password, {
+            axios.post('/api/login', "email=" + this.correo + "&password=" + this.password, {
                     headers: {
                         'content-type': 'application/x-www-form-urlencoded'
                     }
                 })
                 .then(response => {
-                    window.location.href = "/index.html"
-
+                    window.location.href = "index.html"
                 }).catch(error => {
-                    alert(error);
+                    alert(error.response.data[0]);
                 })
         },
     registrarse() {
-        axios.post('/api/usuarios', "correo=" + this.correo + "&password=" + this.password + "&nombre=" + this.nombre + "&apellido=" + this.apellido +"&apodo=" + this.apodo).then(response => {
-            window.location.href = "/index.html"
-
+        axios.post('/api/usuarios', "correo=" + this.correo + "&password=" + this.password + "&nombre=" + this.nombre + "&apellido=" + this.apellido +"&apodo=" + this.apodo, {
+        headers: {
+            'content-type': 'application/x-www-form-urlencoded'
+        }
+    }).then(response => {
+            window.location.href = "index.html"
         }).catch(error => {
-            alert(error);
+            alert(error.response.data);
         })
     }
     },

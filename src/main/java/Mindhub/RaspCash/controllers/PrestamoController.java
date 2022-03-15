@@ -2,9 +2,7 @@ package Mindhub.RaspCash.controllers;
 
 import Mindhub.RaspCash.dtos.AplicacionPrestamoUsuarioDTO;
 import Mindhub.RaspCash.dtos.PrestamoDTO;
-import Mindhub.RaspCash.dtos.PrestamoUsuarioDTO;
 import Mindhub.RaspCash.models.*;
-import Mindhub.RaspCash.respositories.*;
 import Mindhub.RaspCash.servicios.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

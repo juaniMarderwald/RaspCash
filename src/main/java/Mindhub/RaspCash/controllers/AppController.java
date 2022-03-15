@@ -13,10 +13,6 @@ import Mindhub.RaspCash.servicios.ServicioUsuario;
 @RestController
 public class AppController {
 
-    @Autowired
-    UsuarioRepositorio usuarioRepositorio;
-
-
     @Autowired 
     ServicioUsuario servicioUsuario;
     
