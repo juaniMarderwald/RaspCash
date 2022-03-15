@@ -10,12 +10,12 @@ var app = new Vue({
         registro: false
     },
     created() {
-        this.cargarDatos
+        this.cargarDatos();
     },
 
     methods: {
         cargarDatos() {
-            //Función a modificar
+           axios.get('/api/usuario/current').then(response => window.location.href = "index.html").catch(error => console.log("Inicie sesión!"));
         },
         iniciarSesion() {
             axios.post('/api/login', "email=" + this.correo + "&password=" + this.password, {
