@@ -103,7 +103,7 @@ public class CarritoController {
             usuario.agregarProductoComprado(productoUsuario);
             productoUsuario.setUsuarioDuenio(usuario);
             productoUsuario.setEstadoProducto(EstadoProducto.VENDIDO);
-            productoUsuario.setCarrito();
+            productoUsuario.setCarrito(carrito);
         });
 
         //Genero la transacción para cobrarle al usuario y le asigno la transaccion a la billetera
