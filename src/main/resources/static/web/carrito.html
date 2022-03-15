@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RaspCash</title>
+
+
+
+    <!--Estilos CSS-->
+    <link rel="stylesheet" href="css/estiloCarrito.css">
+
+    <link rel="stylesheet" href="css/style.css">
+
+    <!--FAVICON-->
+    <link rel="shortcut icon" href="img/Logoje.png">
+
+</head>
+
+<body>
+    <!-- El header comienza aquí -->
+    <header class="header bg-white10">
+        <div class="container">
+            <a href="index.html" class="logo bold white">Rasp<span class="lightpurple">Cash</span></a>
+
+            <div class="menu">
+                
+                <a href="NFT.html">NFT</a>
+                <a href="Crypto.html">Cripto</a>
+                <a href="DeFi.html">DeFi</a>
+                <a href="merchandasing.html">Productos</a>
+                <a href="carrito.html"><span>🛒</span></a>
+                
+            </div>
+
+            <div class="fas fa-wallet" id="wallet"></div>
+            <div class="fas fa-bars" id="bar"></div>
+        </div>
+    </header>
+    <!-- El header comienza aquí -->
+
+    <!-- La sección main comienza aquí -->
+        <section class="collections spacer10" id="collections">
+            <div class="container">
+                <h1 class="bold size4 ta-center">Tu Carrito</h1>
+                <p class="spacebottom3 halfwhite size2 ta-center">
+                    Los mejores productos al mejor precio.
+                </p>
+                <div class="row box-card jc-evenly-md">
+                    <div class="col4 card collect bg-white10 col5-md col6-s" data-item="art">
+                        <img src="img/merch/remera.jpg" class="img-responsive" alt="">
+                        <div class="row jc-between spacetop2">
+                            <div>
+                                <p class="size2 halfwhite">
+
+                                </p>
+                                <h5 class="size2 bold">Remera</h5>
+                            </div>
+                            <div>
+                                <p class="current halfwhite">Precio</p>
+                                <h5 class="size2 bold">$500</h5>
+                            </div>
+                            <div>
+                                <p class="current halfwhite">Stock</p>
+                                <h5 class="size2 bold">5 u</h5>
+                            </div>
+                        </div>
+                        <a class="bid size2 ta-center">
+                            Comprar
+                        </a>
+                    </div>
+                    <div class="col4 card collect bg-white10 col5-md col6-s" data-item="photograpy">
+                        <img src="img/merch/libreta2.jpg" class="img-responsive" alt="">
+                        <div class="row jc-between spacetop2">
+                            <div>
+                                <p class="size2 halfwhite">
+
+                                </p>
+                                <h5 class="size2 bold">Libreta</h5>
+                            </div>
+                            <div>
+                                <p class="current halfwhite">Precio</p>
+                                <h5 class="size2 bold">$500</h5>
+                            </div>
+                            <div>
+                                <p class="current halfwhite">Stock</p>
+                                <h5 class="size2 bold">5 u</h5>
+                            </div>
+                        </div>
+                        <a class="bid size2 ta-center">
+                            Comprar
+                        </a>
+                    </div>
+
+                    <div class="col4 card collect bg-white10 col5-md col6-s" data-item="photograpy">
+                        <img src="img/collection5.png" class="img-responsive" alt="">
+                        <div class="row jc-between spacetop2">
+                            <div>
+                                <p class="size2 halfwhite">
+                                    @Johny
+                                </p>
+                                <h5 class="size2 bold">Yellow Red</h5>
+                            </div>
+                            <div>
+                                <p class="current halfwhite">Oferta actual</p>
+                                <h5 class="size2 bold">0.005ETH</h5>
+                            </div>
+                        </div>
+                        <a class="bid size2 ta-center">
+                            Hacer una Oferta
+                        </a>
+                    </div>
+                </div>
+                <div>
+                    <p class="cardTotal">Total: {{Total}}</p>
+                    <div class="cardTotalBoton"><button class="btn bg-purple wallet">Confirmar compra</button></div>
+                </div>
+            </div>
+        </section>
+    <!-- La sección main finaliza aquí -->
+
+
+
+    <!-- La sección de Footer comienza aquí -->
+    <footer class="spacer10">
+        <div class="container row jc-between flexcol-s ta-center-s">
+            <div class="row flexcol spacebottom3-s">
+                <a href="#home" class="size2 bold white">Rasp<span class="lightpurple">Cash</span></a>
+                <p class="size2 halfwhite spacetop2">El mejor lugar para comprar NFT <br>del mundo, sumate a la
+                    <br>experiencia de comprar y vender<br> NFT
+                </p>
+            </div>
+            <div class="row flexcol spacebottom3-s">
+                <a href="#about" class="bold size2 white">Sobre Nosotros</a>
+                <a href="#" class="size2 halfwhite spacetop2">Productos</a>
+                <a href="#" class="size2 halfwhite spacetop2">Recursos</a>
+                <a href="#" class="size2 halfwhite spacetop2">Terminos & Condiciones</a>
+                <a href="#faq" class="size2 halfwhite spacetop2">Preguntas Frecuentes</a>
+            </div>
+            <div class="row flexcol spacebottom3-s">
+                <a href="#" class="bold size2 white">Empresa</a>
+                <a href="#" class="size2 halfwhite spacetop2">Nuestro equipo</a>
+                <a href="#" class="size2 halfwhite spacetop2">Trabaja con nosotros</a>
+                <a href="#" class="size2 halfwhite spacetop2">Politica de Privacidad</a>
+                <a href="#" class="size2 halfwhite spacetop2">Novedades</a>
+            </div>
+            <div class="row flexcol spacebottom3-s">
+                <h5 class="bold size2">Contacto</h5>
+                <a href="#" class="size2 halfwhite spacetop2">11 55559999</a>
+                <a href="#" class="size2 halfwhite spacetop2">adorableprogrammer@gmail.com</a>
+                <div class="row jc-around spacetop2 jc-evenly-s">
+                    <a href="#" class="fab fa-youtube size2 halfwhite spacetop2"></a>
+                    <a href="#" class="fab fa-instagram size2 halfwhite spacetop2"></a>
+                </div>
+            </div>
+        </div>
+        <p class="size2 halfwhite spacetop5 ta-center">Creado por <span class="white bold">MorazZarnozaz</span> | Todos
+            los derechos reservados</p>
+    </footer>
+    <!-- La sección de footer finaliza aquí -->
+
+
+
+</body>
+
+</html>
