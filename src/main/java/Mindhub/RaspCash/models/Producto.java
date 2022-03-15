@@ -5,6 +5,7 @@ import org.hibernate.annotations.GenericGenerator;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
@@ -23,7 +24,12 @@ public @Data class Producto {
     private String nombre;
     private  TipoProducto tipo;
 
+  /*  @OneToMany(mappedBy = "producto", fetch = FetchType.EAGER)
+    private ProductoUsuario productoUsuario;
 
+    @OneToMany(mappedBy = "producto",fetch = FetchType.EAGER)
+    private List<Opinion> opiniones = new ArrayList<>();
+*/
     public Producto() {
     }
 
@@ -47,4 +53,40 @@ public @Data class Producto {
         //Aumento la cantidad del stock del producto
         this.stock+=cantidad;
     }
+
+    public long getId() {
+        return id;
+    }
+
+    public int getStock() {
+        return stock;
+    }
+
+    public String getImagen() {
+        return imagen;
+    }
+
+    public double getValor() {
+        return valor;
+    }
+
+    public String getDescripcion() {
+        return descripcion;
+    }
+
+    public String getNombre() {
+        return nombre;
+    }
+
+    public TipoProducto getTipo() {
+        return tipo;
+    }
+
+    /*public ProductoUsuario getProductoUsuario() {
+        return productoUsuario;
+    }
+
+    public List<Opinion> getOpiniones() {
+        return opiniones;
+    }*/
 }

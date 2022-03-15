@@ -21,6 +21,9 @@ public @Data class Opinion {
     @JoinColumn(name = "usuario")
     private Usuario usuarioOpinion;
 
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "producto_id")
+    private Producto producto;
 
     public Opinion() {
     }
