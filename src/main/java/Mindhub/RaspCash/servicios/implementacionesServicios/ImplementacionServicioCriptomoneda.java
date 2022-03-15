@@ -4,7 +4,6 @@ import Mindhub.RaspCash.dtos.CriptoMonedaDTO;
 import Mindhub.RaspCash.models.CriptoMoneda;
 import Mindhub.RaspCash.respositories.CriptoMonedaRepositorio;
 import Mindhub.RaspCash.servicios.ServicioCriptomoneda;
-import excepciones.ConflictException;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

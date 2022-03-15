@@ -1,44 +1,43 @@
-var app1 = new Vue({
-    el: '#app1',
+var app = new Vue({
+    el: '#app',
     data: {
         correo: "",
         password: "",
+        nombre: "",
+        apellido: "",
+        apodo: "",
+        inicioSesion: true,
+        registro: false
+    },
+    created() {
+        this.cargarDatos
     },
 
     methods: {
+        cargarDatos() {
+            //Función a modificar
+        },
         iniciarSesion() {
             axios.
-            post('/api/login', "email=" + this.correo + "&password=" + this.password, {
-                headers: {
-                    'content-type': 'application/x-www-form-urlencoded'
-                }
-            })
+                post('/api/login', "email=" + this.correo + "&password=" + this.password, {
+                    headers: {
+                        'content-type': 'application/x-www-form-urlencoded'
+                    }
+                })
+                .then(response => {
+                    window.location.href = "/index.html"
 
-            .then(response => {
-                window.alert("USTED INGRESO A SU HOME BANKING")
-                console.log('signed in!!!');
-                return window.location.href = "/index.html"
+                }).catch(error => {
+                    alert(error);
+                })
+        },
+    registrarse() {
+        axios.post('/api/usuarios', "correo=" + this.correo + "&password=" + this.password + "&nombre=" + this.nombre + "&apellido=" + this.apellido +"&apodo=" + this.apodo).then(response => {
+            window.location.href = "/index.html"
 
-            }).catch(error => {
-                "error de correo o password"
-
-
-            })
-
-        }
-    },
-
-    logout() {
-        axios.post(`/api/logout`)
-
-        .then(response => console.log('signed out!!'))
-            .then
-
-        return (window.location.href = "/index.html")
-
+        }).catch(error => {
+            alert(error);
+        })
     }
-
-
-
-
+    },
 })

@@ -22,15 +22,11 @@ public class WebAuthorization extends WebSecurityConfigurerAdapter {
 
         http.authorizeRequests()
 
-                .antMatchers("/rest/**").permitAll()
-                .antMatchers("/h2-console/**").permitAll()
-                .antMatchers(HttpMethod.POST,"/api/**").permitAll()
-                .antMatchers("api/login").permitAll()
-                .antMatchers("/web/**").permitAll()
-
-                //autorizacion de archivos estaticos
-                .antMatchers( "/Crypto.html","/index.html","NFT.html","login.html","/registracion.html").permitAll()
-                .antMatchers("/css/**","/img/**","/js/**").permitAll();
+               //  .antMatchers("/rest/**").permitAll()
+              //  .antMatchers("/h2-console/**").
+                .antMatchers(HttpMethod.POST, "/api/usuarios").permitAll()
+                .antMatchers("/api/login").permitAll()
+                .antMatchers("/web/**").permitAll();
 
         http.formLogin()
                 .usernameParameter("email")

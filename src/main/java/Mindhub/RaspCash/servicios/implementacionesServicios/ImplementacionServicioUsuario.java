@@ -4,7 +4,7 @@ import Mindhub.RaspCash.models.Billetera;
 import Mindhub.RaspCash.respositories.BilleteraRepositorio;
 import Mindhub.RaspCash.servicios.ServicioUsuario;
 import Mindhub.RaspCash.utilidades.Utilidades;
-import excepciones.ConflictException;
+import Mindhub.excepciones.ConflictException;
 import Mindhub.RaspCash.dtos.UsuarioDTO;
 import Mindhub.RaspCash.models.Usuario;
 import Mindhub.RaspCash.respositories.UsuarioRepositorio;
