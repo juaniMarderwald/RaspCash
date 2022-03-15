@@ -10,6 +10,8 @@ import org.springframework.web.bind.annotation.RestController;
 import Mindhub.RaspCash.respositories.UsuarioRepositorio;
 import Mindhub.RaspCash.servicios.ServicioUsuario;
 
+import javax.mail.MessagingException;
+
 @RestController
 public class AppController {
 
@@ -21,7 +23,7 @@ public class AppController {
     @PostMapping("/api/usuarios")
     public ResponseEntity<Object> register(
             @RequestParam String nombre, @RequestParam String apellido, @RequestParam String apodo,
-            @RequestParam String correo, @RequestParam String password) {
+            @RequestParam String correo, @RequestParam String password) throws MessagingException {
 
         return servicioUsuario.registro(nombre, apellido, apodo, correo, password);
     }
