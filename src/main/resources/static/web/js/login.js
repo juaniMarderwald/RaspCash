@@ -26,7 +26,7 @@ var app = new Vue({
                 .then(response => {
                     window.location.href = "index.html"
                 }).catch(error => {
-                    alert(error.response.data[0]);
+                    alert("Usuario o contraseña incorrectos");
                 })
         },
     registrarse() {
