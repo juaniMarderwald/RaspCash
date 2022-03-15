@@ -16,8 +16,8 @@ public interface ServicioUsuario {
     
     public UsuarioDTO obtenerUsuarioPorId(long Id);
 
-    public UsuarioDTO findByEmail(String email);
+    public UsuarioDTO findByEmail(String email);//Devuelve el UsuarioDTO
 
-    public Usuario encontrarUsuarioPorEmail(String email);
+    public Usuario encontrarUsuarioPorEmail(String email);//Devuelve el Usuario
 
 }

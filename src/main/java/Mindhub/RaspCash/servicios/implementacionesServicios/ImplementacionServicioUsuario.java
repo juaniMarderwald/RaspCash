@@ -110,7 +110,5 @@ public class ImplementacionServicioUsuario implements ServicioUsuario {
 		return usuarioRepositorio.findByEmail(email);
 	}
 
-	;
-
 
 }

@@ -12,6 +12,8 @@ public class ProductoUsuario {
     @GenericGenerator(name = "native", strategy = "native")
     private long id;
 
+    private EstadoProducto estadoProducto;
+
     @ManyToOne
     @JoinColumn(name="producto_id")
     private Producto producto;
@@ -27,7 +29,10 @@ public class ProductoUsuario {
     public ProductoUsuario() {
     }
 
-
+    //Inicialmente se encuentra Disponible, cambia el estado cuando se selecciona para estar en el carrito, y luego cuando lo compra el usuario, o si sale del carrito vuelve a estar disponible
+    private void cambiarEstadoDeProducto(EstadoProducto nuevoEstadoProducto){
+        this.estadoProducto=nuevoEstadoProducto;
+    }
 
 
 }
