@@ -5,10 +5,7 @@ import Mindhub.RaspCash.dtos.PrestamoDTO;
 import Mindhub.RaspCash.dtos.PrestamoUsuarioDTO;
 import Mindhub.RaspCash.models.*;
 import Mindhub.RaspCash.respositories.*;
-import Mindhub.RaspCash.servicios.ServicioPrestamo;
-import Mindhub.RaspCash.servicios.ServicioPrestamoUsuario;
-import Mindhub.RaspCash.servicios.ServicioTransaccion;
-import Mindhub.RaspCash.servicios.ServicioUsuario;
+import Mindhub.RaspCash.servicios.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -37,6 +34,9 @@ public class PrestamoController {
     @Autowired
     ServicioPrestamoUsuario servicioPrestamoUsuario;
 
+    @Autowired
+    ServicioBilletera servicioBilletera;
+
     @GetMapping("/prestamos")
     public List<PrestamoDTO> obtenerPrestamos(){
         return servicioPrestamo.obtenerPrestamos();
@@ -48,7 +48,15 @@ public class PrestamoController {
 
         Prestamo prestamo = servicioPrestamo.encontrarPrestamoPorNombre(aplicacionPrestamoUsuarioDTO.getNombrePrestamo());
         Usuario usuario = servicioUsuario.encontrarUsuarioPorEmail(authentication.getName());
-        Billetera billetera= usuario.getBilletera();
+        Billetera billetera= servicioBilletera.encontrarPorDireccion(aplicacionPrestamoUsuarioDTO.obtenerBilleteraDestino());
+
+        if (Objects.isNull(billetera)){
+            return new ResponseEntity<>("No se encuentra la billetera destino para otorgar el prestamo", HttpStatus.FORBIDDEN);
+        }
+
+        if (!prestamo.getCuotas().contains(aplicacionPrestamoUsuarioDTO.getCuotas())){
+            return new ResponseEntity<>("Cantidad de cuotas invalidas para el prestamo", HttpStatus.FORBIDDEN);
+        }
 
         //Compruebo que exista el prestamo solicitado, en teoria nunca tendria que entrar a esta comprobación, ya que lo corroboro en el front que esto no suceda
         if(Objects.isNull(prestamo)){
@@ -58,6 +66,7 @@ public class PrestamoController {
         //Parseo el amoun y cuotas a los tipos correctos, ya que traigo String desde el front
         double monto = Double.parseDouble(aplicacionPrestamoUsuarioDTO.getMonto());
         Integer cuotas = aplicacionPrestamoUsuarioDTO.getCuotas();
+
         //Compruebo que el monto ingresado no sea negativo
         if(monto<=0){
             return new ResponseEntity<>("El monto ingresado para el préstamo es inválido", HttpStatus.FORBIDDEN);
@@ -75,7 +84,7 @@ public class PrestamoController {
         double interes = 1+ prestamo.getInteres();
         double montoFinalPrestamo = monto * interes;
 
-        String description = "Prestamo de tipo: "+prestamo.getNombre()+" otorgado a la billetera: "+aplicacionPrestamoUsuarioDTO.getCuentaDestino();
+        String description = "Prestamo de tipo: "+prestamo.getNombre()+" otorgado a la billetera: "+aplicacionPrestamoUsuarioDTO.obtenerBilleteraDestino();
 
         Transaccion transaccion=new Transaccion(TipoDeTransaccion.CREDITO,monto,description,LocalDateTime.now(),TipoDeMoneda.BITCOIN,billetera);
         billetera.agregarTransaccion(transaccion);

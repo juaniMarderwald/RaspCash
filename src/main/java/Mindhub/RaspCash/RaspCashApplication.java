@@ -137,11 +137,11 @@ public class RaspCashApplication {
 		ClientLoan clientLoan2=new ClientLoan(50000,12,client1,loanAutomotriz);
 		*/
 
-		PrestamoUsuario prestamoUsuario1 = new PrestamoUsuario(prestamoTradicional.getMonto(),6,usuario1,prestamoTradicional);
+		/*PrestamoUsuario prestamoUsuario1 = new PrestamoUsuario(prestamoTradicional.getMonto(),6,usuario1,prestamoTradicional);
 		usuario1.agregarPrestamo(prestamoUsuario1);
 		prestamoTradicional.agregarPrestamoUsuario(prestamoUsuario1);
 
-		prestamoUsuarioRespositorio.save(prestamoUsuario1);
+		prestamoUsuarioRespositorio.save(prestamoUsuario1);*/
 
 	};
 	}

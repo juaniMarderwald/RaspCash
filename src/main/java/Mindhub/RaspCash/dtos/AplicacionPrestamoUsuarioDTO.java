@@ -28,7 +28,7 @@ public class AplicacionPrestamoUsuarioDTO {
         return cuotas;
     }
 
-    public String getCuentaDestino() {
+    public String obtenerBilleteraDestino() {
         return billeteraDestino;
     }
 
