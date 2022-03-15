@@ -1,6 +1,7 @@
 package Mindhub.RaspCash.controllers;
 
 import Mindhub.RaspCash.dtos.ProductoDTO;
+import Mindhub.RaspCash.models.Producto;
 import Mindhub.RaspCash.servicios.ServicioProducto;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -20,5 +21,15 @@ public class ProductosController {
     @GetMapping("/productos")
     public List<ProductoDTO> obtenerTodosLosProductosDTO(){
         return servicioProducto.obtenerTodosLosProductosDTO();
+    }
+
+    @GetMapping("/productos/nfts")
+    public List<ProductoDTO> obtenerTodosLosNFTs(){
+        return servicioProducto.obtenerNFTsDTO();
+    }
+
+    @GetMapping("/productos/merchandising")
+    public List<ProductoDTO> obtenerTodosLosProductosMerchandising(){
+        return servicioProducto.obtenerMerchandisingDTO();
     }
 }

@@ -10,5 +10,8 @@ import java.util.List;
 public interface ServicioProducto {
 
     public List<ProductoDTO> obtenerTodosLosProductosDTO();
+    public List<ProductoDTO> obtenerMerchandisingDTO();
+    public List<ProductoDTO> obtenerNFTsDTO();
     public Producto obtenerProductoPorId(long id);
+
 }
