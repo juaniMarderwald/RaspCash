@@ -6,7 +6,9 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 import java.util.stream.Collectors;
 
 @Getter
@@ -18,6 +20,7 @@ public class UsuarioDTO {
     private String email;
     private BilleteraDTO billetera;
     private List<PrestamoUsuarioDTO> prestamos=new ArrayList<>();
+    private Set<ProductoUsuarioDTO> productosAdquiridos=new HashSet<>();
 
     public UsuarioDTO(Usuario usuario) {
         this.id=usuario.getId();
@@ -27,6 +30,7 @@ public class UsuarioDTO {
         this.email= usuario.getEmail();
         this.billetera=new BilleteraDTO(usuario.getBilletera());
         this.prestamos=usuario.getPrestamos().stream().map(PrestamoUsuarioDTO::new).collect(Collectors.toList());
+        this.productosAdquiridos=usuario.getProductos().stream().map(ProductoUsuarioDTO::new).collect(Collectors.toSet());
     }
 
     public long getId() {
@@ -55,5 +59,9 @@ public class UsuarioDTO {
 
     public List<PrestamoUsuarioDTO> getPrestamos() {
         return prestamos;
+    }
+
+    public Set<ProductoUsuarioDTO> getProductosAdquiridos() {
+        return productosAdquiridos;
     }
 }

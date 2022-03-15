@@ -8,7 +8,8 @@ import javax.persistence.*;
 import java.util.List;
 
 @Entity
-public @Data class Carrito {
+public class Carrito {
+
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO, generator = "native")
     @GenericGenerator(name = "native", strategy = "native")
@@ -17,7 +18,7 @@ public @Data class Carrito {
     @OneToOne
     private Usuario usuario;
 
-    //private List<Producto> productos;
+    private List<ProductoUsuario> productos;
 
     private  double total;
 
@@ -28,9 +29,23 @@ public @Data class Carrito {
         return usuario;
     }
 
-   /* public void agregarProductoAlCarrito(Producto producto){
-        this.productos.add(producto);
-    }*/
+    public void agregarProductoAlCarrito(ProductoUsuario productoUsuario){
+        this.productos.add(productoUsuario);
+    }
 
+    public long getId() {
+        return id;
+    }
 
+    public List<ProductoUsuario> getProductos() {
+        return productos;
+    }
+
+    public double getTotal() {
+        return total;
+    }
+
+    public void setUsuario(Usuario usuario){
+        this.usuario=usuario;
+    }
 }

@@ -5,7 +5,9 @@ import org.hibernate.annotations.GenericGenerator;
 import javax.persistence.*;
 
 import java.util.ArrayList;
+import java.util.HashSet;
 import java.util.List;
+import java.util.Set;
 
 
 @Entity
@@ -22,10 +24,10 @@ public class Usuario {
     private String apellido;
     private String apodo;
 
-   /* @OneToOne
+    @OneToOne
     @JoinColumn(name = "carrito_id")
     private Carrito carrito = new Carrito();
-*/
+
     @OneToOne
     @JoinColumn(name = "billetera_id")
     private Billetera billetera;
@@ -33,8 +35,8 @@ public class Usuario {
     @OneToMany(mappedBy = "duenioPrestamo", fetch = FetchType.EAGER)
     private List<PrestamoUsuario> prestamos =new ArrayList<>();
 
-    /*@OneToMany(mappedBy = "usuario" , fetch = FetchType.EAGER)
-    private Set<Producto> nfts= new HashSet<>();*/
+    @OneToMany(mappedBy = "usuario" , fetch = FetchType.EAGER)
+    private Set<ProductoUsuario> productos= new HashSet<>();
 
     public Usuario() {
     }
@@ -47,7 +49,7 @@ public class Usuario {
         this.apodo = apodo;
     }
 
-    public Usuario(String correo, String contrasenia, String nombre, String apellido, String apodo,Billetera billetera) {
+    public Usuario(String correo, String contrasenia, String nombre, String apellido, String apodo,Billetera billetera, Carrito carrito) {
         this.email = correo;
         this.password = contrasenia;
         this.nombre = nombre;
@@ -55,13 +57,23 @@ public class Usuario {
         this.apodo = apodo;
         this.billetera=billetera;
         billetera.setUsuario(this);
+        this.carrito=carrito;
+        carrito.setUsuario(this);
     }
 
-    /*public void addNft(Producto producto){
-        this.nfts.add(producto);
-    }*/
+    public void agregarProductoAdquirido(ProductoUsuario productoUsuario){
+        this.productos.add(productoUsuario);
+    }
 
-	public String getEmail() {
+    public Carrito getCarrito() {
+        return carrito;
+    }
+
+    public Set<ProductoUsuario> getProductos() {
+        return productos;
+    }
+
+    public String getEmail() {
 		return this.email;
 	}
 
