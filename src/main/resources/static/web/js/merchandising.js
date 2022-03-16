@@ -11,8 +11,8 @@
         cargarDatos() {
             axios.get('/api/productos/merchandising')
                 .then(response => {
-                    console.log(response.data);
-                    this.nfts = response.data;
+                    this.productos = response.data;
+                    console.log(this.productos);
                 })
                 .finally(function () {
                     const preload = document.querySelector(".preload");

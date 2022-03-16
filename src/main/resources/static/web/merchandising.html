@@ -18,6 +18,10 @@
 
     <!-- custom css link -->
     <link rel="stylesheet" href="css/style.css" />
+
+    <!-- custom css link -->
+    <link rel="stylesheet" href="css/preload.css">
+
     <!--FAVICON-->
     <link rel="shortcut icon" href="img/Logoje.png">
     <title>RaspCash</title>
@@ -74,35 +78,38 @@
 
     <!-- collections section starts -->
     <section class="collections spacer10" id="collections">
-        <div class="container">
+        <div class="container" id="appMerchandising">
             <h1 class="bold size4 ta-center">Productos</h1>
             <p class="spacebottom3 halfwhite size2 ta-center">
-                Lorem ipsum dolor sit amet, consectetur<br>adipiscing elit.
+                Encuentra aquí todos nuestros productos para tu día a día 
             </p>
             <div class="row box-card jc-evenly-md">
-                <div class="col4 card collect bg-white10 col5-md col6-s" data-item="art">
-                    <img src="img/merch/remera.jpg" class="img-responsive" alt="">
-                    <div class="row jc-between spacetop2">
-                        <div>
-                            <p class="size2 halfwhite">
-                                
-                            </p>
-                            <h5 class="size2 bold">Remera</h5>
+               
+                    <div v-for="producto in productos" class="col4 card collect bg-white10 col5-md col6-s" data-item="art">
+                        <img v-bind:src="producto.imagen" class="img-responsive" alt="">
+                        <div class="row jc-between spacetop2">
+                            <div>
+                                <p class="size2 halfwhite">
+                                    
+                                </p>
+                                <h5 class="size2 bold">{{producto.nombre}}</h5>
+                            </div>
+                            <div>
+                                <p class="current halfwhite">Precio</p>
+                                <h5 class="size2 bold">$ {{ producto.valor}}</h5>
+                            </div>
+                            <div>
+                                <p class="current halfwhite">Stock</p>
+                                <h5 class="size2 bold">{{ producto.stock}} u</h5>
+                            </div>
                         </div>
-                        <div>
-                            <p class="current halfwhite">Precio</p>
-                            <h5 class="size2 bold">$500</h5>
-                        </div>
-                        <div>
-                            <p class="current halfwhite">Stock</p>
-                            <h5 class="size2 bold">5 u</h5>
-                        </div>
+                        <a class="bid size2 ta-center">
+                            Añadir al carrito
+                        </a>
                     </div>
-                    <a class="bid size2 ta-center">
-                        Añadir al carrito
-                    </a>
-                </div>
-                <div class="col4 card collect bg-white10 col5-md col6-s" data-item="photograpy">
+               
+                
+                <!-- <div class="col4 card collect bg-white10 col5-md col6-s" data-item="photograpy">
                     <img src="img/merch/libreta2.jpg" class="img-responsive" alt="">
                     <div class="row jc-between spacetop2">
                         <div>
@@ -212,7 +219,7 @@
                     <a class="bid size2 ta-center">
                         Añadir al carrito
                     </a>
-                </div>
+                </div> -->
             </div>
         </div>
     </section>

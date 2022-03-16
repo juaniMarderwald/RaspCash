@@ -164,12 +164,12 @@ https://i.ibb.co/WG4Gwwf/taza1.jpg
 		*/
 		    //public Producto(String nombre, int stock,String imagen,double valor,String descripcion,TipoProducto tipo){
 
-			Producto productoFundaNotebook = new Producto("Funda Notebook",100,"https://i.ibb.co/S6Qd689/funda-notebook.jpg",5000,"Funca para notebook ideal para llevar tu notebook a todos lados, practica y comoda",TipoProducto.MERCHANDISING);
+			Producto productoFundaNotebook = new Producto("Funda Notebook",100,"https://i.ibb.co/S6Qd689/funda-notebook.jpg",5000,"Funda para notebook ideal para llevar tu notebook a todos lados, practica y comoda",TipoProducto.MERCHANDISING);
 			Producto productoLibreta=new Producto("Libreta NFT",1500,"https://i.ibb.co/NmrcyQ1/libreta2.jpg",1500,"Libreta práctica y canchera, para anotar tus ideas mas frescas",TipoProducto.MERCHANDISING);
 			Producto productoMochila=new Producto("Mochila NFT",5000,"https://i.ibb.co/RSv6DSn/mochila-2.jpg",10500,"Mochila NFT, diseño unico y exclusivo, amplia para ir con tus cosas a todos lados",TipoProducto.MERCHANDISING);
-			Producto productoTaza2=new Producto("Taza NFT - Modelo 2",12000,"https://i.ibb.co/HnPHnk7/otra-taza1.jpg",2350,"Taza termica e irrompible con diseño unico y exclusivo",TipoProducto.MERCHANDISING);
+			Producto productoTaza2=new Producto("Taza NFT - 2",12000,"https://i.ibb.co/HnPHnk7/otra-taza1.jpg",2350,"Taza termica e irrompible con diseño unico y exclusivo",TipoProducto.MERCHANDISING);
 			Producto productoRemera=new Producto("Remera NFT",1000,"https://i.ibb.co/CsXSYK1/remera.jpg",4999,"Destacá entre tus Criptoamigos con esta remera unica en su especie",TipoProducto.MERCHANDISING);
-			Producto productoTaza1=new Producto("Taza NFT - Modelo 1",1200,"https://i.ibb.co/WG4Gwwf/taza1.jpg",2350,"Taza termica e irrompible con diseño unico y exclusivo", TipoProducto.MERCHANDISING);
+			Producto productoTaza1=new Producto("Taza NFT - 1",1200,"https://i.ibb.co/WG4Gwwf/taza1.jpg",2350,"Taza termica e irrompible con diseño unico y exclusivo", TipoProducto.MERCHANDISING);
 
 			productoRepositorio.save(productoFundaNotebook);
 			productoRepositorio.save(productoLibreta);
