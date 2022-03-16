@@ -1,8 +1,9 @@
 var appCarrito = new Vue({
     el: '#appCarrito',
     data: {
-        carrito: {},
-        productos: {}
+        carrito: [],
+        productosEnCarrito: [],
+        total:0
     },
     created() {
         this.cargarDatos();
@@ -12,9 +13,12 @@ var appCarrito = new Vue({
         cargarDatos() {
             axios.get('/api/carrito/current')
                 .then(response => {
+                    
                     this.carrito = response.data;
                     this.productos = this.carrito.productos;
                     console.log(response.data);
+                    this.total=this.carrito.montoTotal;
+
                 }).catch(error => console.log(error.response.data))
                 .finally(function() {
                     const preload = document.querySelector(".preload");

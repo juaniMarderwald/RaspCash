@@ -26,13 +26,13 @@
             <a href="index.html" class="logo bold white">Rasp<span class="lightpurple">Cash</span></a>
 
             <div class="menu">
-                
+
                 <a href="NFT.html">NFT</a>
                 <a href="Crypto.html">Cripto</a>
                 <a href="DeFi.html">DeFi</a>
                 <a href="merchandising.html">Productos</a>
                 <a href="carrito.html"><span>🛒</span></a>
-                
+
             </div>
 
             <div class="fas fa-wallet" id="wallet"></div>
@@ -42,83 +42,50 @@
     <!-- El header comienza aquí -->
 
     <!-- La sección main comienza aquí -->
-        <section class="collections spacer10" id="collections">
-            <div class="container">
-                <h1 class="bold size4 ta-center">Tu Carrito</h1>
-                <p class="spacebottom3 halfwhite size2 ta-center">
-                   Aquí se encuentran los productos que seleccionaste anteriormente
-                </p>
-                <div class="row box-card jc-evenly-md">
-                    <div class="col4 card collect bg-white10 col5-md col6-s" data-item="art">
-                        <img src="img/merch/remera.jpg" class="img-responsive" alt="">
+    <section class="collections spacer10" id="collections">
+        <div class="container" id="appCarrito">
+            <h1 class="bold size4 ta-center">Tu Carrito</h1>
+            <p class="spacebottom3 halfwhite size2 ta-center">
+                Aquí se encuentran los productos que seleccionaste anteriormente
+            </p>
+            <div class="row box-card jc-evenly-md">
+                <template v-if="productosEnCarrito.length == 0">
+                    <div class="carritoVacio">
+                        <h1>El carrito se encuentra vacío</h1>
+                        <a href="merchandising.html" class="btn bg-purple wallet">Agregue productos al carrito</a>
+                    </div>
+
+                </template>
+                <template v-if-else>
+                    <div v-for="producto in productosEnCarrito" class="col4 card collect bg-white10 col5-md col6-s"
+                        data-item="art">
+                        <img v-bind:src="producto.imagen" class="img-responsive" alt="">
                         <div class="row jc-between spacetop2">
                             <div>
                                 <p class="size2 halfwhite">
 
                                 </p>
-                                <h5 class="size2 bold">Remera</h5>
+                                <h5 class="size2 bold">{{producto.nombre}}</h5>
                             </div>
                             <div>
                                 <p class="current halfwhite">Precio</p>
-                                <h5 class="size2 bold">$500</h5>
+                                <h5 class="size2 bold">$ {{producto.valor}} </h5>
                             </div>
                             <div>
                                 <p class="current halfwhite">Stock</p>
-                                <h5 class="size2 bold">5 u</h5>
+                                <h5 class="size2 bold"> {producto.stock} u</h5>
                             </div>
                         </div>
-                        <a class="bid size2 ta-center">
-                            Comprar
-                        </a>
                     </div>
-                    <div class="col4 card collect bg-white10 col5-md col6-s" data-item="photograpy">
-                        <img src="img/merch/libreta2.jpg" class="img-responsive" alt="">
-                        <div class="row jc-between spacetop2">
-                            <div>
-                                <p class="size2 halfwhite">
+                </template>
 
-                                </p>
-                                <h5 class="size2 bold">Libreta</h5>
-                            </div>
-                            <div>
-                                <p class="current halfwhite">Precio</p>
-                                <h5 class="size2 bold">$500</h5>
-                            </div>
-                            <div>
-                                <p class="current halfwhite">Stock</p>
-                                <h5 class="size2 bold">5 u</h5>
-                            </div>
-                        </div>
-                        <a class="bid size2 ta-center">
-                            Comprar
-                        </a>
-                    </div>
-
-                    <div class="col4 card collect bg-white10 col5-md col6-s" data-item="photograpy">
-                        <img src="img/collection5.png" class="img-responsive" alt="">
-                        <div class="row jc-between spacetop2">
-                            <div>
-                                <p class="size2 halfwhite">
-                                    @Johny
-                                </p>
-                                <h5 class="size2 bold">Yellow Red</h5>
-                            </div>
-                            <div>
-                                <p class="current halfwhite">Oferta actual</p>
-                                <h5 class="size2 bold">0.005ETH</h5>
-                            </div>
-                        </div>
-                        <a class="bid size2 ta-center">
-                            Hacer una Oferta
-                        </a>
-                    </div>
-                </div>
-                <div>
-                    <p class="cardTotal">Total: {{Total}}</p>
-                    <div class="cardTotalBoton"><button class="btn bg-purple wallet">Confirmar compra</button></div>
-                </div>
             </div>
-        </section>
+            <div>
+                <p class="cardTotal">Total: ${{total}}</p>
+                <div class="cardTotalBoton"><button class="btn bg-purple wallet">Confirmar compra</button></div>
+            </div>
+        </div>
+    </section>
     <!-- La sección main finaliza aquí -->
 
 
@@ -161,7 +128,16 @@
     </footer>
     <!-- La sección de footer finaliza aquí -->
 
+    <!-- SCRIPTS DE VUE, AXIOS, ETC -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+    <!-- custom js file link -->
+    <script src="js/script.js"></script>
+
+    <!-- SCRIPT PARA TRAER DE LA API EL CARRITO ACTUAL DEL USUARIO -->
+    <script src="js/carrito.js"></script>
 
 </body>
 

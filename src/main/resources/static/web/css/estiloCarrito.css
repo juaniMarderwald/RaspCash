@@ -328,6 +328,10 @@ form{
   height: 30rem;
 }
 
+.carritoVacio{
+  display: flex;
+  flex-direction: column;
+}
 
 .bg-image {
     background-image: url(/img/background.jpg);
