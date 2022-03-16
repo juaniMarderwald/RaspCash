@@ -1,7 +1,8 @@
 var app = new Vue({
-    el: '#app',
+    el: '#appNFTs',
     data: {
-        nfts: {}
+        nfts: [],
+        obrasDestacadas:[]
     },
     created() {
         this.cargarDatos();
@@ -13,6 +14,8 @@ var app = new Vue({
                 .then(response => {
                     console.log(response.data);
                     this.nfts = response.data;
+                    this.obrasDestacadas= this.nfts.slice(10,15);
+                    console.log(this.obrasDestacadas);
                 })
                 .finally(function () {
                     const preload = document.querySelector(".preload");
@@ -27,6 +30,6 @@ var app = new Vue({
                     window.location.href = "login.html"
                 }
             })
-        }
+        }      
     }
 })

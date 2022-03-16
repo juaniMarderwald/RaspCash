@@ -205,7 +205,7 @@ https://i.ibb.co/WG4Gwwf/taza1.jpg
 				Producto nft1=new Producto("Cointelegraph1",1,"https://i.ibb.co/RgTWhrZ/1434-a-HR0c-HM6-Ly9z-My5jb2lud-GVs-ZWdy-YXBo-Lm-Nvb-S91c-Gxv-YWRz-Lz-Iw-Mj-Et-MTAv-MDI1-OWY3-N2-Et-O.webp",4000000," ",TipoProducto.NFT);
 				Producto nft2=new Producto("Niña Incendio",1,"https://i.ibb.co/RSrMnd0/2021051910175571146.jpg",1000000," ",TipoProducto.NFT);
 				Producto nft3=new Producto("Gato volador",1,"https://i.ibb.co/hVsBXGp/giphy.webp",2500000," ",TipoProducto.NFT);
-				Producto nft4=new Producto("Space Opens in New York",1,"https://i.ibb.co/TKxCRFk/https-hypebeast-com-image-2021-03-First-NFT-Art-Gallery-Space-Opens-in-New-York-b.jpg",10500000," ",TipoProducto.NFT);
+				Producto nft4=new Producto("Space New York",1,"https://i.ibb.co/TKxCRFk/https-hypebeast-com-image-2021-03-First-NFT-Art-Gallery-Space-Opens-in-New-York-b.jpg",1500000," ",TipoProducto.NFT);
 				Producto nft5=new Producto("Hot Rabbit",1,"https://i.ibb.co/6R6Hm5r/itdo-nft-que-son-como-funcionan.jpg",500000," ",TipoProducto.NFT);
 				Producto nft6=new Producto("Quick Fix Woman",1,"https://i.ibb.co/Vtc89xh/IYBJLIS4-FJKF5-PEBL5-LG7-WDMP4.jpg",2500000," ",TipoProducto.NFT);
 				Producto nft7=new Producto("Monkey Crystal Eyes",1,"https://i.ibb.co/F4BXjrz/mutant-975x1024-1-1.jpg",12000000," ",TipoProducto.NFT);

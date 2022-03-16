@@ -59,7 +59,7 @@
 
                     <div class="row col8 col9-md jc-between spacebottom4 jc-evenly-s col12-s">
                         <a href="#collections" class="btn bg-purple size2 white ">Explorar</a>
-                        <a href="#banner" class="btn bg-white10 size2 white ">Vender NFT</a>
+                        <!-- <a href="#banner" class="btn bg-white10 size2 white ">Vender NFT</a> -->
                     </div>
 
                     <div class="row jc-between">
@@ -98,24 +98,22 @@
     <!-- about section starts -->
     <section id="about" class="spacer10">
         <div class="container">
-            <h1 class="bold size4 ta-center">Sobre Nosotros</h1>
-            <p class="spacebottom3 halfwhite size2 ta-center">
-                Lorem ipsum dolor sit amet, consectetur<br>adipiscing elit.
-            </p>
+            <h1 class="bold size4 ta-center">NFTs</h1>
+            <!-- <p class="spacebottom3 halfwhite size2 ta-center">
+                Conocé más acerca de los NFTs
+            </p> -->
             <div class="row ai-center jc-between flexcol-s">
                 <div class="col5 col10-s spacebottom2-s">
                     <img src="img/about.png" class="img-responsive" alt="">
                 </div>
                 <div class="col6 col12-s ta-center-s">
                     <h3 class="size3 bold">Obtener NFT Populares</h3>
-                    <p class="size2 spacetop1 spacebottom3 halfwhite">Lorem ipsum dolor sit amet, consectetur adipiscing
-                        elit.
-                        Etiam eu turpis molestie, dictum est a, mattis tellus. Sed dignissim, metus nec fringilla
-                        accumsan, risus sem sollicitudin lacus, ut interdum tellus elit sed risus. Maecenas eget
-                        condimentum velit, sit amet feugiat lectus. Class aptent taciti sociosqu ad litora torquent per
-                        conubia nostra, per inceptos himenaeos.
-                    </p>
-                    <a href="#collections" class="btn bg-purple size2 white">Mostrar Más</a>
+                    <p class="size2 spacetop1 spacebottom3 halfwhite">Un token no fungible (NFT) es una unidad de datos
+                        no intercambiable almacenada en una Blockchain, que se
+                        puede comercializar. Los tipos de unidades de datos NFT pueden asociarse con
+                        archivos digitales como fotos, videos y audio. Debido a que cada token es identificable de forma
+                        única. Puedes obtener aquí los mejores NFTs del mercado a un precio increíble. <br>
+                        <a href="#collections" class="btn bg-purple size2 white">Mostrar Más</a>
                 </div>
             </div>
 
@@ -125,32 +123,33 @@
 
     <!-- collections section starts -->
     <section class="collections spacer10" id="collections">
-        <div class="container">
+        <div class="container" id="appNFTs">
             <h1 class="bold size4 ta-center">Colecciones</h1>
             <p class="spacebottom3 halfwhite size2 ta-center">
-                Lorem ipsum dolor sit amet, consectetur<br>adipiscing elit.
+                Conocé y obtené los NFTs más populares del mercado mundial.
             </p>
-            
-            <div class="row box-card jc-evenly-md">
-                <div class="col4 card collect bg-white10 col5-md col6-s" data-item="art">
-                    <img src="img/collection1.png" class="img-responsive" alt="">
+
+            <div class="row box-card jc-evenly-md" >
+                <div v-for="nft in nfts"class="col4 card collect bg-white10 col5-md col6-s" data-item="art">
+                    <img v-bind:src="nft.imagen" class="img-responsive" alt="">
                     <div class="row jc-between spacetop2">
-                        <div>
+                        <div>                           
                             <p class="size2 halfwhite">
-                                @Johny
+                                {{nft.nombre}}
                             </p>
-                            <h5 class="size2 bold">Yellow Red</h5>
+                            <h5 class="size2 bold">Stock: {{nft.stock }}</h5>
                         </div>
                         <div>
                             <p class="current halfwhite">Precio actual</p>
-                            <h5 class="size2 bold">0.005ETH</h5>
+                            <h5 class="size2 bold">$ {{nft.valor}} </h5>
                         </div>
                     </div>
                     <a class="bid size2 ta-center">
                         Añadir al carrito
                     </a>
                 </div>
-                <div class="col4 card collect bg-white10 col5-md col6-s" data-item="photograpy">
+                
+                <!-- <div class="col4 card collect bg-white10 col5-md col6-s" data-item="photograpy">
                     <img src="img/collection2.png" class="img-responsive" alt="">
                     <div class="row jc-between spacetop2">
                         <div>
@@ -296,7 +295,7 @@
                     <a class="bid size2 ta-center">
                         Añadir al carrito
                     </a>
-                </div>
+                </div> -->
             </div>
         </div>
     </section>
@@ -562,9 +561,18 @@
     </footer>
     <!-- footer section ends -->
 
+    <!-- SCRIPTS DE VUE, AXIOS, ETC -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+
+
     <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
     <!-- custom js file link -->
     <script src="js/script.js"></script>
+
+    <!-- SCRIPT PARA LA FUNCIONALIDAD DE TRAER LOS NFTS DE LA API-->
+    <script src="js/nft.js"></script>
+
 </body>
 
 </html>
