@@ -84,7 +84,7 @@ public class ImplementacionServicioUsuario implements ServicioUsuario {
 			Usuario usuario=new Usuario(correo, passwordEncoder.encode(password), nombre, apellido, apodo);
 			Carrito carrito= new Carrito();
 		    carritoRepositorio.save(carrito);
-			usuario.setIdCarritoActual(carrito.getId());
+			usuario.setCarrito(carrito);
 			//usuario.setBilletera(billetera);
 			//billetera.setUsuario(usuario);
 			usuarioRepositorio.save(usuario);

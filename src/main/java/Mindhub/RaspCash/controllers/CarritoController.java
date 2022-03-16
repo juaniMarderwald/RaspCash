@@ -64,11 +64,12 @@ public class CarritoController {
 
         Carrito carrito;
 
-        if (usuario.get) {
-            carrito = servicioCarrito.obtenerCarritoPorId(usuario.getIdCarritoActual());
+        if (Objects.isNull(usuario.getCarrito())){
+            carrito = usuario.getCarrito();
         } else {
             carrito = carritoRepositorio.save(new Carrito());
-            usuario.setIdCarritoActual(carrito.getId());
+            usuario.setCarrito(carrito);
+            carrito.setUsuario(usuario);
         }
 
         Producto producto = servicioProducto.obtenerProductoPorId(idProducto);
@@ -81,7 +82,6 @@ public class CarritoController {
             return new ResponseEntity<>("No hay stock disponible para el producto que intenta añadir al carrito",
                     HttpStatus.FORBIDDEN);
         }
-
 
         ProductoUsuario productoUsuarioAlCarrito = new ProductoUsuario(producto, carrito, EstadoProducto.EN_CARRITO);
 

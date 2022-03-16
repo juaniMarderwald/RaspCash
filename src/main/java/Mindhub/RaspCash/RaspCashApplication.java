@@ -2,7 +2,6 @@ package Mindhub.RaspCash;
 
 import Mindhub.RaspCash.models.*;
 import Mindhub.RaspCash.respositories.*;
-import Mindhub.RaspCash.servicios.implementacionesServicios.EmailSenderServiceImplementation;
 import Mindhub.RaspCash.utilidades.Utilidades;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
@@ -22,8 +21,6 @@ public class RaspCashApplication {
 	@Autowired
 	private PasswordEncoder passwordEncoder;
 
-	@Autowired
-	private EmailSenderServiceImplementation senderService;
 
 	public static void main(String[] args) {
 		SpringApplication.run(RaspCashApplication.class, args);
@@ -86,19 +83,19 @@ public class RaspCashApplication {
 
 			Carrito carrito1= new Carrito();
 			carritoRepositorio.save(carrito1);
-		    usuario1.setIdCarritoActual(carrito1.getId());
+		    usuario1.setCarrito(carrito1);
 
 			Carrito carrito2= new Carrito();
 			carritoRepositorio.save(carrito2);
-			usuario2.setIdCarritoActual(carrito2.getId());
+			usuario2.setCarrito(carrito2);
 
 			Carrito carrito3= new Carrito();
 			carritoRepositorio.save(carrito3);
-			usuario3.setIdCarritoActual(carrito3.getId());
+			usuario3.setCarrito(carrito3);
 
 			Carrito carritoAdmin= new Carrito();
 			carritoRepositorio.save(carritoAdmin);
-			usuarioAdmin.setIdCarritoActual(carritoAdmin.getId());
+			usuarioAdmin.setCarrito(carritoAdmin);
 
 			usuarioRepositorio.save(usuario1);
 			usuarioRepositorio.save(usuario2);

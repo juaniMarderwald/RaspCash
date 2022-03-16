@@ -1,16 +1,13 @@
 package Mindhub.RaspCash.models;
 
 import org.hibernate.annotations.GenericGenerator;
-import org.hibernate.annotations.Parent;
 
+import lombok.Getter;
 import javax.persistence.*;
-
-import java.util.ArrayList;
 import java.util.HashSet;
-import java.util.List;
 import java.util.Set;
 
-
+@Getter
 @Entity
 public class Usuario {
 	
@@ -24,11 +21,10 @@ public class Usuario {
     private String nombre;
     private String apellido;
     private String apodo;
-    private long idCarritoActual;
 
-   /* @OneToOne
+    @OneToOne
     @JoinColumn(name = "carrito_id")
-    private Carrito carrito = new Carrito();*/
+    private Carrito carrito;
 
     @OneToOne
     @JoinColumn(name = "billetera_id")
@@ -64,6 +60,13 @@ public class Usuario {
 
     public String getEmail() {
 		return this.email;
+	}
+
+    public Carrito getCarrito() {
+		return this.carrito;
+	}
+    public void setCarrito(Carrito carrito) {
+		this.carrito = carrito;
 	}
 
 	public String getPassword() {
@@ -147,14 +150,5 @@ public class Usuario {
     public void agregarProductoComprado(ProductoUsuario productoUsuario){
         this.productos.add(productoUsuario);
     }
-
-    public void setIdCarritoActual(long idCarritoActual){
-        this.idCarritoActual=idCarritoActual;
-    }
-
-    public long getIdCarritoActual(){
-        return this.idCarritoActual;
-    }
-
 
 }

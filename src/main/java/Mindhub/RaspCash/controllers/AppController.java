@@ -1,13 +1,10 @@
 package Mindhub.RaspCash.controllers;
 
-import Mindhub.RaspCash.models.Billetera;
-import Mindhub.RaspCash.utilidades.Utilidades;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
-import Mindhub.RaspCash.respositories.UsuarioRepositorio;
 import Mindhub.RaspCash.servicios.ServicioUsuario;
 
 import javax.mail.MessagingException;

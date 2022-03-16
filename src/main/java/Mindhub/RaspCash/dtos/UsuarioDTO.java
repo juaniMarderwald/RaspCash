@@ -1,8 +1,7 @@
 package Mindhub.RaspCash.dtos;
 
-import Mindhub.RaspCash.models.PrestamoUsuario;
+import Mindhub.RaspCash.models.Carrito;
 import Mindhub.RaspCash.models.Usuario;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 
 import java.util.ArrayList;
@@ -21,7 +20,7 @@ public class UsuarioDTO {
     private BilleteraDTO billetera;
     private List<PrestamoUsuarioDTO> prestamos=new ArrayList<>();
     private Set<ProductoUsuarioDTO> productosAdquiridos=new HashSet<>();
-    private long idCarritoActual;
+    private Carrito carrito;
 
 
     public UsuarioDTO(Usuario usuario) {
@@ -33,7 +32,7 @@ public class UsuarioDTO {
         this.billetera=new BilleteraDTO(usuario.getBilletera());
         this.prestamos=usuario.getPrestamos().stream().map(PrestamoUsuarioDTO::new).collect(Collectors.toList());
         this.productosAdquiridos=usuario.getProductosComprados().stream().map(ProductoUsuarioDTO::new).collect(Collectors.toSet());
-        this.idCarritoActual=usuario.getIdCarritoActual();
+        this.carrito = usuario.getCarrito();
     }
 
     public long getId() {
@@ -68,5 +67,5 @@ public class UsuarioDTO {
         return productosAdquiridos;
     }
 
-    public long getIdCarritoActual() {return idCarritoActual;}
+    public Carrito getCarrito() {return carrito;}
 }

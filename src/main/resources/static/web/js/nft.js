@@ -20,7 +20,8 @@ var app = new Vue({
                 });
         },
         agregarProductoAlCarrito(idProducto) {
-            axios.post('/api/carrito/producto', `idProducto=${idProducto}`).then(response => app.cargarDatos()).catch(error => {
+            axios.post('/api/carrito/producto', `idProducto=${idProducto}`).then(response => {app.cargarDatos();
+            alert(response.data)}).catch(error => {
                 alert(error.response.data);
                 if (error.response.data == "No hay un usuario logueado") {
                     window.location.href = "login.html"

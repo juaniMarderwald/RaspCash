@@ -2,9 +2,12 @@ package Mindhub.RaspCash.models;
 
 import org.hibernate.annotations.GenericGenerator;
 
+import lombok.Getter;
+
 import javax.persistence.*;
 import java.util.*;
 
+@Getter
 @Entity
 public class Carrito {
 
@@ -15,6 +18,10 @@ public class Carrito {
 
     @OneToMany(mappedBy = "carrito_id", fetch = FetchType.EAGER)
     private Set<ProductoUsuario> productosEnCarrito=new HashSet<>();
+
+    @OneToOne
+    @JoinColumn(name = "usuario_id")
+    private Usuario usuario;
 
     private double total;
 
@@ -37,6 +44,14 @@ public class Carrito {
 
     public double getTotal() {
         return total;
+    }
+
+    public Usuario getUsuario(){
+        return usuario;
+    }
+
+    public void setUsuario(Usuario usuario){
+        this.usuario = usuario;
     }
 
     public void vaciarCarrito(){

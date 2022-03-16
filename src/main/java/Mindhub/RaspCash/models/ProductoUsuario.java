@@ -2,8 +2,11 @@ package Mindhub.RaspCash.models;
 
 import org.hibernate.annotations.GenericGenerator;
 
+import lombok.Getter;
+
 import javax.persistence.*;
 
+@Getter
 @Entity
 public class ProductoUsuario {
 
