@@ -10,8 +10,8 @@
 
 
     <!--Estilos CSS-->
-    <link rel="stylesheet" href="./css/preload.css">
     <link rel="stylesheet" href="css/estiloCarrito.css">
+
     <link rel="stylesheet" href="css/style.css">
 
     <!--FAVICON-->
@@ -40,7 +40,7 @@
         </div>
     </header>
     <!-- El header comienza aquí -->
-<div id="app">
+
     <!-- La sección main comienza aquí -->
         <section class="collections spacer10" id="collections">
             <div class="container">
@@ -48,32 +48,73 @@
                 <p class="spacebottom3 halfwhite size2 ta-center">
                     Los mejores productos al mejor precio.
                 </p>
-                <div class="row box-card jc-evenly-md" >
-                    <div class="col4 card collect bg-white10 col5-md col6-s" data-item="art" v-for="item in productos">
-                        <img :src="item.imagen" class="img-responsive" alt="">
+                <div class="row box-card jc-evenly-md">
+                    <div class="col4 card collect bg-white10 col5-md col6-s" data-item="art">
+                        <img src="img/merch/remera.jpg" class="img-responsive" alt="">
                         <div class="row jc-between spacetop2">
                             <div>
                                 <p class="size2 halfwhite">
 
                                 </p>
-                                <h5 class="size2 bold">{{item.nombre}}</h5>
+                                <h5 class="size2 bold">Remera</h5>
                             </div>
                             <div>
                                 <p class="current halfwhite">Precio</p>
-                                <h5 class="size2 bold">{{item.valorPagado}}$</h5>
+                                <h5 class="size2 bold">$500</h5>
                             </div>
                             <div>
                                 <p class="current halfwhite">Stock</p>
-                                <h5 class="size2 bold">{{item.stock}}</h5>
+                                <h5 class="size2 bold">5 u</h5>
                             </div>
                         </div>
                         <a class="bid size2 ta-center">
                             Comprar
                         </a>
                     </div>
+                    <div class="col4 card collect bg-white10 col5-md col6-s" data-item="photograpy">
+                        <img src="img/merch/libreta2.jpg" class="img-responsive" alt="">
+                        <div class="row jc-between spacetop2">
+                            <div>
+                                <p class="size2 halfwhite">
+
+                                </p>
+                                <h5 class="size2 bold">Libreta</h5>
+                            </div>
+                            <div>
+                                <p class="current halfwhite">Precio</p>
+                                <h5 class="size2 bold">$500</h5>
+                            </div>
+                            <div>
+                                <p class="current halfwhite">Stock</p>
+                                <h5 class="size2 bold">5 u</h5>
+                            </div>
+                        </div>
+                        <a class="bid size2 ta-center">
+                            Comprar
+                        </a>
+                    </div>
+
+                    <div class="col4 card collect bg-white10 col5-md col6-s" data-item="photograpy">
+                        <img src="img/collection5.png" class="img-responsive" alt="">
+                        <div class="row jc-between spacetop2">
+                            <div>
+                                <p class="size2 halfwhite">
+                                    @Johny
+                                </p>
+                                <h5 class="size2 bold">Yellow Red</h5>
+                            </div>
+                            <div>
+                                <p class="current halfwhite">Oferta actual</p>
+                                <h5 class="size2 bold">0.005ETH</h5>
+                            </div>
+                        </div>
+                        <a class="bid size2 ta-center">
+                            Hacer una Oferta
+                        </a>
+                    </div>
                 </div>
                 <div>
-                    <p class="cardTotal">Total: ${{carrito.montoTotal}} </p>
+                    <p class="cardTotal">Total: {{Total}}</p>
                     <div class="cardTotalBoton"><button class="btn bg-purple wallet">Confirmar compra</button></div>
                 </div>
             </div>
@@ -120,19 +161,7 @@
     </footer>
     <!-- La sección de footer finaliza aquí -->
 
- <!-- preload -->
- <div class="preload">
-    <div class="loadingio-spinner-spin-ecbmbwwrxu8"><div class="ldio-vh027wh0dx">
-        <div><div></div></div><div><div></div></div><div><div></div></div><div><div></div></div><div><div></div></div><div><div></div></div><div><div></div></div><div><div></div></div>
-        </div></div>
-    </div>
 
-</div>
-
-    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <!-- custom js file link -->
-    <script src="./js/carrito.js"></script>
 
 </body>
 

@@ -18,7 +18,6 @@
 
     <!-- custom css link -->
     <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="./css/preload.css">
     <!--FAVICON-->
     <link rel="shortcut icon" href="img/Logoje.png">
     <title>RaspCash</title>
@@ -43,7 +42,7 @@
         </div>
     </header>
     <!-- header section ends -->
-<div id="app">
+
     <!-- home section starts -->
     <section id="home" class="spacetop15 spacebottom10">
         <div class="container">
@@ -131,12 +130,7 @@
             <p class="spacebottom3 halfwhite size2 ta-center">
                 Lorem ipsum dolor sit amet, consectetur<br>adipiscing elit.
             </p>
-            <div class="row spacebottom3 filter-buttons">
-                <div class="col3 filter col6-xs spacebottom1-xs" data-filter="all">Todos</div>
-                <div class="col3 filter col6-xs spacebottom1-xs" data-filter="art">Arte</div>
-                <div class="col3 filter col6-xs" data-filter="photograpy">Fotografía</div>
-                <div class="col3 filter col6-xs" data-filter="pattern">Patrones</div>
-            </div>
+            
             <div class="row box-card jc-evenly-md">
                 <div class="col4 card collect bg-white10 col5-md col6-s" data-item="art">
                     <img src="img/collection1.png" class="img-responsive" alt="">
@@ -303,27 +297,6 @@
                         Añadir al carrito
                     </a>
                 </div>
-                <div class="col4 card collect bg-white10 col5-md col6-s" data-item="pattern" v-for="item in nfts">
-                    <img :src="item.imagen" class="img-responsive" alt="">
-                    <div class="row jc-between spacetop2">
-                        <div>
-                            <p class="size2 halfwhite">
-                                @Johny
-                            </p>
-                            <h5 class="size2 bold">{{item.nombre}}</h5>
-                        </div>
-                        <div>
-                            <p class="current halfwhite">Precio actual</p>
-                            <h5 class="size2 bold">{{item.valor}}$</h5>
-                        </div>
-                    </div>
-                    <a v-show="item.stock" @click="agregarProductoAlCarrito(item.id)" class="bid size2 ta-center">
-                        Añadir al carrito
-                    </a>
-                    <a v-show="!item.stock" class="bid size2 ta-center">
-                        Sin stock
-                    </a>
-                </div>
             </div>
         </div>
     </section>
@@ -467,18 +440,6 @@
                             <button class="follow ta-center bg-purple white">+ Seguir</button>
                         </div>
                     </div>
-
-                    <div class="col4 col5-md col7-s swiper-slide">
-                        <div class="card-creator bg-white10 ta-center">
-                            <img src="img/creator3.png" class="img-responsive" alt="">
-                            <img src="img/photo3.png" class="photo" alt="">
-                            <h5 class="spacer1 size2 bold">John Wick</h5>
-                            <p class="spacebottom2 halfwhite desc">Lorem ipsum dolor sit amet,
-                                consectetur<br>adipiscing
-                                elit.</p>
-                            <button class="follow ta-center bg-purple white">+ Seguir</button>
-                        </div>
-                    </div>
                 </div>
 
             </div>
@@ -601,22 +562,9 @@
     </footer>
     <!-- footer section ends -->
 
-
-    <!-- preload -->
-<div class="preload">
-    <div class="loadingio-spinner-spin-ecbmbwwrxu8"><div class="ldio-vh027wh0dx">
-        <div><div></div></div><div><div></div></div><div><div></div></div><div><div></div></div><div><div></div></div><div><div></div></div><div><div></div></div><div><div></div></div>
-        </div></div>
-    </div>
-
-</div>
-
     <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
     <!-- custom js file link -->
     <script src="js/script.js"></script>
-    <script src="./js/nft.js"></script>
 </body>
 
 </html>

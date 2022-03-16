@@ -6,6 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
     <!-- swiperjs cdn link -->
     <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
     <!-- font awesome cdn link -->
@@ -20,7 +22,8 @@
 
     <!-- custom css link -->
     <link rel="stylesheet" href="css/style.css" />
-    <link rel="stylesheet" href="css/style2.css" />
+    <link rel="stylesheet" href="css/estilos.css" />
+    <link rel="stylesheet" href="css/normalize.css" />
 
     <!--FAVICON-->
     <link rel="shortcut icon" href="img/Logoje.png">
@@ -34,13 +37,14 @@
             <a href="index.html" class="logo bold white">Rasp<span class="lightpurple">Cash</span></a>
 
             <div class="menu">
-                
+
                 <a href="NFT.html">NFT</a>
                 <a href="Crypto.html">Cripto</a>
                 <a href="DeFi.html">DeFi</a>
                 <a href="merchandasing.html">Productos</a>
+                <a href="#">Usuario <i class="fas fa-user-alt"></i></a>
                 <a href="carrito.html"><span>🛒</span></a>
-                <div class="btn bg-purple wallet">Seleccionar Billetera</div>
+                <a href="index.html"><i class="fa-solid fa-right-from-bracket"></i></a>
             </div>
 
             <div class="fas fa-wallet" id="wallet"></div>
@@ -55,8 +59,8 @@
             <div class="row jc-between ai-center col-reverse-s">
                 <div class="col5 col6-md col12-s ta-center-s">
                     <h1 class="size5 bold spacebottom1">
-                        Comprar & Vender
-                        Criptomonedas
+                        Swap Tokens y
+                        Solicitiar Smart Contracts
                     </h1>
                     <p class="size2 spacebottom3 halfwhite">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
                         Nunc
@@ -65,9 +69,8 @@
                     </p>
                     <br>
                     <div class="row col12 col9-md jc-between spacebottom4 jc-evenly-s col12-s">
-                        <a href="#" class="btn bg-purple size2 white ">Explorar</a>
-                        <a href="#" class="btn bg-white10 size2 white ">Comprar</a>
-                        <a href="#" class="btn bg-white10 size2 white ">Vender</a>
+                        <a href="#loan" class="btn bg-purple size2 white ">Solicitiar Prestamos</a>
+                        <a href="#swap" class="btn bg-white10 size2 white ">Swap Tokens</a>
                     </div>
                 </div>
                 <div class="col6 col12-s spacebottom3-s">
@@ -78,29 +81,44 @@
     </section>
     <!-- home section ends -->
 
-    <!-- panel crypto start -->
-
-    <!-- NAVBAR -->
-    <section id="content">
-        <!-- MAIN -->
-        <main>
-            <div class="info-data">
-                <div class="card">
-                    <div class="head">
-                        <div>
-                            <h2>Balance de cuenta</h2>
-                            <p>0.005 BTC</p>
-                        </div>
-                    </div>
-                    
-                </div>
+    <!-- Swap start -->
+    <main id="swap" class="flex">
+        <article class="card">
+            <div class="card-body">
+                <h1>Swap</h1>
+                <p>Una manera facil y sencilla de cambiar tus Tokens</p>
             </div>
+            <div class="card-footer">
+                <form action="">
+                    <input type="number" placeholder="Cantidad a cambiar">
+                    <select required>
+                        <option value="">BTC</option>
+                        <option value="">Pesos</option>
+                    </select>
+                </form>
+            </div>
+            <h2>Recibiras: {{Monto}}</h2>
+        </article>
+    </main>
+    <!-- Swap Ends -->
 
-        </main>
-        <!-- MAIN -->
-    </section>
-    <!-- NAVBAR -->
-
+    <!-- Loan Start -->
+    <main id="loan" class="flex">
+        <article class="card">
+            <div class="card-body">
+                <h1>Solicitar Prestamos</h1>
+                <p>Los mejores prestamos DeFi bajo Smart Contracts</p>
+            </div>
+            <div class="card-footer">
+                <form action="">
+                    <input type="number" placeholder="BTC a depositar">
+                </form>
+            </div>
+            <p class="float-span">*Deberas depositar al menos 0.005BTC</p>
+            <h2>Recibiras: {{Monto}}</h2>
+        </article>
+    </main>
+    <!-- Loan End -->
 
     <!-- FAQ section starts -->
     <section class="spacer10" id="faq">
