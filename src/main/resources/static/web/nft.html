@@ -120,36 +120,36 @@
         </div>
     </section>
     <!-- about section ends -->
+    <div id="appNFTs">
+        <!-- collections section starts -->
+        <section class="collections spacer10" id="collections">
+            <div class="container">
+                <h1 class="bold size4 ta-center">Colecciones</h1>
+                <p class="spacebottom3 halfwhite size2 ta-center">
+                    Conocé y obtené los NFTs más populares del mercado mundial.
+                </p>
 
-    <!-- collections section starts -->
-    <section class="collections spacer10" id="collections">
-        <div class="container" id="appNFTs">
-            <h1 class="bold size4 ta-center">Colecciones</h1>
-            <p class="spacebottom3 halfwhite size2 ta-center">
-                Conocé y obtené los NFTs más populares del mercado mundial.
-            </p>
-
-            <div class="row box-card jc-evenly-md" >
-                <div v-for="nft in nfts"class="col4 card collect bg-white10 col5-md col6-s" data-item="art">
-                    <img v-bind:src="nft.imagen" class="img-responsive" alt="">
-                    <div class="row jc-between spacetop2">
-                        <div>                           
-                            <p class="size2 halfwhite">
-                                {{nft.nombre}}
-                            </p>
-                            <h5 class="size2 bold">Stock: {{nft.stock }}</h5>
+                <div class="row box-card jc-evenly-md">
+                    <div v-for="nft in nfts" class="col4 card collect bg-white10 col5-md col6-s" data-item="art">
+                        <img v-bind:src="nft.imagen" class="img-responsive" alt="">
+                        <div class="row jc-between spacetop2">
+                            <div>
+                                <p class="size2 halfwhite">
+                                    {{nft.nombre}}
+                                </p>
+                                <h5 class="size2 bold">Stock: {{nft.stock }}</h5>
+                            </div>
+                            <div>
+                                <p class="current halfwhite">Precio actual</p>
+                                <h5 class="size2 bold">$ {{nft.valor}} </h5>
+                            </div>
                         </div>
-                        <div>
-                            <p class="current halfwhite">Precio actual</p>
-                            <h5 class="size2 bold">$ {{nft.valor}} </h5>
-                        </div>
+                        <a class="bid size2 ta-center">
+                            Añadir al carrito
+                        </a>
                     </div>
-                    <a class="bid size2 ta-center">
-                        Añadir al carrito
-                    </a>
-                </div>
-                
-                <!-- <div class="col4 card collect bg-white10 col5-md col6-s" data-item="photograpy">
+
+                    <!-- <div class="col4 card collect bg-white10 col5-md col6-s" data-item="photograpy">
                     <img src="img/collection2.png" class="img-responsive" alt="">
                     <div class="row jc-between spacetop2">
                         <div>
@@ -296,106 +296,47 @@
                         Añadir al carrito
                     </a>
                 </div> -->
-            </div>
-        </div>
-    </section>
-    <!-- collections section ends -->
-
-    <!-- featured section starts -->
-    <section class="featured spacer10" id="featured">
-        <div class="container">
-            <h1 class="bold size4 ta-center">Obras Destacadas</h1>
-            <p class="spacebottom3 halfwhite size2 ta-center">
-                Lorem ipsum dolor sit amet, consectetur<br>adipiscing elit.
-            </p>
-            <div class="swiper card-slider row">
-                <div class="swiper-wrapper">
-                    <div class="col4 col5-md col7-s swiper-slide">
-                        <div class="card bg-white10">
-                            <img src="img/collection4.png" class="img-responsive" alt="">
-                            <div class="row jc-between spacetop2">
-                                <div>
-                                    <p class="size2 halfwhite">
-                                        @Johny
-                                    </p>
-                                    <h5 class="size2 bold">Yellow Red</h5>
-                                </div>
-                                <div>
-                                    <p class="current halfwhite">Precio actual</p>
-                                    <h5 class="size2 bold">0.005ETH</h5>
-                                </div>
-                            </div>
-                            <a class="bid size2 ta-center">
-                                Añadir al carrito
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col4 col5-md col7-s swiper-slide">
-                        <div class="card bg-white10">
-                            <img src="img/collection5.png" class="img-responsive" alt="">
-                            <div class="row jc-between spacetop2">
-                                <div>
-                                    <p class="size2 halfwhite">
-                                        @Johny
-                                    </p>
-                                    <h5 class="size2 bold">Yellow Red</h5>
-                                </div>
-                                <div>
-                                    <p class="current halfwhite">Precio actual</p>
-                                    <h5 class="size2 bold">0.005ETH</h5>
-                                </div>
-                            </div>
-                            <a class="bid size2 ta-center">
-                                Añadir al carrito
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col4 col5-md col7-s swiper-slide">
-                        <div class="card bg-white10">
-                            <img src="img/collection6.png" class="img-responsive" alt="">
-                            <div class="row jc-between spacetop2">
-                                <div>
-                                    <p class="size2 halfwhite">
-                                        @Angel
-                                    </p>
-                                    <h5 class="size2 bold">An Angel</h5>
-                                </div>
-                                <div>
-                                    <p class="current halfwhite">Precio actual</p>
-                                    <h5 class="size2 bold">0.005ETH</h5>
-                                </div>
-                            </div>
-                            <a class="bid size2 ta-center">
-                                Añadir al carrito
-                            </a>
-                        </div>
-                    </div>
-                    <div class="col4 col5-md col7-s swiper-slide">
-                        <div class="card bg-white10">
-                            <img src="img/collection1.png" class="img-responsive" alt="">
-                            <div class="row jc-between spacetop2">
-                                <div>
-                                    <p class="size2 halfwhite">
-                                        @Angel
-                                    </p>
-                                    <h5 class="size2 bold">An Angel</h5>
-                                </div>
-                                <div>
-                                    <p class="current halfwhite">Precio actual</p>
-                                    <h5 class="size2 bold">0.005ETH</h5>
-                                </div>
-                            </div>
-                            <a class="bid size2 ta-center">
-                                Añadir al carrito
-                            </a>
-                        </div>
-                    </div>
-
                 </div>
             </div>
-        </div>
-    </section>
-    <!-- featured section ends -->
+        </section>
+        <!-- collections section ends -->
+
+        <!-- featured section starts -->
+        <section class="featured spacer10" id="featured">
+            <div class="container">
+                <h1 class="bold size4 ta-center">Obras Destacadas</h1>
+                <p class="spacebottom3 halfwhite size2 ta-center">
+                    Lorem ipsum dolor sit amet, consectetur<br>adipiscing elit.
+                </p>
+                <div class="swiper card-slider row">
+                    <div class="swiper-wrapper">
+                        <div  class="col4 col5-md col7-s swiper-slide">
+                            <div v-for="obraDestacada in obrasDestacadas" class="card bg-white10">
+                                <img v-bind:src="obraDestacada.imagen" class="img-responsive" alt="">
+                                <div class="row jc-between spacetop2">
+                                    <div>
+                                        <p class="size2 halfwhite">
+                                            {{obraDestacada.nombre}}
+                                        </p>
+                                        <h5 class="size2 bold">Stock: {{obraDestacada.stock}}</h5>
+                                    </div>
+                                    <div>
+                                        <p class="current halfwhite">Precio actual</p>
+                                        <h5 class="size2 bold">${{obraDestacada.valor}}</h5>
+                                    </div>
+                                </div>
+                                <a class="bid size2 ta-center">
+                                    Añadir al carrito
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- featured section ends -->
+    </div>
+
 
     <!-- creator section starts -->
     <section class="creator spacer10" id="featured">
