@@ -6,5 +6,5 @@ import javax.mail.MessagingException;
 
 @Service
 public interface EmailSenderService {
-    public void sendSimpleEmailTo(String ReceptorEmail, String  MensajeAenviar, String tema,String archivoAdjunto) throws MessagingException;
+    public void sendSimpleEmailTo(String ReceptorEmail, String  MensajeAenviar, String tema);
 }

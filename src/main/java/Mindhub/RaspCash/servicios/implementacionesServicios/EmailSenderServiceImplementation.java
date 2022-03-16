@@ -1,5 +1,6 @@
 package Mindhub.RaspCash.servicios.implementacionesServicios;
 
+import Mindhub.RaspCash.models.Usuario;
 import Mindhub.RaspCash.respositories.UsuarioRepositorio;
 import Mindhub.RaspCash.servicios.EmailSenderService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -23,9 +24,9 @@ public class EmailSenderServiceImplementation implements EmailSenderService {
     UsuarioRepositorio usuarioRepositorio;
 
     //Metodo para enviar un mail
-    public void sendSimpleEmailTo(String ReceptorEmail,String  MensajeAenviar, String tema ){
+    public void sendSimpleEmailTo(String ReceptorEmail, String MensajeAenviar, String tema) {
 
-        SimpleMailMessage message= new SimpleMailMessage();
+        SimpleMailMessage message = new SimpleMailMessage();
 
         message.setFrom("RaspCashCrypto@gmail.com");
         message.setTo(ReceptorEmail);
@@ -33,28 +34,9 @@ public class EmailSenderServiceImplementation implements EmailSenderService {
         message.setSubject(tema);
 
 
-
         mailSender.send(message);
         System.out.println("Email enviado ...");
 
-
-    }
-    public void sendSimpleEmailTo(String ReceptorEmail,String  MensajeAenviar, String tema ,String archivoAdjunto) throws MessagingException {
-
-        MimeMessage mimeMessage= mailSender.createMimeMessage();
-
-        MimeMessageHelper mimeMessageHelper=new MimeMessageHelper(mimeMessage,true);
-
-        mimeMessageHelper.setFrom("RaspCashCrypto@gmail.com");
-        mimeMessageHelper.setTo(ReceptorEmail);
-        mimeMessageHelper.setText(MensajeAenviar);
-        mimeMessageHelper.setSubject(tema);
-
-        FileSystemResource fileSystem=new FileSystemResource(new File(archivoAdjunto));
-        mimeMessageHelper.addAttachment(fileSystem.getFilename(),fileSystem);
-
-        mailSender.send(mimeMessage);
-        System.out.println("Email enviado ...");
-
+        Usuario usuario=usuarioRepositorio.findByEmail(ReceptorEmail);
     }
 }

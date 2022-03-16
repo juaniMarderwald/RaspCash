@@ -94,7 +94,7 @@ public class ImplementacionServicioUsuario implements ServicioUsuario {
 
 			billeteraRepositorio.save(billetera);
 
-			//emailSenderService.sendSimpleEmailTo(correo,"Se ha creado el usuario exitosamente","CREACION DE USUARIO EN RASPCASH","\\RaspCash\\src\\main\\resources\\static\\web\\img\\Logo.png");
+			emailSenderService.sendSimpleEmailTo(correo,"Se ha creado el usuario exitosamente","CREACION DE USUARIO EN RASPCASH");
 
 			return new ResponseEntity<>("Registro de usuario realizado con éxito", HttpStatus.CREATED);
 	}
