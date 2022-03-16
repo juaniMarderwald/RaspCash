@@ -131,12 +131,12 @@ public class RaspCashApplication {
 		List<Integer> cuotasTradicional= new ArrayList<>();
 		List<Integer> cuotasPersonal= new ArrayList<>();
 
-		cuotasTradicional.add(6);
-		cuotasTradicional.add(12);
-		cuotasTradicional.add(18);
+		cuotasTradicional.add(6,12);
+		cuotasTradicional.add(12,18);
+		cuotasTradicional.add(18,24);
 
-		cuotasPersonal.add(6);
-		cuotasPersonal.add(12);
+		cuotasPersonal.add(6,18);
+		cuotasPersonal.add(12,24);
 
 		Prestamo prestamoTradicional = new Prestamo("Tradicional Bitcoin",0.11,0.3,1,cuotasTradicional);
 		Prestamo prestamoTrader=new Prestamo("Trader Bitcoin",0.22,0.6,1.5,cuotasPersonal);

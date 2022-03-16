@@ -4,7 +4,12 @@ var appDeFi = new Vue({
         direccionBilletera: "",
         montoPesos: "",
         montoEnBTC: "",
-        tipoDeSwap: ""
+        tipoDeSwap: "",
+
+        monto: "",
+        cuotas: [],
+        billeteraDestino: [],
+        nombrePrestamo: [],
 
     },
     created() {
@@ -15,7 +20,18 @@ var appDeFi = new Vue({
             axios.post("/api/transaccion/swap", "direccionBilletera=" + this.direccionBilletera + "&montoPesos=" + thi.montoPesos + "&montoEnBTC=" + this.montoEnBTC + "&tipoDeSwap=" + this.tipoDeSwap)
                 .then
             window.alert("Transaccion realizada!!")
+        },
+        pedirPrestamo() {
+            axio.post("/api/prestamo") {
+                xios.post("/api/loans", {
+                    "monto": this.monto,
+                    "cuotas ": this.cuotas,
+                    "billeteraDestino": this.billeteraDestino,
+                    "nombrePrestamo ": this.nombrePrestamo
+                })
+            }
         }
+
     }
 
 
