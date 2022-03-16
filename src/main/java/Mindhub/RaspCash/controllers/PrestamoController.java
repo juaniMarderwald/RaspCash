@@ -40,7 +40,7 @@ public class PrestamoController {
     }
 
     @Transactional
-    @PostMapping("/prestamo")
+    @PostMapping("/prestamos")
     public ResponseEntity<Object> asignarPrestamo(@RequestBody AplicacionPrestamoUsuarioDTO aplicacionPrestamoUsuarioDTO, Authentication authentication){
 
         Prestamo prestamo = servicioPrestamo.encontrarPrestamoPorNombre(aplicacionPrestamoUsuarioDTO.getNombrePrestamo());
