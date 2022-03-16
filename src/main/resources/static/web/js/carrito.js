@@ -1,7 +1,8 @@
 var app = new Vue({
     el: '#app',
     data: {
-        carrito: {}
+        carrito: {},
+        productos: {}
     },
     created() {
         this.cargarDatos();
@@ -12,6 +13,7 @@ var app = new Vue({
             axios.get('/api/carrito/current')
                 .then(response => {
                     this.carrito = response.data;
+                    this.productos = this.carrito.productos;
                     console.log(response.data);
                 }).catch(error => console.log(error.response.data))
                 .finally(function () {

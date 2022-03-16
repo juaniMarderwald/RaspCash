@@ -70,6 +70,10 @@ public class ProductoUsuario {
         return this.id;
     }
 
+    public int getStock(){
+        return this.producto.getStock();
+    }
+
     public void setUsuarioDuenio(Usuario usuarioDuenio) {
         this.usuarioDuenio = usuarioDuenio;
     }

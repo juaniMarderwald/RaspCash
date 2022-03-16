@@ -15,8 +15,7 @@ public class ProductoUsuarioDTO {
     private String descripcion;
     private double valorPagado;
     private EstadoProducto estadoProducto;
-
-
+    private int stock;
 
     public ProductoUsuarioDTO(ProductoUsuario productoUsuario) {
         this.id= productoUsuario.getId();
@@ -26,6 +25,7 @@ public class ProductoUsuarioDTO {
         this.descripcion=productoUsuario.getDescripcion();
         this.valorPagado=productoUsuario.getPrecio();
         this.estadoProducto=productoUsuario.getEstadoProducto();
+        this.stock = productoUsuario.getStock();
     }
 
     public long getId() {
