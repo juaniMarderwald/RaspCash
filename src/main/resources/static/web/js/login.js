@@ -41,7 +41,8 @@ var app = new Vue({
                     'content-type': 'application/x-www-form-urlencoded'
                 }
             }).then(response => {
-                window.location.href = "nft.html"
+                this.iniciarSesion();
+                window.location.href = "/web/nft.html"
             }).catch(error => {
                 alert(error.response.data);
             })
@@ -51,9 +52,7 @@ var app = new Vue({
 
         CerraSeccion() {
             axios.post(`/api/logout`)
-
             .then(response => window.alert('GRACIAS POR LA VISITA!! :D'))
-                .then
             return (window.location.href = "/index.html")
 
         },

@@ -51,22 +51,23 @@
             <div id="login" class="container">
                 <div class="row justify-content-center pt-5 mt-5 m-1">
                     <div class="col-md-6 col-sm-8 col-xl-4 col-lg-5 formulario">
-                        
-                            <div class="form-group text-center pt-3">
-                                <h1 class="text-light">INICIAR SESIÓN</h1>
-                            </div>
-                            <div class="form-group mx-sm-4 pt-3">
-                                <input v-model="correo" type="text" class="form-control" placeholder="Ingrese su Usuario">
-                                {{correo}}
-                            </div>
-                            <div class="form-group mx-sm-4 pb-3">
-                                <input v-model="password" type="password" class="form-control" placeholder="Ingrese su Contraseña">
-                            </div>
-                            <div class="form-group mx-sm-4 pb-2">
-                                <a @click="iniciarSesion()" class="btn btn-block ingresar">INGRESAR</a>
-                            </div>
 
-                        
+                        <div class="form-group text-center pt-3">
+                            <h1 class="text-light">INICIAR SESIÓN</h1>
+                        </div>
+                        <div class="form-group mx-sm-4 pt-3">
+                            <input v-model="correo" type="text" class="form-control" placeholder="Ingrese su Usuario">
+                            {{correo}}
+                        </div>
+                        <div class="form-group mx-sm-4 pb-3">
+                            <input v-model="password" type="password" class="form-control"
+                                placeholder="Ingrese su Contraseña">
+                        </div>
+                        <div class="form-group mx-sm-4 pb-2">
+                            <a @click="iniciarSesion()" class="btn btn-block ingresar">INGRESAR</a>
+                        </div>
+
+
                     </div>
                 </div>
             </div>
@@ -76,27 +77,30 @@
             <div id="registro" class="container">
                 <div class="row justify-content-center pt-5 mt-5 m-1">
                     <div class="col-md-6 col-sm-8 col-xl-4 col-lg-5 formulario">
-                        <form action="">
-                            <div class="form-group text-center pt-3">
-                                <h1 class="text-light">REGISTRARSE</h1>
-                            </div>
-                            <div class="form-group mx-sm-4 pb-3">
-                                <input type="text" class="form-control" placeholder="Ingrese su Nombre">
-                            </div>
-                            <div class="form-group mx-sm-4 pb-3">
-                                <input type="text" class="form-control" placeholder="Ingrese su Apellido">
-                            </div>
-                            <div class="form-group mx-sm-4 pt-3">
-                                <input type="email" class="form-control" placeholder="Ingrese su Correo">
-                            </div>
-                            <div class="form-group mx-sm-4 pb-3">
-                                <input type="text" class="form-control" placeholder="Ingrese su Contraseña">
-                            </div>
-                            <div class="form-group mx-sm-4 pb-2">
-                                <input type="submit" class="btn btn-block ingresar" value="REGISTRARSE">
-                            </div>
 
-                        </form>
+                        <div class="form-group text-center pt-3">
+                            <h1 class="text-light">REGISTRARSE</h1>
+                        </div>
+                        <div class="form-group mx-sm-4 pb-3">
+                            <input v-model="nombre" type="text" class="form-control" placeholder="Ingrese su Nombre">
+                        </div>
+                        <div class="form-group mx-sm-4 pb-3">
+                            <input v-model="apellido" type="text" class="form-control" placeholder="Ingrese su Apellido">
+                        </div>
+                        <div class="form-group mx-sm-4 pt-3">
+                            <input v-model="correo" type="email" class="form-control" placeholder="Ingrese su Correo">
+                        </div>
+                        <div class="form-group mx-sm-4 pb-3">
+                            <input v-model="password" type="password" class="form-control" placeholder="Ingrese su Contraseña">
+                        </div>
+                        <div class="form-group mx-sm-4 pb-3">
+                            <input v-model="apodo" type="text" class="form-control" placeholder="Apodo">
+                        </div>
+                        <div class="form-group mx-sm-4 pb-2">
+                            <a @click="registrarse()" class="btn btn-block ingresar">REGISTRARSE</a>
+                        </div>
+
+
                     </div>
                 </div>
             </div>
@@ -121,7 +125,7 @@
     <!-- La sección main finaliza aquí -->
 
     <!-- preload -->
-<!--     <div class="preload">
+    <!--     <div class="preload">
         <div class="loadingio-spinner-spin-ecbmbwwrxu8">
             <div class="ldio-vh027wh0dx">
                 <div>
@@ -171,7 +175,7 @@
                 <a href="#" class="size2 halfwhite spacetop2">Nuestro equipo</a>
                 <a href="web/Empleos.html" class="size2 halfwhite spacetop2">Trabaja con nosotros</a>
                 <a href="web/PoliticaPrivacidad.html" class="size2 halfwhite spacetop2">Politica de Privacidad</a>
-                <a href="#" class="size2 halfwhite spacetop2">Novedades</a>
+                <!-- <a href="#" class="size2 halfwhite spacetop2">Novedades</a> -->
             </div>
             <div class="row flexcol spacebottom3-s">
                 <h5 class="bold size2">Contacto</h5>
