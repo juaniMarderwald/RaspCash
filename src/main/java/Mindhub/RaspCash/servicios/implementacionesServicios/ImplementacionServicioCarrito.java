@@ -46,4 +46,16 @@ public class ImplementacionServicioCarrito implements ServicioCarrito {
         Usuario usuario = servicioUsuario.encontrarUsuarioPorEmail(authentication.getName());
         return new CarritoDTO(usuario.getCarrito());
     }
+
+    @Override
+    public void guardarCarrito(Carrito carrito) {
+        carritoRepositorio.save(carrito);
+    }
+
+    @Override
+    public void borrarCarrito(Carrito carrito) {
+        carritoRepositorio.delete(carrito);
+    }
+
+
 }

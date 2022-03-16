@@ -96,7 +96,7 @@ public class CarritoController {
 
         carrito.agregarProductoAlCarrito(productoUsuarioAlCarrito);
 
-        carritoRepositorio.save(carrito);
+        servicioCarrito.guardarCarrito(carrito);
 
         return new ResponseEntity<>("Se agregó el producto al carrito", HttpStatus.CREATED);
     }
@@ -140,7 +140,15 @@ public class CarritoController {
 
         servicioTransaccion.guardarTransaccion(transaccion);
 
-        carrito.vaciarCarrito();
+       // carrito.vaciarCarrito();
+       // servicioCarrito.guardarCarrito(carrito);
+        Carrito carrito1=new Carrito();
+        usuario.setCarrito(carrito1);
+
+        //servicioCarrito.borrarCarrito(carrito);
+
+        servicioCarrito.guardarCarrito(carrito1);
+
 
         return new ResponseEntity<>("La compra fue realizada con éxito", HttpStatus.CREATED);
     }

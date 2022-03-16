@@ -15,4 +15,6 @@ public interface ServicioCarrito {
     public Carrito obtenerCarritoPorId(long id);
     public List<CarritoDTO> obtenerTodosLosCarritos();
     public CarritoDTO obtenerCurrentCarrito(Authentication authentication);
+    public void guardarCarrito(Carrito carrito);
+    public void borrarCarrito(Carrito carrito);
 }
