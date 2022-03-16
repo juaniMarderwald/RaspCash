@@ -1,10 +1,11 @@
 package Mindhub.RaspCash.models;
 
 import org.hibernate.annotations.GenericGenerator;
-
 import javax.persistence.*;
 import java.time.LocalDateTime;
+import lombok.Getter;
 
+@Getter
 @Entity
 public class Transaccion {
 

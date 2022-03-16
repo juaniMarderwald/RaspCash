@@ -15,7 +15,7 @@ var app = new Vue({
 
     methods: {
         cargarDatos() {
-           axios.get('/api/usuario/current').then(response => window.location.href = "index.html").catch(error => {console.log("Inicie sesión!")
+           axios.get('/api/usuario/current').then(response => window.location.href = "nft.html").catch(error => {console.log("Inicie sesión!")
            const preload = document.querySelector(".preload");
            preload.style.visibility = "hidden";});
         },

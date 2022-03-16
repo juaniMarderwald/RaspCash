@@ -10,8 +10,8 @@
 
 
     <!--Estilos CSS-->
+    <link rel="stylesheet" href="./css/preload.css">
     <link rel="stylesheet" href="css/estiloCarrito.css">
-
     <link rel="stylesheet" href="css/style.css">
 
     <!--FAVICON-->
@@ -40,7 +40,7 @@
         </div>
     </header>
     <!-- El header comienza aquí -->
-
+<div id="app">
     <!-- La sección main comienza aquí -->
         <section class="collections spacer10" id="collections">
             <div class="container">
@@ -114,7 +114,7 @@
                     </div>
                 </div>
                 <div>
-                    <p class="cardTotal">Total: {{Total}}</p>
+                    <p class="cardTotal">Total: </p>
                     <div class="cardTotalBoton"><button class="btn bg-purple wallet">Confirmar compra</button></div>
                 </div>
             </div>
@@ -161,7 +161,19 @@
     </footer>
     <!-- La sección de footer finaliza aquí -->
 
+ <!-- preload -->
+ <div class="preload">
+    <div class="loadingio-spinner-spin-ecbmbwwrxu8"><div class="ldio-vh027wh0dx">
+        <div><div></div></div><div><div></div></div><div><div></div></div><div><div></div></div><div><div></div></div><div><div></div></div><div><div></div></div><div><div></div></div>
+        </div></div>
+    </div>
 
+</div>
+
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <!-- custom js file link -->
+    <script src="./js/carrito.js"></script>
 
 </body>
 

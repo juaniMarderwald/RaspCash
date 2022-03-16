@@ -2,7 +2,9 @@ package Mindhub.RaspCash.dtos;
 
 import Mindhub.RaspCash.models.Producto;
 import Mindhub.RaspCash.models.TipoProducto;
+import lombok.Getter;
 
+@Getter
 public class ProductoDTO {
 
     private long id;

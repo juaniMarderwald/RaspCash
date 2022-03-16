@@ -3,7 +3,9 @@ package Mindhub.RaspCash.dtos;
 import Mindhub.RaspCash.models.EstadoProducto;
 import Mindhub.RaspCash.models.ProductoUsuario;
 import Mindhub.RaspCash.models.TipoProducto;
+import lombok.Getter;
 
+@Getter
 public class ProductoUsuarioDTO {
 
     private long id;
