@@ -1,5 +1,5 @@
-var app = new Vue({
-    el: '#app',
+var appCarrito = new Vue({
+    el: '#appCarrito',
     data: {
         carrito: {},
         productos: {}
@@ -16,7 +16,7 @@ var app = new Vue({
                     this.productos = this.carrito.productos;
                     console.log(response.data);
                 }).catch(error => console.log(error.response.data))
-                .finally(function () {
+                .finally(function() {
                     const preload = document.querySelector(".preload");
                     preload.style.visibility = "hidden";
                 });

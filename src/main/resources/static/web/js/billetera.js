@@ -1,5 +1,5 @@
-var app = new Vue({
-    el: "#app",
+var appBilletera = new Vue({
+    el: "#billetera",
     data: {
         billetera: [],
         tipoDeMoneda: "",

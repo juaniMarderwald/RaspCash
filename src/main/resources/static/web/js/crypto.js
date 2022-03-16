@@ -4,11 +4,13 @@ var app = new VTTCue({
         cryptos: []
     },
     created() {
-
+        this.obtenerCrytos()
     },
 
     methods: {
+        obtenerCrytos() {
 
+        }
     }
 
 })
