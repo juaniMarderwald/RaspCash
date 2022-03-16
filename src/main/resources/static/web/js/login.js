@@ -15,9 +15,11 @@ var app = new Vue({
 
     methods: {
         cargarDatos() {
-           axios.get('/api/usuario/current').then(response => window.location.href = "nft.html").catch(error => {console.log("Inicie sesión!")
-           const preload = document.querySelector(".preload");
-           preload.style.visibility = "hidden";});
+            axios.get('/api/usuario/current').then(response => window.location.href = "nft.html").catch(error => {
+                console.log("Inicie sesión!")
+                const preload = document.querySelector(".preload");
+                preload.style.visibility = "hidden";
+            });
         },
         iniciarSesion() {
             axios.post('/api/login', "email=" + this.correo + "&password=" + this.password, {
@@ -31,16 +33,28 @@ var app = new Vue({
                     alert("Usuario o contraseña incorrectos");
                 })
         },
-    registrarse() {
-        axios.post('/api/usuarios', "correo=" + this.correo + "&password=" + this.password + "&nombre=" + this.nombre + "&apellido=" + this.apellido +"&apodo=" + this.apodo, {
-        headers: {
-            'content-type': 'application/x-www-form-urlencoded'
-        }
-    }).then(response => {
-            window.location.href = "nft.html"
-        }).catch(error => {
-            alert(error.response.data);
-        })
+        registrarse() {
+            axios.post('/api/usuarios', "correo=" + this.correo + "&password=" + this.password + "&nombre=" + this.nombre + "&apellido=" + this.apellido + "&apodo=" + this.apodo, {
+                headers: {
+                    'content-type': 'application/x-www-form-urlencoded'
+                }
+            }).then(response => {
+                window.location.href = "nft.html"
+            }).catch(error => {
+                alert(error.response.data);
+            })
+
+
+        },
+
+        CerraSeccion() {
+            axios.post(`/api/logout`)
+
+            .then(response => window.alert('GRACIAS POR LA VISITA!! :D'))
+                .then
+            return (window.location.href = "/index.html")
+
+        },
     }
-    },
+
 })
