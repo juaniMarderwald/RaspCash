@@ -41,6 +41,7 @@ var app = new Vue({
                 }
             }).then(response => {
                 this.iniciarSesion();
+
                 window.location.href = "/web/nft.html"
             }).catch(error => {
                 alert(error.response.data);

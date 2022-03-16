@@ -89,7 +89,7 @@ public class ImplementacionServicioUsuario implements ServicioUsuario {
 			//billetera.setUsuario(usuario);
 			usuarioRepositorio.save(usuario);
 
-			Billetera billetera=new Billetera(utilidades.obtenerDireccionBilletera(),0.2,2000);
+			Billetera billetera=new Billetera(utilidades.obtenerDireccionBilletera(),0.2,20000);
 			usuario.setBilletera(billetera);
 
 			billeteraRepositorio.save(billetera);

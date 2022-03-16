@@ -21,26 +21,31 @@ var appCarrito = new Vue({
 
                 })
                 .catch(error => console.log(error.response.data))
-                .finally(function () {
+                .finally(function() {
                     const preload = document.querySelector(".preload");
                     preload.style.visibility = "hidden";
                 });
         },
         eliminarProductoDelCarrito(idProducto) {
             axios.post('/api/carrito/sacar_producto', "idProducto=" + idProducto)
-                .then(response => {
-                    alert(response.data);
-                    location.reload();
-                })
+            Swal.fire({
+                text: 'Se ha borrado el producto con exito',
+                icon: 'success',
+                confirmButtonText: 'Ok',
+            }).then(response => {
+                location.reload();
+            })
         },
         realizarCompra() {
             axios.post('/api/carrito/realizarCompra')
-                .then(response => {
-                    alert(response.data);
-                    location.reload();
-                })
-                .catch(error => console.log(error.response.data))
-        }
+            Swal.fire({
+                text: 'Cuenta creada con exito',
+                icon: 'success',
+                confirmButtonText: 'Ok',
+            }).then((result) => {
+                location.reload();
+            })
+        },
 
     }
 })
