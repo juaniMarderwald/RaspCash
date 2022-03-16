@@ -1,7 +1,7 @@
 var appBilletera = new Vue({
     el: "#billetera",
     data: {
-        billetera: [],
+        billetera: {},
         tipoDeMoneda: "",
         monto: "",
         billeteraEmisora: "",
