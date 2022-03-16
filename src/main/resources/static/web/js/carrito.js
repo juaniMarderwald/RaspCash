@@ -15,7 +15,7 @@ var appCarrito = new Vue({
                 .then(response => {
                     
                     this.carrito = response.data;
-                    this.productos = this.carrito.productos;
+                    this.productosEnCarrito = this.carrito.productos;
                     console.log(response.data);
                     this.total=this.carrito.montoTotal;
 
@@ -24,6 +24,10 @@ var appCarrito = new Vue({
                     const preload = document.querySelector(".preload");
                     preload.style.visibility = "hidden";
                 });
+        },
+        eliminarProductoDelCarrito(idProducto){
+            axios.post('api/carrito/sacar_producto',)
         }
+
     }
 })

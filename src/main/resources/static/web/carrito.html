@@ -56,7 +56,7 @@
                     </div>
 
                 </template>
-                <template v-if-else>
+                <template v-if="productosEnCarrito.length != 0">
                     <div v-for="producto in productosEnCarrito" class="col4 card collect bg-white10 col5-md col6-s"
                         data-item="art">
                         <img v-bind:src="producto.imagen" class="img-responsive" alt="">
@@ -69,11 +69,11 @@
                             </div>
                             <div>
                                 <p class="current halfwhite">Precio</p>
-                                <h5 class="size2 bold">$ {{producto.valor}} </h5>
+                                <h5 class="size2 bold">$ {{producto.valorPagado}} </h5>
                             </div>
                             <div>
-                                <p class="current halfwhite">Stock</p>
-                                <h5 class="size2 bold"> {producto.stock} u</h5>
+                                <p class="current halfwhite">Cantidad</p>
+                                <h5 class="size2 bold"> 1 u</h5>
                             </div>
                         </div>
                     </div>
