@@ -12,7 +12,9 @@ var appDeFi = new Vue({
     },
     methods: {
         metodoSwap() {
-            axios.post("/api/transaccion/swap")
+            axios.post("/api/transaccion/swap", "direccionBilletera=" + this.direccionBilletera + "&montoPesos=" + thi.montoPesos + "&montoEnBTC=" + this.montoEnBTC + "&tipoDeSwap=" + this.tipoDeSwap)
+                .then
+            window.alert("Transaccion realizada!!")
         }
     }
 
