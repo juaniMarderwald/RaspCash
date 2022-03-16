@@ -22,17 +22,16 @@ var appDeFi = new Vue({
             window.alert("Transaccion realizada!!")
         },
         pedirPrestamo() {
-            axio.post("/api/prestamo") {
-                xios.post("/api/loans", {
-                    "monto": this.monto,
-                    "cuotas ": this.cuotas,
-                    "billeteraDestino": this.billeteraDestino,
-                    "nombrePrestamo ": this.nombrePrestamo
-                })
-            }
+            axio.post("/api/prestamo" {
+                "monto": this.monto,
+                "cuotas ": this.cuotas,
+                "billeteraDestino": this.billeteraDestino,
+                "nombrePrestamo ": this.nombrePrestamo
+            })
         }
-
     }
+
+}
 
 
 
