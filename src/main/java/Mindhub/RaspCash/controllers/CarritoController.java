@@ -159,4 +159,25 @@ public class CarritoController {
         carrito.vaciarCarrito();
         return new ResponseEntity<>("El carrito se encuentra vacío nuevamente", HttpStatus.CREATED);
     }
+
+    @PostMapping("/carrito/sacar_producto")
+    public ResponseEntity<Object> sacarProductoDelCarrito(Authentication authentication, @RequestParam long idProducto){
+        Usuario usuario = servicioUsuario.encontrarUsuarioPorEmail(authentication.getName());
+        Carrito carrito = usuario.getCarrito();
+
+        ProductoUsuario productoUsuarioSacarCarrito = servicioProductoUsuario.encontrarProductoUsuarioPorId(idProducto);
+     //   productoUsuarioSacarCarrito.setEstadoProducto(EstadoProducto.DISPONIBLE);
+        Producto producto=servicioProducto.obtenerProductoPorId(productoUsuarioSacarCarrito.getProducto().getId());
+        producto.agregarAlStock(1);
+
+        carrito.getProductosEnCarrito().remove(productoUsuarioSacarCarrito);
+        carrito.disminuirTotal(productoUsuarioSacarCarrito.getPrecio());
+
+        servicioProductoUsuario.eliminarProductoUsuario(productoUsuarioSacarCarrito);
+        productoUsuarioSacarCarrito=null;
+        System.gc();
+
+        servicioCarrito.guardarCarrito(carrito);
+        return new ResponseEntity<>("El elemento se ha borrado del carrito", HttpStatus.CREATED);
+    }
 }

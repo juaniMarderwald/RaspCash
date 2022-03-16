@@ -8,4 +8,5 @@ public interface ServicioProductoUsuario {
 
     public ProductoUsuario encontrarProductoUsuarioPorId(long id);
     public void guardarProductoUsuario(ProductoUsuario productoUsuario);
+    public void eliminarProductoUsuario(ProductoUsuario productoUsuario);
 }

@@ -20,7 +20,7 @@ public class UsuarioDTO {
     private BilleteraDTO billetera;
     private List<PrestamoUsuarioDTO> prestamos=new ArrayList<>();
     private Set<ProductoUsuarioDTO> productosAdquiridos=new HashSet<>();
-    private Carrito carrito;
+    private CarritoDTO carrito;
 
 
     public UsuarioDTO(Usuario usuario) {
@@ -32,7 +32,7 @@ public class UsuarioDTO {
         this.billetera=new BilleteraDTO(usuario.getBilletera());
         this.prestamos=usuario.getPrestamos().stream().map(PrestamoUsuarioDTO::new).collect(Collectors.toList());
         this.productosAdquiridos=usuario.getProductosComprados().stream().map(ProductoUsuarioDTO::new).collect(Collectors.toSet());
-        this.carrito = usuario.getCarrito();
+        this.carrito = new CarritoDTO(usuario.getCarrito());
     }
 
     public long getId() {
@@ -67,5 +67,5 @@ public class UsuarioDTO {
         return productosAdquiridos;
     }
 
-    public Carrito getCarrito() {return carrito;}
+    public CarritoDTO getCarrito() {return carrito;}
 }

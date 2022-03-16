@@ -59,4 +59,8 @@ public class Carrito {
         this.productosEnCarrito=new HashSet<>();
     }
     //public void setUsuario(Usuario usuario){        this.usuario=usuario;    }
+
+    public void disminuirTotal(double valor){
+        this.total-=valor;
+    }
 }

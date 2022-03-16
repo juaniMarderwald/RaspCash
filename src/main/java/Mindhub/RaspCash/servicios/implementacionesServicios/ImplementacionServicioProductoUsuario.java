@@ -22,4 +22,10 @@ public class ImplementacionServicioProductoUsuario implements ServicioProductoUs
         productoUsuarioRepositorio.save(productoUsuario);
     }
 
+    @Override
+    public void eliminarProductoUsuario(ProductoUsuario productoUsuario) {
+        productoUsuarioRepositorio.delete(productoUsuario);
+    }
+
+
 }

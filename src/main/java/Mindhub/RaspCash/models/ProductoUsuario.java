@@ -43,6 +43,10 @@ public class ProductoUsuario {
         this.estadoProducto=nuevoEstadoProducto;
     }
 
+    public Producto getProducto() {
+        return producto;
+    }
+
     public String getNombre(){
         return this.producto.getNombre();
     }
