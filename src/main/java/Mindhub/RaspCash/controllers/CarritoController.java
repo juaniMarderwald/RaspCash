@@ -162,6 +162,7 @@ public class CarritoController {
 
     @PostMapping("/carrito/sacar_producto")
     public ResponseEntity<Object> sacarProductoDelCarrito(Authentication authentication, @RequestParam long idProducto){
+
         Usuario usuario = servicioUsuario.encontrarUsuarioPorEmail(authentication.getName());
         Carrito carrito = usuario.getCarrito();
 

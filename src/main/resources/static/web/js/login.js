@@ -1,5 +1,5 @@
 var app = new Vue({
-    el: '#app',
+    el: '#appLogin',
     data: {
         correo: "",
         password: "",
@@ -15,7 +15,9 @@ var app = new Vue({
 
     methods: {
         cargarDatos() {
-            axios.get('/api/usuario/current').then(response => window.location.href = "nft.html").catch(error => {
+            axios.get('/api/usuario/current')
+            .then(response => window.location.href = "/web/nft.html")
+            .catch(error => {
                 console.log("Inicie sesión!")
                 const preload = document.querySelector(".preload");
                 preload.style.visibility = "hidden";
@@ -28,7 +30,7 @@ var app = new Vue({
                     }
                 })
                 .then(response => {
-                    window.location.href = "nft.html"
+                    window.location.href = "/web/nft.html"
                 }).catch(error => {
                     alert("Usuario o contraseña incorrectos");
                 })

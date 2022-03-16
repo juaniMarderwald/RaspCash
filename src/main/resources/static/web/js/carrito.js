@@ -26,7 +26,11 @@ var appCarrito = new Vue({
                 });
         },
         eliminarProductoDelCarrito(idProducto){
-            axios.post('api/carrito/sacar_producto',)
+            axios.post('/api/carrito/sacar_producto',"idProducto="+idProducto)
+            .then(response =>{
+                alert(response.data);
+                location.reload()
+            })
         }
 
     }
