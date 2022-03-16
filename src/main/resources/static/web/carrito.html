@@ -48,9 +48,8 @@
                 <p class="spacebottom3 halfwhite size2 ta-center">
                     Los mejores productos al mejor precio.
                 </p>
-                <template v-for="item in productos">
-                <div class="row box-card jc-evenly-md">
-                    <div class="col4 card collect bg-white10 col5-md col6-s" data-item="art">
+                <div class="row box-card jc-evenly-md" >
+                    <div class="col4 card collect bg-white10 col5-md col6-s" data-item="art" v-for="item in productos">
                         <img :src="item.imagen" class="img-responsive" alt="">
                         <div class="row jc-between spacetop2">
                             <div>
@@ -73,7 +72,6 @@
                         </a>
                     </div>
                 </div>
-            </template>
                 <div>
                     <p class="cardTotal">Total: {{carrito.montoTotal}} </p>
                     <div class="cardTotalBoton"><button class="btn bg-purple wallet">Confirmar compra</button></div>

@@ -69,7 +69,7 @@ public class CarritoController {
 
         Carrito carrito;
 
-        if (Objects.isNull(usuario.getCarrito())){
+        if (Objects.nonNull(usuario.getCarrito())){
             carrito = usuario.getCarrito();
         } else {
             carrito = carritoRepositorio.save(new Carrito());
@@ -95,6 +95,8 @@ public class CarritoController {
         producto.disminuirStock(1);
 
         carrito.agregarProductoAlCarrito(productoUsuarioAlCarrito);
+
+        carritoRepositorio.save(carrito);
 
         return new ResponseEntity<>("Se agregó el producto al carrito", HttpStatus.CREATED);
     }

@@ -17,7 +17,7 @@ public class Carrito {
     private long id;
 
     @OneToMany(mappedBy = "carrito_id", fetch = FetchType.EAGER)
-    private Set<ProductoUsuario> productosEnCarrito=new HashSet<>();
+    private Set<ProductoUsuario> productosEnCarrito;
 
     @OneToOne
     @JoinColumn(name = "usuario_id")
