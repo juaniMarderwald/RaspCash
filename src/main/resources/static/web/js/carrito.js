@@ -1,7 +1,7 @@
 var app = new Vue({
     el: '#app',
     data: {
-        usuario: {}
+        carrito: {}
     },
     created() {
         this.cargarDatos();
@@ -9,21 +9,15 @@ var app = new Vue({
 
     methods: {
         cargarDatos() {
-            axios.get('/api/usuario/current')
+            axios.get('/api/carrito/current')
                 .then(response => {
-                    this.usuario = response.data;
-                    this.cargarCarrito();
+                    this.carrito = response.data;
+                    console.log(response.data);
                 }).catch(error => console.log(error.response.data))
                 .finally(function () {
                     const preload = document.querySelector(".preload");
                     preload.style.visibility = "hidden";
                 });
-        },
-        cargarCarrito(){
-            axios.get(`/api/carrito/${app.usuario.id}`)
-            .then(response => {
-                console.log(response.data);
-            })
         }
     }
 })

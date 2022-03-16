@@ -2,9 +2,14 @@ package Mindhub.RaspCash.servicios.implementacionesServicios;
 
 import Mindhub.RaspCash.dtos.CarritoDTO;
 import Mindhub.RaspCash.models.Carrito;
+import Mindhub.RaspCash.models.Usuario;
 import Mindhub.RaspCash.respositories.CarritoRepositorio;
+import Mindhub.RaspCash.respositories.UsuarioRepositorio;
 import Mindhub.RaspCash.servicios.ServicioCarrito;
+import Mindhub.RaspCash.servicios.ServicioUsuario;
+
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -15,6 +20,9 @@ public class ImplementacionServicioCarrito implements ServicioCarrito {
 
     @Autowired
     CarritoRepositorio carritoRepositorio;
+
+    @Autowired
+    ServicioUsuario servicioUsuario;
 
     @Override
     public CarritoDTO obtenerCarritoDTOPorId(long id) {
@@ -30,5 +38,12 @@ public class ImplementacionServicioCarrito implements ServicioCarrito {
     @Override
     public List<CarritoDTO> obtenerTodosLosCarritos() {
         return carritoRepositorio.findAll().stream().map(CarritoDTO::new).collect(Collectors.toList());
+    }
+
+    @Override 
+    public CarritoDTO obtenerCurrentCarrito(Authentication authentication){
+        //Hacer excepciones
+        Usuario usuario = servicioUsuario.encontrarUsuarioPorEmail(authentication.getName());
+        return new CarritoDTO(usuario.getCarrito());
     }
 }

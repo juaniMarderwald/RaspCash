@@ -51,6 +51,11 @@ public class CarritoController {
         return servicioCarrito.obtenerCarritoPorId(id);
     }
 
+    @GetMapping("/carrito/current")
+    public CarritoDTO obtenerCurrentCarrito(Authentication authentication) {
+        return servicioCarrito.obtenerCurrentCarrito(authentication);
+    }
+
     @Transactional
     @PostMapping("/carrito/producto")
     public ResponseEntity<Object> agregarProductoAlcarrito(Authentication authentication,
