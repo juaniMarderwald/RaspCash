@@ -3,7 +3,7 @@ var appCarrito = new Vue({
     data: {
         carrito: [],
         productosEnCarrito: [],
-        total:0
+        total: 0
     },
     created() {
         this.cargarDatos();
@@ -13,24 +13,33 @@ var appCarrito = new Vue({
         cargarDatos() {
             axios.get('/api/carrito/current')
                 .then(response => {
-                    
+
                     this.carrito = response.data;
                     this.productosEnCarrito = this.carrito.productos;
                     console.log(response.data);
-                    this.total=this.carrito.montoTotal;
+                    this.total = this.carrito.montoTotal;
 
-                }).catch(error => console.log(error.response.data))
-                .finally(function() {
+                })
+                .catch(error => console.log(error.response.data))
+                .finally(function () {
                     const preload = document.querySelector(".preload");
                     preload.style.visibility = "hidden";
                 });
         },
-        eliminarProductoDelCarrito(idProducto){
-            axios.post('/api/carrito/sacar_producto',"idProducto="+idProducto)
-            .then(response =>{
-                alert(response.data);
-                location.reload()
-            })
+        eliminarProductoDelCarrito(idProducto) {
+            axios.post('/api/carrito/sacar_producto', "idProducto=" + idProducto)
+                .then(response => {
+                    alert(response.data);
+                    location.reload();
+                })
+        },
+        realizarCompra() {
+            axios.post('/api/carrito/realizarCompra')
+                .then(response => {
+                    alert(response.data);
+                    location.reload();
+                })
+                .catch(error => console.log(error.response.data))
         }
 
     }

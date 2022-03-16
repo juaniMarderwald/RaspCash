@@ -85,7 +85,9 @@
             </div>
             <div>
                 <p class="cardTotal">Total: ${{total}}</p>
-                <div class="cardTotalBoton"><button class="btn bg-purple wallet">Confirmar compra</button></div>
+                <div class="cardTotalBoton">
+                    <a @click="realizarCompra()" class="btn bg-purple wallet">Confirmar compra</a>
+                </div>
             </div>
         </div>
     </section>

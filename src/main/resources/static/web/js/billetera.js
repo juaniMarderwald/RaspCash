@@ -1,9 +1,10 @@
 var appBilletera = new Vue({
-    el: "#billetera",
+    el: "#appBilletera",
     data: {
         billetera: {},
         tipoDeMoneda: "",
-        monto: "",
+        montoEnPesos: "",
+        montoEnBTC:"",
         billeteraEmisora: "",
         billeteraReceptora: "",
         descripcion: ""
@@ -15,9 +16,9 @@ var appBilletera = new Vue({
         obtenerBilletera() {
             axios.get('/api/usuarios/current')
                 .then(response => {
-                    console.log(response.data)
-                    this.billetera = response.data.billetera
-                    console.log(this.billetera)
+                    console.log(response.data);
+                    this.billetera = response.data.billetera;
+                    console.log(this.billetera);
                 })
         },
         transaccion() {

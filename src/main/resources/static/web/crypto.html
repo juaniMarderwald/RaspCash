@@ -83,9 +83,13 @@
                 <div class="card">
                     <div class="head">
                         <div>
-                            <h2>Balance de cuenta</h2>
-                            <p>0.005 BTC</p>
+                            <h1>BALANCE DE LA CUENTA</h1>                            
                         </div>
+                    </div>
+                    <div id="appBilletera">
+                        <h1>Monto en BTC: {{billetera.montoBTC}}</h1>
+                        <br>
+                        <h1>Monto en $: {{billetera.montoPesos}}</h1>
                     </div>
                     <template>
                         <div id="chart" class="container">
@@ -96,7 +100,7 @@
                             </div>
                           </div>
                         </div>
-                      </template>
+                    </template>
                 </div>
             </div>
 
@@ -255,10 +259,11 @@
 
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-    <script src="js/billetera.js"></script>
 
     <!-- custom js file link -->
     <script src="js/script.js"></script>
+    <script src="js/billetera.js"></script>
+
 
 </body>
 

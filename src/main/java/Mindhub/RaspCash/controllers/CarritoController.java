@@ -103,11 +103,12 @@ public class CarritoController {
 
     @Transactional
     @PostMapping("/carrito/realizarCompra")
-    public ResponseEntity<Object> realizarCompra(Authentication authentication, @RequestParam long idCarrito) {
+    public ResponseEntity<Object> realizarCompra(Authentication authentication) {
 
         Usuario usuario = servicioUsuario.encontrarUsuarioPorEmail(authentication.getName());
         Billetera billetera = usuario.getBilletera();
-        Carrito carrito = servicioCarrito.obtenerCarritoPorId(idCarrito);
+        //Carrito carrito = servicioCarrito.obtenerCarritoPorId(idCarrito);
+        Carrito carrito = usuario.getCarrito();
 
         if (billetera.getMontoPesos() < carrito.getTotal()) {
             return new ResponseEntity<>("No cuenta con fondos en pesos requeridos para esta compra",
