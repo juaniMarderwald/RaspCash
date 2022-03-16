@@ -317,8 +317,11 @@
                             <h5 class="size2 bold">{{item.valor}}$</h5>
                         </div>
                     </div>
-                    <a @click="agregarProductoAlCarrito(item.id)" class="bid size2 ta-center">
+                    <a v-show="item.stock" @click="agregarProductoAlCarrito(item.id)" class="bid size2 ta-center">
                         Añadir al carrito
+                    </a>
+                    <a v-show="!item.stock" class="bid size2 ta-center">
+                        Sin stock
                     </a>
                 </div>
             </div>
