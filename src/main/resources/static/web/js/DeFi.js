@@ -50,8 +50,14 @@ var appDeFi = new Vue({
 
             metodoSwap() {
                 axios.post("/api/transaccion/swap", "direccionBilletera=" + this.direccionBilletera + "&montoPesos=" + thi.montoPesos + "&montoEnBTC=" + this.montoEnBTC + "&tipoDeSwap=" + this.tipoDeSwap)
-                    .then
-                window.alert("Transaccion realizada!!")
+                Swal.fire({
+                    text: 'La transacción fue un exito',
+                    icon: 'success',
+                    confirmButtonText: 'Ok',
+                }).then(response => {
+                    location.reload();
+                })
+
             },
             pedirPrestamo() {
                 axio.post("/api/prestamos", {

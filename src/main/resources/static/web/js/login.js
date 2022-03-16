@@ -40,11 +40,22 @@ var app = new Vue({
                     'content-type': 'application/x-www-form-urlencoded'
                 }
             }).then(response => {
+                Swal.fire({
+                    text: 'Se ha registrado con exito!',
+                    icon: 'success',
+                    confirmButtonText: 'Ok',
+                }).then(response => {
+                    location.reload();
+                })
                 this.iniciarSesion();
 
                 window.location.href = "/web/nft.html"
             }).catch(error => {
-                alert(error.response.data);
+                Swal.fire({
+                    text: 'Datos incorrectos',
+                    icon: 'danger',
+                    confirmButtonText: 'Ok',
+                })
             })
 
 

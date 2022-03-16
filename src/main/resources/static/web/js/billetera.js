@@ -4,7 +4,7 @@ var appBilletera = new Vue({
         billetera: {},
         tipoDeMoneda: "",
         montoEnPesos: "",
-        montoEnBTC:"",
+        montoEnBTC: "",
         billeteraEmisora: "",
         billeteraReceptora: "",
         descripcion: ""
@@ -23,13 +23,17 @@ var appBilletera = new Vue({
         },
         transaccion() {
             axios.post('/api/usuarios/current', "tipoDeMoneda=" + this.tipoDeMoneda + "&monto=" + this.monto + "&direccionBilleteraEmisora=" + this.billeteraEmisora + "&direccionBilleteraReceptora" + this.billeteraReceptora + "&descripcion" + this.descripcion)
-                .then(response => {
-                    window.alert("compra hecha exitosamente!!!")
-                })
+            Swal.fire({
+                text: 'Se ha borrado el producto con exito',
+                icon: 'success',
+                confirmButtonText: 'Ok',
+            }).then(response => {
+                location.reload();
+            })
+
         }
+
     }
-
-
 
 
 

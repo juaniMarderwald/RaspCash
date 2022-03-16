@@ -12,9 +12,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" />
 
     <!-- google font link -->
-    <link
-        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,400&family=Poppins:wght@400;500;700&display=swap"
-        rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,400&family=Poppins:wght@400;500;700&display=swap" rel="stylesheet" />
 
     <!-- custom css link -->
     <link rel="stylesheet" href="css/style.css" />
@@ -34,13 +32,13 @@
             <a href="index.html" class="logo bold white">Rasp<span class="lightpurple">Cash</span></a>
 
             <div class="menu">
-                
+
                 <a href="NFT.html">NFT</a>
                 <a href="Crypto.html">Cripto</a>
                 <a href="DeFi.html">DeFi</a>
                 <a href="merchandasing.html">Productos</a>
                 <a href="carrito.html"><span>🛒</span></a>
-                
+
             </div>
 
             <div class="fas fa-wallet" id="wallet"></div>
@@ -78,33 +76,33 @@
         <div class="container" id="appMerchandising">
             <h1 class="bold size4 ta-center">Productos</h1>
             <p class="spacebottom3 halfwhite size2 ta-center">
-                Encuentra aquí todos nuestros productos para tu día a día 
+                Encuentra aquí todos nuestros productos para tu día a día
             </p>
             <div class="row box-card jc-evenly-md">
-               
-                    <div v-for="producto in productos" class="col4 card collect bg-white10 col5-md col6-s" data-item="art">
-                        <img v-bind:src="producto.imagen" class="img-responsive" alt="">
-                        <div class="row jc-between spacetop2">
-                            <div>
-                                <p class="size2 halfwhite">
-                                    
-                                </p>
-                                <h5 class="size2 bold">{{producto.nombre}}</h5>
-                            </div>
-                            <div>
-                                <p class="current halfwhite">Precio</p>
-                                <h5 class="size2 bold">$ {{ producto.valor}}</h5>
-                            </div>
-                            <div>
-                                <p class="current halfwhite">Stock</p>
-                                <h5 class="size2 bold">{{ producto.stock}} u</h5>
-                            </div>
+
+                <div v-for="producto in productos" class="col4 card collect bg-white10 col5-md col6-s" data-item="art">
+                    <img v-bind:src="producto.imagen" class="img-responsive" alt="">
+                    <div class="row jc-between spacetop2">
+                        <div>
+                            <p class="size2 halfwhite">
+
+                            </p>
+                            <h5 class="size2 bold">{{producto.nombre}}</h5>
                         </div>
-                        <a @Click="agregarProductoAlCarrito(producto.id)" class="bid size2 ta-center">
+                        <div>
+                            <p class="current halfwhite">Precio</p>
+                            <h5 class="size2 bold">$ {{ producto.valor}}</h5>
+                        </div>
+                        <div>
+                            <p class="current halfwhite">Stock</p>
+                            <h5 class="size2 bold">{{ producto.stock}} u</h5>
+                        </div>
+                    </div>
+                    <a @Click="agregarProductoAlCarrito(producto.id)" class="bid size2 ta-center">
                             Añadir al carrito
                         </a>
-                    </div>
-               
+                </div>
+
             </div>
         </div>
     </section>
@@ -124,30 +122,21 @@
                             <h3 class="size2 halfwhite">Lorem ipsum ipsum?</h3>
                             <i class="fas fa-angle-down size2 halfwhite"></i>
                         </div>
-                        <p class="answer size2 spacetop1 ">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            Voluptates
-                            ratione ea officiis ad quam blanditiis, dignissimos adipisci suscipit nobis temporibus
-                            molestias fugiat quas possimus assumenda quod quae modi dolorem sed.</p>
+                        <p class="answer size2 spacetop1 ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates ratione ea officiis ad quam blanditiis, dignissimos adipisci suscipit nobis temporibus molestias fugiat quas possimus assumenda quod quae modi dolorem sed.</p>
                     </div>
                     <div class="box spacebottom5">
                         <div class="title row jc-between">
                             <h3 class="size2 halfwhite">Lorem ipsum ipsum?</h3>
                             <i class="fas fa-angle-down size2 halfwhite"></i>
                         </div>
-                        <p class="answer size2 spacetop1 ">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            Voluptates
-                            ratione ea officiis ad quam blanditiis, dignissimos adipisci suscipit nobis temporibus
-                            molestias fugiat quas possimus assumenda quod quae modi dolorem sed.</p>
+                        <p class="answer size2 spacetop1 ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates ratione ea officiis ad quam blanditiis, dignissimos adipisci suscipit nobis temporibus molestias fugiat quas possimus assumenda quod quae modi dolorem sed.</p>
                     </div>
                     <div class="box spacebottom5">
                         <div class="title row jc-between">
                             <h3 class="size2 halfwhite">Lorem ipsum ipsum?</h3>
                             <i class="fas fa-angle-down size2 halfwhite"></i>
                         </div>
-                        <p class="answer size2 spacetop1 ">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            Voluptates
-                            ratione ea officiis ad quam blanditiis, dignissimos adipisci suscipit nobis temporibus
-                            molestias fugiat quas possimus assumenda quod quae modi dolorem sed.</p>
+                        <p class="answer size2 spacetop1 ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates ratione ea officiis ad quam blanditiis, dignissimos adipisci suscipit nobis temporibus molestias fugiat quas possimus assumenda quod quae modi dolorem sed.</p>
                     </div>
                 </div>
                 <div class="box-faq col6 col12-s">
@@ -156,30 +145,21 @@
                             <h3 class="size2 halfwhite">Lorem ipsum ipsum?</h3>
                             <i class="fas fa-angle-down size2 halfwhite"></i>
                         </div>
-                        <p class="answer size2 spacetop1 ">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            Voluptates
-                            ratione ea officiis ad quam blanditiis, dignissimos adipisci suscipit nobis temporibus
-                            molestias fugiat quas possimus assumenda quod quae modi dolorem sed.</p>
+                        <p class="answer size2 spacetop1 ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates ratione ea officiis ad quam blanditiis, dignissimos adipisci suscipit nobis temporibus molestias fugiat quas possimus assumenda quod quae modi dolorem sed.</p>
                     </div>
                     <div class="box spacebottom5">
                         <div class="title row jc-between">
                             <h3 class="size2 halfwhite">Lorem ipsum ipsum?</h3>
                             <i class="fas fa-angle-down size2 halfwhite"></i>
                         </div>
-                        <p class="answer size2 spacetop1 ">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            Voluptates
-                            ratione ea officiis ad quam blanditiis, dignissimos adipisci suscipit nobis temporibus
-                            molestias fugiat quas possimus assumenda quod quae modi dolorem sed.</p>
+                        <p class="answer size2 spacetop1 ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates ratione ea officiis ad quam blanditiis, dignissimos adipisci suscipit nobis temporibus molestias fugiat quas possimus assumenda quod quae modi dolorem sed.</p>
                     </div>
                     <div class="box spacebottom5">
                         <div class="title row jc-between">
                             <h3 class="size2 halfwhite">Lorem ipsum ipsum?</h3>
                             <i class="fas fa-angle-down size2 halfwhite"></i>
                         </div>
-                        <p class="answer size2 spacetop1 ">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                            Voluptates
-                            ratione ea officiis ad quam blanditiis, dignissimos adipisci suscipit nobis temporibus
-                            molestias fugiat quas possimus assumenda quod quae modi dolorem sed.</p>
+                        <p class="answer size2 spacetop1 ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates ratione ea officiis ad quam blanditiis, dignissimos adipisci suscipit nobis temporibus molestias fugiat quas possimus assumenda quod quae modi dolorem sed.</p>
                     </div>
                 </div>
             </div>
@@ -220,15 +200,14 @@
                 </div>
             </div>
         </div>
-        <p class="size2 halfwhite spacetop5 ta-center">Creado por <span class="white bold">MorazZarnozaz</span> | Todos
-            los derechos reservados</p>
+        <p class="size2 halfwhite spacetop5 ta-center">Creado por <span class="white bold">MorazZarnozaz</span> | Todos los derechos reservados</p>
     </footer>
     <!-- footer section ends -->
 
     <!-- SCRIPTS DE VUE, AXIOS, ETC -->
     <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
     <!-- custom js file link -->
     <script src="js/script.js"></script>

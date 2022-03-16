@@ -8,64 +8,89 @@
     <link rel="stylesheet" href="./css/preload.css">
 
     <title>Inicia Sesión o registrate</title>
-    
+
 </head>
 
 <body>
     <div id="app">
         <main>
-        <h1>¡Bienvenidos a RaspCash!</h1>
-        <div v-show="inicioSesion">
-            <h2>Inicio de sesión</h2>
-            <div class="form">
-            <input v-model="correo" type="text" required>
-            <label>
+            <h1>¡Bienvenidos a RaspCash!</h1>
+            <div v-show="inicioSesion">
+                <h2>Inicio de sesión</h2>
+                <div class="form">
+                    <input v-model="correo" type="text" required>
+                    <label>
                 <span class="text-nomb">Correo</span>
             </label>
-        </div>
-        <div class="form">
-            <input v-model="password" type="password" required>
-            <label class="lbl-nombre">
+                </div>
+                <div class="form">
+                    <input v-model="password" type="password" required>
+                    <label class="lbl-nombre">
                 <span class="text-nomb">Contraseña</span>
             </label>
-        </div>
+                </div>
 
-        <button v-on:click="iniciarSesion()" class="btn"> Iniciar Sesión </button>
+                <button v-on:click="iniciarSesion()" class="btn"> Iniciar Sesión </button>
 
-        <p>¿Aun no estás registrado?</p>
-        <button type="button" class="btn" @click="registro = true; inicioSesion = false"> Ir a registro </button>
-    </div>
-    <div v-show="registro">
-        <h2>Registrarse</h2>
-        <div class="form"><input v-model="nombre" type="text" required><label><span class="text-nomb">Nombre</span></label></div>
-        <div class="form"><input v-model="apellido" type="text" required><label><span class="text-nomb">Apellido</span></label></div>
-        <div class="form"><input v-model="apodo" type="text" required><label><span class="text-nomb">Apodo</span></label></div>
-        <div class="form"><input v-model="correo" type="text" required><label><span class="text-nomb">Correo</span></label></div>
-    <div class="form">
-        <input v-model="password" type="password" required>
-        <label class="lbl-nombre">
+                <p>¿Aun no estás registrado?</p>
+                <button type="button" class="btn" @click="registro = true; inicioSesion = false"> Ir a registro </button>
+            </div>
+            <div v-show="registro">
+                <h2>Registrarse</h2>
+                <div class="form"><input v-model="nombre" type="text" required><label><span class="text-nomb">Nombre</span></label></div>
+                <div class="form"><input v-model="apellido" type="text" required><label><span class="text-nomb">Apellido</span></label></div>
+                <div class="form"><input v-model="apodo" type="text" required><label><span class="text-nomb">Apodo</span></label></div>
+                <div class="form"><input v-model="correo" type="text" required><label><span class="text-nomb">Correo</span></label></div>
+                <div class="form">
+                    <input v-model="password" type="password" required>
+                    <label class="lbl-nombre">
             <span class="text-nomb">Contraseña</span>
         </label>
-    </div>
+                </div>
 
-    <button @click="registrarse()" class="btn"> Registrarse</button>
+                <button @click="registrarse()" class="btn"> Registrarse</button>
 
-    <p>Ya tengo una cuenta</p>
-    <button type="button" class="btn" @click="registro = false; inicioSesion = true"> Ir a inicio de sesión</button>
-</main>
-</div>
+                <p>Ya tengo una cuenta</p>
+                <button type="button" class="btn" @click="registro = false; inicioSesion = true"> Ir a inicio de sesión</button>
+        </main>
+        </div>
 
-<!-- preload -->
-<div class="preload">
-<div class="loadingio-spinner-spin-ecbmbwwrxu8"><div class="ldio-vh027wh0dx">
-    <div><div></div></div><div><div></div></div><div><div></div></div><div><div></div></div><div><div></div></div><div><div></div></div><div><div></div></div><div><div></div></div>
-    </div></div>
-</div>
+        <!-- preload -->
+        <div class="preload">
+            <div class="loadingio-spinner-spin-ecbmbwwrxu8">
+                <div class="ldio-vh027wh0dx">
+                    <div>
+                        <div></div>
+                    </div>
+                    <div>
+                        <div></div>
+                    </div>
+                    <div>
+                        <div></div>
+                    </div>
+                    <div>
+                        <div></div>
+                    </div>
+                    <div>
+                        <div></div>
+                    </div>
+                    <div>
+                        <div></div>
+                    </div>
+                    <div>
+                        <div></div>
+                    </div>
+                    <div>
+                        <div></div>
+                    </div>
+                </div>
+            </div>
+        </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
-
-    <script src="js/login.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+        <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+        <script src="js/login.js"></script>
 
 
 </body>

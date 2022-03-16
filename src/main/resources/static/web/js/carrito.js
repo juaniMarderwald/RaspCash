@@ -39,7 +39,7 @@ var appCarrito = new Vue({
         realizarCompra() {
             axios.post('/api/carrito/realizarCompra')
             Swal.fire({
-                text: 'Cuenta creada con exito',
+                text: 'compra realizada con exito',
                 icon: 'success',
                 confirmButtonText: 'Ok',
             }).then((result) => {
