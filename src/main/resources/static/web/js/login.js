@@ -26,7 +26,7 @@ var app = new Vue({
                     }
                 })
                 .then(response => {
-                    window.location.href = "index.html"
+                    window.location.href = "nft.html"
                 }).catch(error => {
                     alert("Usuario o contraseña incorrectos");
                 })
@@ -37,7 +37,7 @@ var app = new Vue({
             'content-type': 'application/x-www-form-urlencoded'
         }
     }).then(response => {
-            window.location.href = "index.html"
+            window.location.href = "nft.html"
         }).catch(error => {
             alert(error.response.data);
         })
