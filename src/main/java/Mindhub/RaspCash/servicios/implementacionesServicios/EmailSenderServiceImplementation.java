@@ -1,6 +1,5 @@
 package Mindhub.RaspCash.servicios.implementacionesServicios;
 
-import Mindhub.RaspCash.models.Usuario;
 import Mindhub.RaspCash.respositories.UsuarioRepositorio;
 import Mindhub.RaspCash.servicios.EmailSenderService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -38,7 +37,6 @@ public class EmailSenderServiceImplementation implements EmailSenderService {
         mailSender.send(message);
         System.out.println("Email enviado ...");
 
-        Usuario usuario=usuarioRepositorio.findByEmail(ReceptorEmail);
 
     }
     public void sendSimpleEmailTo(String ReceptorEmail,String  MensajeAenviar, String tema ,String archivoAdjunto) throws MessagingException {
@@ -58,6 +56,5 @@ public class EmailSenderServiceImplementation implements EmailSenderService {
         mailSender.send(mimeMessage);
         System.out.println("Email enviado ...");
 
-        Usuario usuario=usuarioRepositorio.findByEmail(ReceptorEmail);
     }
 }

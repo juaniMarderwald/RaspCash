@@ -1,8 +1,6 @@
 package Mindhub.RaspCash.dtos;
 
 import Mindhub.RaspCash.models.Billetera;
-import Mindhub.RaspCash.models.Transaccion;
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Getter;
 
 import java.util.HashSet;

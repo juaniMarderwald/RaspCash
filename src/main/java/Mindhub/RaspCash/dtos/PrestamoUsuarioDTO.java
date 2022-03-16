@@ -1,6 +1,5 @@
 package Mindhub.RaspCash.dtos;
 
-import Mindhub.RaspCash.models.Prestamo;
 import Mindhub.RaspCash.models.PrestamoUsuario;
 
 public class PrestamoUsuarioDTO {

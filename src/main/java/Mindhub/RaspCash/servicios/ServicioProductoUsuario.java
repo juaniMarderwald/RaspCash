@@ -1,6 +1,5 @@
 package Mindhub.RaspCash.servicios;
 
-import Mindhub.RaspCash.models.Producto;
 import Mindhub.RaspCash.models.ProductoUsuario;
 import org.springframework.stereotype.Service;
 

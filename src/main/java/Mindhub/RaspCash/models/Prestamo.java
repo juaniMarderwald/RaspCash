@@ -2,7 +2,6 @@ package Mindhub.RaspCash.models;
 
 import org.hibernate.annotations.GenericGenerator;
 
-import lombok.Data;
 
 import javax.persistence.*;
 import java.util.ArrayList;

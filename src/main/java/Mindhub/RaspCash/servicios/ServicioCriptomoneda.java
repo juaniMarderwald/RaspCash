@@ -1,8 +1,6 @@
 package Mindhub.RaspCash.servicios;
 
 import Mindhub.RaspCash.dtos.CriptoMonedaDTO;
-import Mindhub.RaspCash.models.CriptoMoneda;
-
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
