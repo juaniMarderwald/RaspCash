@@ -61,7 +61,8 @@
                         <h1 class="size5 bold spacebottom1">
                             Swap Tokens y Solicitiar Prestamos
                         </h1>
-                        <p class="size2 spacebottom3 halfwhite">Intercambia Bitcoin y pesos, a la mejor cotizacion del mercado.
+                        <p class="size2 spacebottom3 halfwhite">Intercambia Bitcoin y pesos, a la mejor cotizacion del
+                            mercado.
                         </p>
                         <br>
                         <div class="row col12 col9-md jc-between spacebottom4 jc-evenly-s col12-s">
@@ -80,38 +81,39 @@
         <!-- Swap start -->
         <main id="swap" class="flex">
             <article class="card">
-                <div class="card-body">
+                <div class="card-body spacebottom2">
                     <h1>Swap</h1>
                     <p>Una manera facil y sencilla de cambiar tus Tokens</p>
-                    <hr>   
+                    <hr>
                     <h1>Disponible en Billetera</h1>
                     <p>Mono en Pesos: ${{montoEnPesos}}</p>
                     <p>Monto en BTC: {{montoEnBTC}} BTC</p>
                     <hr>
                 </div>
                 <div class="card-footer">
-                 
                     <form action="">
-                        <template v-if="type == 'PESOS_A_BTC'"> 
+                        <template v-if="type == 'PESOS_A_BTC'">
                             <input type="number" placeholder="Cantidad de pesos" v-model="pesos">
                         </template>
                         <template v-if="type == 'BTC_A_PESOS'">
                             <input type="number" placeholder="Cantidad de BTC" v-model="btc">
                         </template>
                     </form>
-                    <div>
-                        <select required v-model="type">
+                    <div class="spacebottom3">
+                        <select class="spacer1 size2" required v-model="type">
                             <option value="BTC_A_PESOS">BTC a pesos</option>
                             <option value="PESOS_A_BTC">Pesos a BTC</option>
                         </select>
                     </div>
                     <template v-if="type == 'BTC_A_PESOS'">
-                        <h2>Recibiras: {{btc*cotizacionBTCPesos}} pesos</h2>
-                        <button type="button" @click="realizarSwapBTCAPesos(btc*cotizacionBTCPesos)">Realizar Swap</button>
+                        <h2 class="spacebottom5">Recibiras: {{btc*cotizacionBTCPesos}} pesos</h2>
+                        <button class="btn bg-purple size2 white nmcol12" type="button" @click="realizarSwapBTCAPesos(btc*cotizacionBTCPesos)">Realizar
+                            Swap</button>
                     </template>
                     <template v-if="type == 'PESOS_A_BTC'">
-                        <h2 >Recibiras: {{pesos/cotizacionBTCPesos}} btc </h2>
-                        <button type="button" @click="realizarSwapPesosABTC(pesos/cotizacionBTCPesos)">Realizar Swap</button>
+                        <h2 class="spacebottom5">Recibiras: {{pesos/cotizacionBTCPesos}} btc </h2>
+                        <button class="btn bg-purple size2 white nmcol12" type="button" @click="realizarSwapPesosABTC(pesos/cotizacionBTCPesos)">Realizar
+                            Swap</button>
                     </template>
                     <!-- <h2 v-show="type == 'BTC_A_PESOS'" >Recibiras: {{btc*cotizacionBTCPesos}} pesos</h2>
                     <h2 v-show="type == 'PESOS_A_BTC'" >Recibiras: {{pesos/cotizacionBTCPesos}} btc </h2> -->
@@ -122,25 +124,41 @@
 
         <!-- Loan Start -->
         <main id="loan" class="flex">
-            <!-- <article class="card">
+            <article class="card">
                 <div class="card-body">
-                    <h1>Solicitar Prestamos</h1>
-                    <p>Los mejores prestamos DeFi bajo Smart Contracts</p>
+                    <h1>Solicitar Prestamos DeFi</h1>
+                    <hr>
+                    <h2>Elija un préstamo que se adapte a tus necesidades</h2>
+                    <hr>
+                    <h2>Disponible en Billetera para la garantía: {{montoEnBTC}} BTC</h2>
+                    <hr>                    
+                    <select v-model="prestamoElegido" class="form-select" name="tipoPrestamo"
+                        aria-label="Default select example">
+                        <option v-for="prestamo in prestamos" v-cloak>{{prestamo.nombre}}</option>
+                    </select>
+                    <hr>
+                    <h3>Cantidad de cuotas</h3>
+                    <h3>Elige una opcion de cuotas</h3>
+                    <select v-model="cuotasASolicitar" class="form-select" name="tipoPrestamo"
+                        aria-label="Default select example">
+                        <option v-for="cuota in obtenerCuotas" v-cloak>{{cuota}}</option>
+                    </select>
+                    <h2>Monto a otorgar: {{obtenerMontoPrestamo}} BTC</h2>
+                    <h2>Interés Anual del préstamo: {{obtenerInteresPrestamo}} %</h2>
+
+
                 </div>
-                <div class="card-footer">
-                    <form action="">
-                        <input type="number" placeholder="Cantidad de BTC" v-model="btc">
-                    </form>
+                <div class="card-footer">                    
+                    <button type="button" @click="solicitarPrestamo()">Solicitar Prestamo</button>    
                 </div>
-                <button type="button" @click="realizarSwap()">Realizar Swap</button>
-                <h2 v-show="type == 'BTC_A_PESOS'" >Recibiras: {{pesos}} pesos</h2>
-                <h2 v-show="type == 'PESOS_A_BTC'" >Recibiras: {{btc}} btc </h2>
-            </article> -->
+                
+                
+            </article>
         </main>
         <!-- Loan End -->
 
         <!-- FAQ section starts -->
-        <section class="spacer10" id="faq">
+    <!--     <section class="spacer10" id="faq">
             <div class="container">
                 <h1 class="bold size4 ta-center">Preguntas Frecuentes</h1>
                 <p class="spacebottom3 halfwhite size2 ta-center">
@@ -207,7 +225,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
         <!-- FAQ section ends -->
 
         <!-- footer section starts -->

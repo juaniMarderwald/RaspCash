@@ -27,7 +27,7 @@
     <!-- header section starts -->
     <header class="header bg-white10">
         <div class="container">
-            <a href="index.html" class="logo bold white">Rasp<span class="lightpurple">Cash</span></a>
+            <a href="/index.html" class="logo bold white">Rasp<span class="lightpurple">Cash</span></a>
 
             <div class="menu" id="appLogin">
                 <a href="NFT.html">NFT</a>
@@ -164,11 +164,11 @@
             <div class="container">
                 <h1 class="bold size4 ta-center">Obras Destacadas</h1>
                 <p class="spacebottom3 halfwhite size2 ta-center">
-                    Lorem ipsum dolor sit amet, consectetur<br>adipiscing elit.
+                    Aquí podrás ver las obras más requeridas de la escena.
                 </p>
                 <div class="swiper card-slider row">
                     <div class="swiper-wrapper">
-                        <div class="col4 col5-md col7-s swiper-slide"  v-for="obraDestacada in obrasDestacadas">
+                        <div class="col4 col5-md col7-s swiper-slide" v-for="obraDestacada in obrasDestacadas">
                             <div class="card bg-white10">
                                 <img v-bind:src="obraDestacada.imagen" class="img-responsive" alt="">
                                 <div class="row jc-between spacetop2">
@@ -183,7 +183,8 @@
                                         <h5 class="size2 bold">${{obraDestacada.valor}}</h5>
                                     </div>
                                 </div>
-                                <a v-show="obraDestacada.stock" @click="agregarProductoAlCarrito(obraDestacada.id)" class="bid size2 ta-center">
+                                <a v-show="obraDestacada.stock" @click="agregarProductoAlCarrito(obraDestacada.id)"
+                                    class="bid size2 ta-center">
                                     Añadir al carrito
                                 </a>
                                 <a v-show="!obraDestacada.stock" class="bid size2 ta-center">
@@ -204,41 +205,40 @@
         <div class="container">
             <h1 class="bold size4 ta-center">Top Creadores</h1>
             <p class="spacebottom3 halfwhite size2 ta-center">
-                Lorem ipsum dolor sit amet, consectetur<br>adipiscing elit.
-            </p>
+                Hacemos referencias a los creadores más importantes de la escena artista internacional actual </p>
             <div class="swiper row creator-slider">
                 <div class="swiper-wrapper">
                     <div class="col4 col5-md col7-s swiper-slide">
                         <div class="card-creator bg-white10 ta-center">
                             <img src="img/creator1.png" class="img-responsive" alt="">
                             <img src="img/photo1.png" class="photo" alt="">
-                            <h5 class="spacer1 size2 bold">John Wick</h5>
-                            <p class="spacebottom2 halfwhite desc">Lorem ipsum dolor sit amet, consectetur
-                                <br>adipiscing elit.
+                            <h5 class="spacer1 size2 bold">Marta Minujin</h5>
+                            <p class="spacebottom2 halfwhite desc">Excentrica creadora Argentina, maravilla al mundo con
+                                sus artes
                             </p>
-                            <button class="follow ta-center bg-purple white">+ Seguir</button>
+                            <!-- <button class="follow ta-center bg-purple white">+ Seguir</button> -->
                         </div>
                     </div>
                     <div class="col4 col5-md col7-s swiper-slide">
                         <div class="card-creator bg-white10 ta-center">
                             <img src="img/creator2.png" class="img-responsive" alt="">
                             <img src="img/photo2.png" class="photo" alt="">
-                            <h5 class="spacer1 size2 bold">John Wick</h5>
-                            <p class="spacebottom2 halfwhite desc">Lorem ipsum dolor sit amet, consectetur
-                                <br>adipiscing elit.
+                            <h5 class="spacer1 size2 bold">Patricio Guevara</h5>
+                            <p class="spacebottom2 halfwhite desc">Artista internacional de gran trayectoria, residente
+                                en Barcelona, España.
                             </p>
-                            <button class="follow ta-center bg-purple white">+ Seguir</button>
+                            <!-- <button class="follow ta-center bg-purple white">+ Seguir</button> -->
                         </div>
                     </div>
                     <div class="col4 col5-md col7-s swiper-slide">
                         <div class="card-creator bg-white10 ta-center">
                             <img src="img/creator3.png" class="img-responsive" alt="">
                             <img src="img/photo3.png" class="photo" alt="">
-                            <h5 class="spacer1 size2 bold">John Wick</h5>
-                            <p class="spacebottom2 halfwhite desc">Lorem ipsum dolor sit amet, consectetur
-                                <br>adipiscing elit.
+                            <h5 class="spacer1 size2 bold">Maria Vallejos</h5>
+                            <p class="spacebottom2 halfwhite desc">Inigualable técnica y desarrollo matricial de colores
+                                en 3D y 2D, artista única en su especie, inspirador y creador innato.
                             </p>
-                            <button class="follow ta-center bg-purple white">+ Seguir</button>
+                            <!-- <button class="follow ta-center bg-purple white">+ Seguir</button> -->
                         </div>
                     </div>
                 </div>
@@ -249,7 +249,7 @@
     <!-- creator section ends -->
 
     <!-- FAQ section starts -->
-    <section class="spacer10" id="faq">
+   <!--  <section class="spacer10" id="faq">
         <div class="container">
             <h1 class="bold size4 ta-center">Preguntas Frecuentes</h1>
             <p class="spacebottom3 halfwhite size2 ta-center">
@@ -316,7 +316,7 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section> -->
     <!-- FAQ section ends -->
 
     <!-- footer section starts -->

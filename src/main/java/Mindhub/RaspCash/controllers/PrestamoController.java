@@ -43,6 +43,10 @@ public class PrestamoController {
     @PostMapping("/prestamos")
     public ResponseEntity<Object> asignarPrestamo(@RequestBody AplicacionPrestamoUsuarioDTO aplicacionPrestamoUsuarioDTO, Authentication authentication){
 
+        if(aplicacionPrestamoUsuarioDTO.getNombrePrestamo().equals("")||aplicacionPrestamoUsuarioDTO.obtenerBilleteraDestino().equals("")||aplicacionPrestamoUsuarioDTO.getCuotas()==0||aplicacionPrestamoUsuarioDTO.getMonto().equals("")){
+            return new ResponseEntity<>("Faltan completar algunos campos requeridos", HttpStatus.FORBIDDEN);
+        }
+
         Prestamo prestamo = servicioPrestamo.encontrarPrestamoPorNombre(aplicacionPrestamoUsuarioDTO.getNombrePrestamo());
         Usuario usuario = servicioUsuario.encontrarUsuarioPorEmail(authentication.getName());
         Billetera billetera= servicioBilletera.encontrarPorDireccion(aplicacionPrestamoUsuarioDTO.obtenerBilleteraDestino());
