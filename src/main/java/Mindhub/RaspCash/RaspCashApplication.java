@@ -58,10 +58,10 @@ public class RaspCashApplication {
 			usuarioRepositorio.save(usuarioAdmin);
 			usuarioRepositorio.save(usuario3);
 
-			Billetera billetera1=new Billetera(utilidades.obtenerDireccionBilletera(), 0.5,10000);
-			Billetera billetera2=new Billetera(utilidades.obtenerDireccionBilletera(), 0.2,15000);
+			Billetera billetera1=new Billetera(utilidades.obtenerDireccionBilletera(), 3.5,1000000);
+			Billetera billetera2=new Billetera(utilidades.obtenerDireccionBilletera(), 0.5,1500000);
 			Billetera billetera3=new Billetera(utilidades.obtenerDireccionBilletera(), 0,0);
-			Billetera billetera4=new Billetera(utilidades.obtenerDireccionBilletera(), 2,20000);
+			Billetera billetera4=new Billetera(utilidades.obtenerDireccionBilletera(), 3,2000000);
 
 			usuario1.setBilletera(billetera1);
 			usuario2.setBilletera(billetera2);
