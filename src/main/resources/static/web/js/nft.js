@@ -2,7 +2,7 @@ var app = new Vue({
     el: '#appNFTs',
     data: {
         nfts: [],
-        obrasDestacadas:[]
+        obrasDestacadas: []
     },
     created() {
         this.cargarDatos();
@@ -14,7 +14,7 @@ var app = new Vue({
                 .then(response => {
                     console.log(response.data);
                     this.nfts = response.data;
-                    this.obrasDestacadas= this.nfts.slice(10,15);
+                    this.obrasDestacadas = this.nfts.slice(10, 15);
                     console.log(this.obrasDestacadas);
                 })
                 .finally(function () {
@@ -23,13 +23,23 @@ var app = new Vue({
                 });
         },
         agregarProductoAlCarrito(idProducto) {
-            axios.post('/api/carrito/producto', `idProducto=${idProducto}`).then(response => {app.cargarDatos();
-            alert(response.data)}).catch(error => {
-                alert(error.response.data);
+            axios.post('/api/carrito/producto', `idProducto=${idProducto}`).then(response => {
+                app.cargarDatos();
+                Swal.fire({
+                    text: response.data,
+                    icon: 'success',
+                    confirmButtonText: 'Ok',
+                });
+            }).catch(error => {
+                Swal.fire({
+                    text: error.response.data,
+                    icon: 'success',
+                    confirmButtonText: 'Ok',
+                });
                 if (error.response.data == "No hay un usuario logueado") {
                     window.location.href = "login.html"
                 }
             })
-        }      
+        }
     }
 })

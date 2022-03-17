@@ -21,16 +21,16 @@ app = new Vue({
         },
         agregarProductoAlCarrito(idProducto) {
             axios.post('/api/carrito/producto', `idProducto=${idProducto}`)
-            Swal.fire({
-                text: 'El producto se agrego con exito',
-                icon: 'success',
-                confirmButtonText: 'Ok',
-            }).then(response => {
-                app.cargarDatos();
-
+            .then(response => {
+                Swal.fire({
+                    text: response.data,
+                    icon: 'success',
+                    confirmButtonText: 'Ok',
+                });
+                this.cargarDatos();
             }).catch(error => {
                 Swal.fire({
-                    text: 'error',
+                    text: error.response.data,
                     icon: 'danger',
                     confirmButtonText: 'Ok',
                 })

@@ -27,25 +27,21 @@ var appCarrito = new Vue({
                 });
         },
         eliminarProductoDelCarrito(idProducto) {
-            axios.post('/api/carrito/sacar_producto', "idProducto=" + idProducto)
-            Swal.fire({
-                text: 'Se ha borrado el producto con exito',
-                icon: 'success',
-                confirmButtonText: 'Ok',
-            }).then(response => {
-                location.reload();
-            })
-        },
+            axios.post('/api/carrito/sacar_producto', "idProducto=" + idProducto).then(response => {
+                Swal.fire({
+                    text: 'Se ha borrado el producto con exito',
+                    icon: 'success',
+                    confirmButtonText: 'Ok'});
+                this.cargarDatos();
+            })},
+        
         realizarCompra() {
-            axios.post('/api/carrito/realizarCompra')
-            Swal.fire({
-                text: 'compra realizada con exito',
-                icon: 'success',
-                confirmButtonText: 'Ok',
-            }).then((result) => {
-                location.reload();
+            axios.post('/api/carrito/realizarCompra').then(response => {
+                this.cargarDatos();
+                Swal.fire({
+                    text: response.data,
+                    icon: 'success',
+                    confirmButtonText: 'Ok',
             })
-        },
-
-    }
-})
+        })
+    }}})

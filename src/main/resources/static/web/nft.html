@@ -12,7 +12,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" />
 
     <!-- google font link -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,400&family=Poppins:wght@400;500;700&display=swap" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,400&family=Poppins:wght@400;500;700&display=swap"
+        rel="stylesheet" />
 
     <!-- custom css link -->
     <link rel="stylesheet" href="css/style.css" />
@@ -49,7 +51,8 @@
                     <h1 class="size5 bold spacebottom1">
                         Crea, Vende & Colecciona tus propios NFT
                     </h1>
-                    <p class="size2 spacebottom3 halfwhite">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit.
+                    <p class="size2 spacebottom3 halfwhite">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                        Nunc vulputate libero et velit.
                     </p>
 
                     <div class="row col8 col9-md jc-between spacebottom4 jc-evenly-s col12-s">
@@ -89,30 +92,35 @@
         </div>
     </section>
     <!-- partner section ends -->
+    <div id="appNFTs">
 
-    <!-- about section starts -->
-    <section id="about" class="spacer10">
-        <div class="container">
-            <h1 class="bold size4 ta-center">NFTs</h1>
-            <!-- <p class="spacebottom3 halfwhite size2 ta-center">
+        <!-- about section starts -->
+        <section id="about" class="spacer10">
+            <div class="container">
+                <h1 class="bold size4 ta-center">NFTs</h1>
+                <!-- <p class="spacebottom3 halfwhite size2 ta-center">
                 Conocé más acerca de los NFTs
             </p> -->
-            <div class="row ai-center jc-between flexcol-s">
-                <div class="col5 col10-s spacebottom2-s">
-                    <img src="img/about.png" class="img-responsive" alt="">
+                <div class="row ai-center jc-between flexcol-s">
+                    <div class="col5 col10-s spacebottom2-s">
+                        <img src="img/about.png" class="img-responsive" alt="">
+                    </div>
+                    <div class="col6 col12-s ta-center-s">
+                        <h3 class="size3 bold">Obtener NFT Populares</h3>
+                        <p class="size2 spacetop1 spacebottom3 halfwhite">Un token no fungible (NFT) es una unidad de
+                            datos
+                            no intercambiable almacenada en una Blockchain, que se puede comercializar. Los tipos de
+                            unidades de datos NFT pueden asociarse con archivos digitales como fotos, videos y audio.
+                            Debido
+                            a que cada token es identificable de forma única. Puedes obtener aquí los mejores NFTs del
+                            mercado a un precio increíble. <br>
+                            <a href="#collections" class="btn bg-purple size2 white">Mostrar Más</a>
+                    </div>
                 </div>
-                <div class="col6 col12-s ta-center-s">
-                    <h3 class="size3 bold">Obtener NFT Populares</h3>
-                    <p class="size2 spacetop1 spacebottom3 halfwhite">Un token no fungible (NFT) es una unidad de datos no intercambiable almacenada en una Blockchain, que se puede comercializar. Los tipos de unidades de datos NFT pueden asociarse con archivos digitales como fotos, videos y audio. Debido
-                        a que cada token es identificable de forma única. Puedes obtener aquí los mejores NFTs del mercado a un precio increíble. <br>
-                        <a href="#collections" class="btn bg-purple size2 white">Mostrar Más</a>
-                </div>
-            </div>
 
-        </div>
-    </section>
-    <!-- about section ends -->
-    <div id="appNFTs">
+            </div>
+        </section>
+        <!-- about section ends -->
         <!-- collections section starts -->
         <section class="collections spacer10" id="collections">
             <div class="container">
@@ -129,167 +137,23 @@
                                 <p class="size2 halfwhite">
                                     {{nft.nombre}}
                                 </p>
-                                <h5 class="size2 bold">Stock: {{nft.stock }}</h5>
+                                <h5 class="size2 bold">Stock: {{nft.stock}}</h5>
                             </div>
                             <div>
                                 <p class="current halfwhite">Precio actual</p>
                                 <h5 class="size2 bold">$ {{nft.valor}} </h5>
                             </div>
                         </div>
-                        <a class="bid size2 ta-center">
+                        <a v-show="nft.stock" @click="agregarProductoAlCarrito(nft.id)" class="bid size2 ta-center">
                             Añadir al carrito
                         </a>
+                        <a v-show="!nft.stock" class="bid size2 ta-center">
+                            Sin stock
+                        </a>
                     </div>
-
-                    <!-- <div class="col4 card collect bg-white10 col5-md col6-s" data-item="photograpy">
-                    <img src="img/collection2.png" class="img-responsive" alt="">
-                    <div class="row jc-between spacetop2">
-                        <div>
-                            <p class="size2 halfwhite">
-                                @Johny
-                            </p>
-                            <h5 class="size2 bold">Yellow Red</h5>
-                        </div>
-                        <div>
-                            <p class="current halfwhite">Precio actual</p>
-                            <h5 class="size2 bold">0.005ETH</h5>
-                        </div>
-                    </div>
-                    <a class="bid size2 ta-center">
-                        Añadir al carrito
-                    </a>
-                </div>
-                <div class="col4 card collect bg-white10 col5-md col6-s" data-item="pattern">
-                    <img src="img/collection3.png" class="img-responsive" alt="">
-                    <div class="row jc-between spacetop2">
-                        <div>
-                            <p class="size2 halfwhite">
-                                @Johny
-                            </p>
-                            <h5 class="size2 bold">Yellow Red</h5>
-                        </div>
-                        <div>
-                            <p class="current halfwhite">Precio actual</p>
-                            <h5 class="size2 bold">0.005ETH</h5>
-                        </div>
-                    </div>
-                    <a class="bid size2 ta-center">
-                        Añadir al carrito
-                    </a>
-                </div>
-
-                <div class="col4 card collect bg-white10 col5-md col6-s" data-item="art">
-                    <img src="img/collection4.png" class="img-responsive" alt="">
-                    <div class="row jc-between spacetop2">
-                        <div>
-                            <p class="size2 halfwhite">
-                                @Johny
-                            </p>
-                            <h5 class="size2 bold">Yellow Red</h5>
-                        </div>
-                        <div>
-                            <p class="current halfwhite">Precio actual</p>
-                            <h5 class="size2 bold">0.005ETH</h5>
-                        </div>
-                    </div>
-                    <a class="bid size2 ta-center">
-                        Añadir al carrito
-                    </a>
-                </div>
-
-                <div class="col4 card collect bg-white10 col5-md col6-s" data-item="photograpy">
-                    <img src="img/collection5.png" class="img-responsive" alt="">
-                    <div class="row jc-between spacetop2">
-                        <div>
-                            <p class="size2 halfwhite">
-                                @Johny
-                            </p>
-                            <h5 class="size2 bold">Yellow Red</h5>
-                        </div>
-                        <div>
-                            <p class="current halfwhite">Precio actual</p>
-                            <h5 class="size2 bold">0.005ETH</h5>
-                        </div>
-                    </div>
-                    <a class="bid size2 ta-center">
-                        Añadir al carrito
-                    </a>
-                </div>
-                <div class="col4 card collect bg-white10 col5-md col6-s" data-item="pattern">
-                    <img src="img/collection6.png" class="img-responsive" alt="">
-                    <div class="row jc-between spacetop2">
-                        <div>
-                            <p class="size2 halfwhite">
-                                @Angel
-                            </p>
-                            <h5 class="size2 bold">An Angel</h5>
-                        </div>
-                        <div>
-                            <p class="current halfwhite">Precio actual</p>
-                            <h5 class="size2 bold">0.005ETH</h5>
-                        </div>
-                    </div>
-                    <a class="bid size2 ta-center">
-                        Añadir al carrito
-                    </a>
-                </div>
-
-                <div class="col4 card collect bg-white10 col5-md col6-s" data-item="art">
-                    <img src="img/collection7.png" class="img-responsive" alt="">
-                    <div class="row jc-between spacetop2">
-                        <div>
-                            <p class="size2 halfwhite">
-                                @Johny
-                            </p>
-                            <h5 class="size2 bold">Yellow Red</h5>
-                        </div>
-                        <div>
-                            <p class="current halfwhite">Precio actual</p>
-                            <h5 class="size2 bold">0.005ETH</h5>
-                        </div>
-                    </div>
-                    <a class="bid size2 ta-center">
-                        Añadir al carrito
-                    </a>
-                </div>
-                <div class="col4 card collect bg-white10 col5-md col6-s" data-item="photograpy">
-                    <img src="img/collection8.png" class="img-responsive" alt="">
-                    <div class="row jc-between spacetop2">
-                        <div>
-                            <p class="size2 halfwhite">
-                                @Johny
-                            </p>
-                            <h5 class="size2 bold">Yellow Red</h5>
-                        </div>
-                        <div>
-                            <p class="current halfwhite">Precio actual</p>
-                            <h5 class="size2 bold">0.005ETH</h5>
-                        </div>
-                    </div>
-                    <a class="bid size2 ta-center">
-                        Añadir al carrito
-                    </a>
-                </div>
-                <div class="col4 card collect bg-white10 col5-md col6-s" data-item="pattern">
-                    <img src="img/collection9.png" class="img-responsive" alt="">
-                    <div class="row jc-between spacetop2">
-                        <div>
-                            <p class="size2 halfwhite">
-                                @Johny
-                            </p>
-                            <h5 class="size2 bold">Yellow Red</h5>
-                        </div>
-                        <div>
-                            <p class="current halfwhite">Precio actual</p>
-                            <h5 class="size2 bold">0.005ETH</h5>
-                        </div>
-                    </div>
-                    <a class="bid size2 ta-center">
-                        Añadir al carrito
-                    </a>
-                </div> -->
                 </div>
             </div>
+
         </section>
         <!-- collections section ends -->
 
@@ -302,8 +166,8 @@
                 </p>
                 <div class="swiper card-slider row">
                     <div class="swiper-wrapper">
-                        <div class="col4 col5-md col7-s swiper-slide">
-                            <div v-for="obraDestacada in obrasDestacadas" class="card bg-white10">
+                        <div class="col4 col5-md col7-s swiper-slide"  v-for="obraDestacada in obrasDestacadas">
+                            <div class="card bg-white10">
                                 <img v-bind:src="obraDestacada.imagen" class="img-responsive" alt="">
                                 <div class="row jc-between spacetop2">
                                     <div>
@@ -317,8 +181,11 @@
                                         <h5 class="size2 bold">${{obraDestacada.valor}}</h5>
                                     </div>
                                 </div>
-                                <a class="bid size2 ta-center">
+                                <a v-show="obraDestacada.stock" @click="agregarProductoAlCarrito(obraDestacada.id)" class="bid size2 ta-center">
                                     Añadir al carrito
+                                </a>
+                                <a v-show="!obraDestacada.stock" class="bid size2 ta-center">
+                                    Sin stock
                                 </a>
                             </div>
                         </div>
@@ -393,21 +260,27 @@
                             <h3 class="size2 halfwhite">Lorem ipsum ipsum?</h3>
                             <i class="fas fa-angle-down size2 halfwhite"></i>
                         </div>
-                        <p class="answer size2 spacetop1 ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates ratione ea officiis ad quam blanditiis, dignissimos adipisci suscipit nobis temporibus molestias fugiat quas possimus assumenda quod quae modi dolorem sed.</p>
+                        <p class="answer size2 spacetop1 ">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Voluptates ratione ea officiis ad quam blanditiis, dignissimos adipisci suscipit nobis
+                            temporibus molestias fugiat quas possimus assumenda quod quae modi dolorem sed.</p>
                     </div>
                     <div class="box spacebottom5">
                         <div class="title row jc-between">
                             <h3 class="size2 halfwhite">Lorem ipsum ipsum?</h3>
                             <i class="fas fa-angle-down size2 halfwhite"></i>
                         </div>
-                        <p class="answer size2 spacetop1 ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates ratione ea officiis ad quam blanditiis, dignissimos adipisci suscipit nobis temporibus molestias fugiat quas possimus assumenda quod quae modi dolorem sed.</p>
+                        <p class="answer size2 spacetop1 ">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Voluptates ratione ea officiis ad quam blanditiis, dignissimos adipisci suscipit nobis
+                            temporibus molestias fugiat quas possimus assumenda quod quae modi dolorem sed.</p>
                     </div>
                     <div class="box spacebottom5">
                         <div class="title row jc-between">
                             <h3 class="size2 halfwhite">Lorem ipsum ipsum?</h3>
                             <i class="fas fa-angle-down size2 halfwhite"></i>
                         </div>
-                        <p class="answer size2 spacetop1 ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates ratione ea officiis ad quam blanditiis, dignissimos adipisci suscipit nobis temporibus molestias fugiat quas possimus assumenda quod quae modi dolorem sed.</p>
+                        <p class="answer size2 spacetop1 ">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Voluptates ratione ea officiis ad quam blanditiis, dignissimos adipisci suscipit nobis
+                            temporibus molestias fugiat quas possimus assumenda quod quae modi dolorem sed.</p>
                     </div>
                 </div>
                 <div class="box-faq col6 col12-s">
@@ -416,21 +289,27 @@
                             <h3 class="size2 halfwhite">Lorem ipsum ipsum?</h3>
                             <i class="fas fa-angle-down size2 halfwhite"></i>
                         </div>
-                        <p class="answer size2 spacetop1 ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates ratione ea officiis ad quam blanditiis, dignissimos adipisci suscipit nobis temporibus molestias fugiat quas possimus assumenda quod quae modi dolorem sed.</p>
+                        <p class="answer size2 spacetop1 ">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Voluptates ratione ea officiis ad quam blanditiis, dignissimos adipisci suscipit nobis
+                            temporibus molestias fugiat quas possimus assumenda quod quae modi dolorem sed.</p>
                     </div>
                     <div class="box spacebottom5">
                         <div class="title row jc-between">
                             <h3 class="size2 halfwhite">Lorem ipsum ipsum?</h3>
                             <i class="fas fa-angle-down size2 halfwhite"></i>
                         </div>
-                        <p class="answer size2 spacetop1 ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates ratione ea officiis ad quam blanditiis, dignissimos adipisci suscipit nobis temporibus molestias fugiat quas possimus assumenda quod quae modi dolorem sed.</p>
+                        <p class="answer size2 spacetop1 ">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Voluptates ratione ea officiis ad quam blanditiis, dignissimos adipisci suscipit nobis
+                            temporibus molestias fugiat quas possimus assumenda quod quae modi dolorem sed.</p>
                     </div>
                     <div class="box spacebottom5">
                         <div class="title row jc-between">
                             <h3 class="size2 halfwhite">Lorem ipsum ipsum?</h3>
                             <i class="fas fa-angle-down size2 halfwhite"></i>
                         </div>
-                        <p class="answer size2 spacetop1 ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates ratione ea officiis ad quam blanditiis, dignissimos adipisci suscipit nobis temporibus molestias fugiat quas possimus assumenda quod quae modi dolorem sed.</p>
+                        <p class="answer size2 spacetop1 ">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                            Voluptates ratione ea officiis ad quam blanditiis, dignissimos adipisci suscipit nobis
+                            temporibus molestias fugiat quas possimus assumenda quod quae modi dolorem sed.</p>
                     </div>
                 </div>
             </div>
@@ -471,7 +350,8 @@
                 </div>
             </div>
         </div>
-        <p class="size2 halfwhite spacetop5 ta-center">Creado por <span class="white bold">MorazZarnozaz</span> | Todos los derechos reservados</p>
+        <p class="size2 halfwhite spacetop5 ta-center">Creado por <span class="white bold">MorazZarnozaz</span> | Todos
+            los derechos reservados</p>
     </footer>
     <!-- footer section ends -->
 
