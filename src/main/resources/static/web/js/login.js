@@ -47,8 +47,8 @@ var app = new Vue({
                     'content-type': 'application/x-www-form-urlencoded'
                 }
             }).then(response => {
-                window.location.href = "/web/nft.html";
-                Swal.fire(response.data);    
+                Swal.fire(response.data); 
+                this.iniciarSesion();   
             }).catch(error => {
                  Swal.fire(error.response.data);
                 });

@@ -1,6 +1,7 @@
 package Mindhub.RaspCash.controllers;
 
 import Mindhub.RaspCash.servicios.ServicioUsuario;
+import Mindhub.excepciones.ConflictException;
 import Mindhub.RaspCash.dtos.UsuarioDTO;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.Authentication;
@@ -30,7 +31,12 @@ public class UsuarioController {
 
     @GetMapping("/usuarios/current")
     public UsuarioDTO obtenerUsuarioActual(Authentication authentication){
-        return servicioUsuario.findByEmail(authentication.getName());
+       UsuarioDTO usuario = servicioUsuario.findByEmail(authentication.getName());
+       
+       if(usuario == null)
+            throw new ConflictException("No se encontro ningún usuario logueado");
+       
+        return usuario;
     }
 
 }
