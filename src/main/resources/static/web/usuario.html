@@ -63,23 +63,25 @@
 
     <!-- Datos personales start -->
     <main id="swap" class="flex spacetop4 spacebottom9">
-        <article class="card">
-            <div class="card-body">
-                <img src="./imagen de user/usuario.png" alt="user image" width="150" height="150">
-                <h1>Bienvenid@ {{nombre}}!</h1>
-            </div>
-            <div class="card-footer">
-                <form action="">
-                    <label>Nombre: {{Nombre}}</label>
-                    <br><br>
-                    <label>Apellido: {{apellido}}</label><br><br>
-                    <label>Email: {{email}}</label><br><br>
-                    <label>Apodo: {{apodo}}</label><br><br>
-                    <label>Contraseña: {{contraseña}}</label><br><br>
-                </form>
-            </div>
+        <div id="appUsuario">
+            <article class="card">
+                <div class="card-body">
+                    <img src="img/usuario.png" alt="user image" width="150" height="150">
+                    <h1>Bienvenid@ {{apodo}}!</h1>
+                </div>
+                <div class="card-footer">
+                    <form action="">
+                        <label>Nombre: {{nombre}}</label>
+                        <br><br>
+                        <label>Apellido: {{apellido}}</label><br><br>
+                        <label>Email: {{correo}}</label><br><br>
+                        <label>Apodo: {{apodo}}</label><br><br>
+                    </form>
+                </div>
 
-        </article>
+            </article>
+
+        </div>
     </main>
     <!-- Datos personales Ends -->
 
@@ -169,6 +171,7 @@
     <!-- custom js file link -->
     <script src="js/script.js"></script>
     <script src="js/login.js"></script>
+    <script src="js/usuario.js"></script>
 
 </body>
 
