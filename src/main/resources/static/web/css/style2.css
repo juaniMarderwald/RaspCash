@@ -49,8 +49,13 @@ main .card .head {
 	justify-content: space-between;
 	align-items: flex-start;
 }
-main .card .head h2 {
-	font-size: 24px;
+
+#head{
+	font-size: 25px;
+}
+main .card{
+	align-items: center;
+	font-size: 15px;
 	font-weight: 600;
 }
 main .card .head p {
