@@ -1,10 +1,13 @@
 let app = new Vue({
-    el: "#app",
+    el: "#appDefi",
     data: {
         billetera: "",
-        btc: "",
-        pesos: "",
-        type: "PESOS_A_BTC"
+        btc: "0",
+        pesos: "0",
+        type: "BTC_A_PESOS",
+        montoEnPesos:"",
+        montoEnBTC:"",
+        cotizacionBTCPesos:"4000000"
     },
     created() {
         this.cargarUsuario();
@@ -14,6 +17,8 @@ let app = new Vue({
             axios.get('/api/usuarios/current').then(response => {
                 console.log(response.data)
                 this.billetera = response.data.billetera;
+                this.montoEnBTC=this.billetera.montoBTC;
+                this.montoEnPesos=this.billetera.montoPesos;
             }).catch(
                 error => {
                     Swal.fire("Inicie sesión");

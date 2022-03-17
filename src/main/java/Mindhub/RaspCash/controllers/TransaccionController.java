@@ -88,8 +88,16 @@ public class TransaccionController {
                                                @RequestParam String montoEnBTC,
                                                @RequestParam String tipoDeSwap){
 
+        if(tipoDeSwap.equals("")){
+            return new ResponseEntity<>("Por favor seleccione un tipo de SWAP para realizar la operacion", HttpStatus.FORBIDDEN);
+        }
+
         if (direccionBilletera.equals("")){
             return new ResponseEntity<>("La Direccion de billetera para realizar el swap se encuentra vacía", HttpStatus.FORBIDDEN);
+        }
+
+        if(montoEnPesos.equals("")||montoEnBTC.equals("")){
+            return new ResponseEntity<>("Faltan algún monto para poder realizar la operación", HttpStatus.FORBIDDEN);
         }
 
         TipoDeSwap tipoDeSwapTransaccion = TipoDeSwap.valueOf(tipoDeSwap);
@@ -135,7 +143,7 @@ public class TransaccionController {
         }
 
 
-        return new ResponseEntity<>(HttpStatus.CREATED);
+        return new ResponseEntity<>("Felicitaciones, el SWAP fue realizado exitosamente",HttpStatus.CREATED);
     }
 
 }

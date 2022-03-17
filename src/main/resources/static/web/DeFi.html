@@ -34,7 +34,7 @@
     <!-- header section starts -->
     <header class="header bg-white10">
         <div class="container">
-            <a href="index.html" class="logo bold white">Rasp<span class="lightpurple">Cash</span></a>
+            <a href="../index.html" class="logo bold white">Rasp<span class="lightpurple">Cash</span></a>
 
             <div class="menu" id="appLogin">
 
@@ -52,17 +52,16 @@
         </div>
     </header>
     <!-- header section ends -->
-    <div id="app">
+    <div id="appDefi">
         <!-- home section starts -->
         <section id="home" class="spacetop15 spacebottom10">
             <div class="container">
                 <div class="row jc-between ai-center col-reverse-s">
                     <div class="col5 col6-md col12-s ta-center-s">
                         <h1 class="size5 bold spacebottom1">
-                            Swap Tokens y Solicitiar Smart Contracts
+                            Swap Tokens y Solicitiar Prestamos
                         </h1>
-                        <p class="size2 spacebottom3 halfwhite">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                            Nunc vulputate libero et velit.
+                        <p class="size2 spacebottom3 halfwhite">Intercambia Bitcoin y pesos, a la mejor cotizacion del mercado.
                         </p>
                         <br>
                         <div class="row col12 col9-md jc-between spacebottom4 jc-evenly-s col12-s">
@@ -84,11 +83,21 @@
                 <div class="card-body">
                     <h1>Swap</h1>
                     <p>Una manera facil y sencilla de cambiar tus Tokens</p>
+                    <hr>   
+                    <h1>Disponible en Billetera</h1>
+                    <p>Mono en Pesos: ${{montoEnPesos}}</p>
+                    <p>Monto en BTC: {{montoEnBTC}} BTC</p>
+                    <hr>
                 </div>
                 <div class="card-footer">
+                 
                     <form action="">
-                        <input type="number" placeholder="Cantidad de pesos" v-model="pesos">
-                        <input type="number" placeholder="Cantidad de BTC" v-model="btc">
+                        <template v-if="type == 'PESOS_A_BTC'"> 
+                            <input type="number" placeholder="Cantidad de pesos" v-model="pesos">
+                        </template>
+                        <template v-if="type == 'BTC_A_PESOS'">
+                            <input type="number" placeholder="Cantidad de BTC" v-model="btc">
+                        </template>
                     </form>
                     <div>
                         <select required v-model="type">
@@ -96,8 +105,8 @@
                             <option value="PESOS_A_BTC">Pesos a BTC</option>
                         </select>
                     </div>
-                    <h2 v-show="type == 'BTC_A_PESOS'" >Recibiras: {{pesos}} pesos</h2>
-                    <h2 v-show="type == 'PESOS_A_BTC'" >Recibiras: {{btc}} btc </h2>
+                    <h2 v-show="type == 'BTC_A_PESOS'" >Recibiras: {{btc*cotizacionBTCPesos}} pesos</h2>
+                    <h2 v-show="type == 'PESOS_A_BTC'" >Recibiras: {{pesos/cotizacionBTCPesos}} btc </h2>
                     <button type="button" @click="realizarSwap()">Realizar Swap</button>
                 </div>
             </article>
