@@ -81,7 +81,7 @@
         <!-- Swap start -->
         <main id="swap" class="flex">
             <article class="card">
-                <div class="card-body">
+                <div class="card-body spacebottom2">
                     <h1>Swap</h1>
                     <p>Una manera facil y sencilla de cambiar tus Tokens</p>
                     <hr>
@@ -91,7 +91,6 @@
                     <hr>
                 </div>
                 <div class="card-footer">
-
                     <form action="">
                         <template v-if="type == 'PESOS_A_BTC'">
                             <input type="number" placeholder="Cantidad de pesos" v-model="pesos">
@@ -100,20 +99,20 @@
                             <input type="number" placeholder="Cantidad de BTC" v-model="btc">
                         </template>
                     </form>
-                    <div>
-                        <select required v-model="type">
+                    <div class="spacebottom3">
+                        <select class="spacer1 size2" required v-model="type">
                             <option value="BTC_A_PESOS">BTC a pesos</option>
                             <option value="PESOS_A_BTC">Pesos a BTC</option>
                         </select>
                     </div>
                     <template v-if="type == 'BTC_A_PESOS'">
-                        <h2>Recibiras: {{btc*cotizacionBTCPesos}} pesos</h2>
-                        <button type="button" @click="realizarSwapBTCAPesos(btc*cotizacionBTCPesos)">Realizar
+                        <h2 class="spacebottom5">Recibiras: {{btc*cotizacionBTCPesos}} pesos</h2>
+                        <button class="btn bg-purple size2 white nmcol12" type="button" @click="realizarSwapBTCAPesos(btc*cotizacionBTCPesos)">Realizar
                             Swap</button>
                     </template>
                     <template v-if="type == 'PESOS_A_BTC'">
-                        <h2>Recibiras: {{pesos/cotizacionBTCPesos}} btc </h2>
-                        <button type="button" @click="realizarSwapPesosABTC(pesos/cotizacionBTCPesos)">Realizar
+                        <h2 class="spacebottom5">Recibiras: {{pesos/cotizacionBTCPesos}} btc </h2>
+                        <button class="btn bg-purple size2 white nmcol12" type="button" @click="realizarSwapPesosABTC(pesos/cotizacionBTCPesos)">Realizar
                             Swap</button>
                     </template>
                     <!-- <h2 v-show="type == 'BTC_A_PESOS'" >Recibiras: {{btc*cotizacionBTCPesos}} pesos</h2>
@@ -159,7 +158,7 @@
         <!-- Loan End -->
 
         <!-- FAQ section starts -->
-        <section class="spacer10" id="faq">
+    <!--     <section class="spacer10" id="faq">
             <div class="container">
                 <h1 class="bold size4 ta-center">Preguntas Frecuentes</h1>
                 <p class="spacebottom3 halfwhite size2 ta-center">
@@ -226,7 +225,7 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
         <!-- FAQ section ends -->
 
         <!-- footer section starts -->

@@ -93,6 +93,8 @@ public class TransaccionController {
         System.out.println(montoEnPesos);
         System.out.println(direccionBilletera);
 
+
+
         if(tipoDeSwap.equals("")){
             return new ResponseEntity<>("Por favor seleccione un tipo de SWAP para realizar la operacion", HttpStatus.FORBIDDEN);
         }
@@ -109,6 +111,10 @@ public class TransaccionController {
         double montoEnBTCTransaccion = Double.parseDouble(montoEnBTC);
         double montoEnPesosTransaccion = Double.parseDouble(montoEnPesos);
         //double cotizacionTransaccion = Double.parseDouble(cotizacion);
+
+        if (montoEnBTCTransaccion==0||montoEnPesosTransaccion==0){
+            return new ResponseEntity<>("No puede Swapear con monto 0, por favor seleccione un monto válido", HttpStatus.FORBIDDEN);
+        }
 
         Billetera billeteraSwap = servicioBilletera.encontrarPorDireccion(direccionBilletera);
 
