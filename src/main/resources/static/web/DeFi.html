@@ -14,7 +14,9 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" />
 
     <!-- google font link -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,400&family=Poppins:wght@400;500;700&display=swap" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,400&family=Poppins:wght@400;500;700&display=swap"
+        rel="stylesheet" />
 
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
 
@@ -50,172 +52,197 @@
         </div>
     </header>
     <!-- header section ends -->
-
-    <!-- home section starts -->
-    <section id="home" class="spacetop15 spacebottom10">
-        <div class="container">
-            <div class="row jc-between ai-center col-reverse-s">
-                <div class="col5 col6-md col12-s ta-center-s">
-                    <h1 class="size5 bold spacebottom1">
-                        Swap Tokens y Solicitiar Smart Contracts
-                    </h1>
-                    <p class="size2 spacebottom3 halfwhite">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nunc vulputate libero et velit.
-                    </p>
-                    <br>
-                    <div class="row col12 col9-md jc-between spacebottom4 jc-evenly-s col12-s">
-                        <a href="#loan" class="btn bg-purple size2 white ">Solicitiar Prestamos</a>
-                        <a href="#swap" class="btn bg-white10 size2 white ">Swap Tokens</a>
-                    </div>
-                </div>
-                <div class="col6 col12-s spacebottom3-s">
-                    <img src="img/Recurso2 1@4x.png" alt="" class="img-responsive float">
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- home section ends -->
-
-    <!-- Swap start -->
-    <main id="swap" class="flex">
-        <article class="card">
-            <div class="card-body">
-                <h1>Swap</h1>
-                <p>Una manera facil y sencilla de cambiar tus Tokens</p>
-            </div>
-            <div class="card-footer">
-                <form action="">
-                    <input type="number" placeholder="Cantidad a cambiar">
-                    <select required>
-                        <option value="">BTC</option>
-                        <option value="">Pesos</option>
-                    </select>
-                </form>
-            </div>
-            <h2>Recibiras: {{Monto}}</h2>
-        </article>
-    </main>
-    <!-- Swap Ends -->
-
-    <!-- Loan Start -->
-    <main id="loan" class="flex">
-        <article class="card">
-            <div class="card-body">
-                <h1>Solicitar Prestamos</h1>
-                <p>Los mejores prestamos DeFi bajo Smart Contracts</p>
-            </div>
-            <div class="card-footer">
-                <form action="">
-                    <input type="number" placeholder="BTC a depositar">
-                </form>
-            </div>
-            <p class="float-span">*Deberas depositar al menos 0.005BTC</p>
-            <h2>Recibiras: {{Monto}}</h2>
-        </article>
-    </main>
-    <!-- Loan End -->
-
-    <!-- FAQ section starts -->
-    <section class="spacer10" id="faq">
-        <div class="container">
-            <h1 class="bold size4 ta-center">Preguntas Frecuentes</h1>
-            <p class="spacebottom3 halfwhite size2 ta-center">
-                Quieres hacer una nueva pregunta?
-            </p>
-            <div class="row jc-between">
-                <div class="box-faq col6 col12-s">
-                    <div class="box spacebottom5">
-                        <div class="title row jc-between">
-                            <h3 class="size2 halfwhite">Lorem ipsum ipsum?</h3>
-                            <i class="fas fa-angle-down size2 halfwhite"></i>
+    <div id="app">
+        <!-- home section starts -->
+        <section id="home" class="spacetop15 spacebottom10">
+            <div class="container">
+                <div class="row jc-between ai-center col-reverse-s">
+                    <div class="col5 col6-md col12-s ta-center-s">
+                        <h1 class="size5 bold spacebottom1">
+                            Swap Tokens y Solicitiar Smart Contracts
+                        </h1>
+                        <p class="size2 spacebottom3 halfwhite">Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+                            Nunc vulputate libero et velit.
+                        </p>
+                        <br>
+                        <div class="row col12 col9-md jc-between spacebottom4 jc-evenly-s col12-s">
+                            <a href="#loan" class="btn bg-purple size2 white ">Solicitiar Prestamos</a>
+                            <a href="#swap" class="btn bg-white10 size2 white ">Swap Tokens</a>
                         </div>
-                        <p class="answer size2 spacetop1 ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates ratione ea officiis ad quam blanditiis, dignissimos adipisci suscipit nobis temporibus molestias fugiat quas possimus assumenda quod quae modi dolorem sed.</p>
                     </div>
-                    <div class="box spacebottom5">
-                        <div class="title row jc-between">
-                            <h3 class="size2 halfwhite">Lorem ipsum ipsum?</h3>
-                            <i class="fas fa-angle-down size2 halfwhite"></i>
-                        </div>
-                        <p class="answer size2 spacetop1 ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates ratione ea officiis ad quam blanditiis, dignissimos adipisci suscipit nobis temporibus molestias fugiat quas possimus assumenda quod quae modi dolorem sed.</p>
-                    </div>
-                    <div class="box spacebottom5">
-                        <div class="title row jc-between">
-                            <h3 class="size2 halfwhite">Lorem ipsum ipsum?</h3>
-                            <i class="fas fa-angle-down size2 halfwhite"></i>
-                        </div>
-                        <p class="answer size2 spacetop1 ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates ratione ea officiis ad quam blanditiis, dignissimos adipisci suscipit nobis temporibus molestias fugiat quas possimus assumenda quod quae modi dolorem sed.</p>
-                    </div>
-                </div>
-                <div class="box-faq col6 col12-s">
-                    <div class="box spacebottom5">
-                        <div class="title row jc-between">
-                            <h3 class="size2 halfwhite">Lorem ipsum ipsum?</h3>
-                            <i class="fas fa-angle-down size2 halfwhite"></i>
-                        </div>
-                        <p class="answer size2 spacetop1 ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates ratione ea officiis ad quam blanditiis, dignissimos adipisci suscipit nobis temporibus molestias fugiat quas possimus assumenda quod quae modi dolorem sed.</p>
-                    </div>
-                    <div class="box spacebottom5">
-                        <div class="title row jc-between">
-                            <h3 class="size2 halfwhite">Lorem ipsum ipsum?</h3>
-                            <i class="fas fa-angle-down size2 halfwhite"></i>
-                        </div>
-                        <p class="answer size2 spacetop1 ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates ratione ea officiis ad quam blanditiis, dignissimos adipisci suscipit nobis temporibus molestias fugiat quas possimus assumenda quod quae modi dolorem sed.</p>
-                    </div>
-                    <div class="box spacebottom5">
-                        <div class="title row jc-between">
-                            <h3 class="size2 halfwhite">Lorem ipsum ipsum?</h3>
-                            <i class="fas fa-angle-down size2 halfwhite"></i>
-                        </div>
-                        <p class="answer size2 spacetop1 ">Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptates ratione ea officiis ad quam blanditiis, dignissimos adipisci suscipit nobis temporibus molestias fugiat quas possimus assumenda quod quae modi dolorem sed.</p>
+                    <div class="col6 col12-s spacebottom3-s">
+                        <img src="img/Recurso2 1@4x.png" alt="" class="img-responsive float">
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-    <!-- FAQ section ends -->
+        </section>
+        <!-- home section ends -->
 
-    <!-- footer section starts -->
-    <footer class="spacer10">
-        <div class="container row jc-between flexcol-s ta-center-s">
-            <div class="row flexcol spacebottom3-s">
-                <a href="#home" class="size2 bold white">Rasp<span class="lightpurple">Cash</span></a>
-                <p class="size2 halfwhite spacetop2">El mejor lugar para comprar NFT <br>del mundo, sumate a la
-                    <br>experiencia de comprar y vender<br> NFT
+        <!-- Swap start -->
+        <main id="swap" class="flex">
+            <article class="card">
+                <div class="card-body">
+                    <h1>Swap</h1>
+                    <p>Una manera facil y sencilla de cambiar tus Tokens</p>
+                </div>
+                <div class="card-footer">
+                    <form action="">
+                        <input type="number" placeholder="Cantidad de pesos" v-model="pesos">
+                        <input type="number" placeholder="Cantidad de BTC" v-model="btc">
+                    </form>
+                    <div>
+                        <select required v-model="type">
+                            <option value="BTC_A_PESOS">BTC a pesos</option>
+                            <option value="PESOS_A_BTC">Pesos a BTC</option>
+                        </select>
+                    </div>
+                    <h2 v-show="type == 'BTC_A_PESOS'" >Recibiras: {{pesos}} pesos</h2>
+                    <h2 v-show="type == 'PESOS_A_BTC'" >Recibiras: {{btc}} btc </h2>
+                    <button type="button" @click="realizarSwap()">Realizar Swap</button>
+                </div>
+            </article>
+        </main>
+        <!-- Swap Ends -->
+
+        <!-- Loan Start -->
+        <main id="loan" class="flex">
+            <!-- <article class="card">
+                <div class="card-body">
+                    <h1>Solicitar Prestamos</h1>
+                    <p>Los mejores prestamos DeFi bajo Smart Contracts</p>
+                </div>
+                <div class="card-footer">
+                    <form action="">
+                        <input type="number" placeholder="Cantidad de BTC" v-model="btc">
+                    </form>
+                </div>
+                <button type="button" @click="realizarSwap()">Realizar Swap</button>
+                <h2 v-show="type == 'BTC_A_PESOS'" >Recibiras: {{pesos}} pesos</h2>
+                <h2 v-show="type == 'PESOS_A_BTC'" >Recibiras: {{btc}} btc </h2>
+            </article> -->
+        </main>
+        <!-- Loan End -->
+
+        <!-- FAQ section starts -->
+        <section class="spacer10" id="faq">
+            <div class="container">
+                <h1 class="bold size4 ta-center">Preguntas Frecuentes</h1>
+                <p class="spacebottom3 halfwhite size2 ta-center">
+                    Quieres hacer una nueva pregunta?
                 </p>
-            </div>
-            <div class="row flexcol spacebottom3-s">
-                <a href="#about" class="bold size2 white">Sobre Nosotros</a>
-                <a href="#" class="size2 halfwhite spacetop2">Productos</a>
-                <a href="#" class="size2 halfwhite spacetop2">Recursos</a>
-                <a href="#" class="size2 halfwhite spacetop2">Terminos & Condiciones</a>
-                <a href="#faq" class="size2 halfwhite spacetop2">Preguntas Frecuentes</a>
-            </div>
-            <div class="row flexcol spacebottom3-s">
-                <a href="#" class="bold size2 white">Empresa</a>
-                <a href="#" class="size2 halfwhite spacetop2">Nuestro equipo</a>
-                <a href="#" class="size2 halfwhite spacetop2">Trabaja con nosotros</a>
-                <a href="#" class="size2 halfwhite spacetop2">Politica de Privacidad</a>
-                <a href="#" class="size2 halfwhite spacetop2">Novedades</a>
-            </div>
-            <div class="row flexcol spacebottom3-s">
-                <h5 class="bold size2">Contacto</h5>
-                <a href="#" class="size2 halfwhite spacetop2">11 55559999</a>
-                <a href="#" class="size2 halfwhite spacetop2">adorableprogrammer@gmail.com</a>
-                <div class="row jc-around spacetop2 jc-evenly-s">
-                    <a href="#" class="fab fa-youtube size2 halfwhite spacetop2"></a>
-                    <a href="#" class="fab fa-instagram size2 halfwhite spacetop2"></a>
+                <div class="row jc-between">
+                    <div class="box-faq col6 col12-s">
+                        <div class="box spacebottom5">
+                            <div class="title row jc-between">
+                                <h3 class="size2 halfwhite">Lorem ipsum ipsum?</h3>
+                                <i class="fas fa-angle-down size2 halfwhite"></i>
+                            </div>
+                            <p class="answer size2 spacetop1 ">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                Voluptates ratione ea officiis ad quam blanditiis, dignissimos adipisci suscipit nobis
+                                temporibus molestias fugiat quas possimus assumenda quod quae modi dolorem sed.</p>
+                        </div>
+                        <div class="box spacebottom5">
+                            <div class="title row jc-between">
+                                <h3 class="size2 halfwhite">Lorem ipsum ipsum?</h3>
+                                <i class="fas fa-angle-down size2 halfwhite"></i>
+                            </div>
+                            <p class="answer size2 spacetop1 ">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                Voluptates ratione ea officiis ad quam blanditiis, dignissimos adipisci suscipit nobis
+                                temporibus molestias fugiat quas possimus assumenda quod quae modi dolorem sed.</p>
+                        </div>
+                        <div class="box spacebottom5">
+                            <div class="title row jc-between">
+                                <h3 class="size2 halfwhite">Lorem ipsum ipsum?</h3>
+                                <i class="fas fa-angle-down size2 halfwhite"></i>
+                            </div>
+                            <p class="answer size2 spacetop1 ">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                Voluptates ratione ea officiis ad quam blanditiis, dignissimos adipisci suscipit nobis
+                                temporibus molestias fugiat quas possimus assumenda quod quae modi dolorem sed.</p>
+                        </div>
+                    </div>
+                    <div class="box-faq col6 col12-s">
+                        <div class="box spacebottom5">
+                            <div class="title row jc-between">
+                                <h3 class="size2 halfwhite">Lorem ipsum ipsum?</h3>
+                                <i class="fas fa-angle-down size2 halfwhite"></i>
+                            </div>
+                            <p class="answer size2 spacetop1 ">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                Voluptates ratione ea officiis ad quam blanditiis, dignissimos adipisci suscipit nobis
+                                temporibus molestias fugiat quas possimus assumenda quod quae modi dolorem sed.</p>
+                        </div>
+                        <div class="box spacebottom5">
+                            <div class="title row jc-between">
+                                <h3 class="size2 halfwhite">Lorem ipsum ipsum?</h3>
+                                <i class="fas fa-angle-down size2 halfwhite"></i>
+                            </div>
+                            <p class="answer size2 spacetop1 ">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                Voluptates ratione ea officiis ad quam blanditiis, dignissimos adipisci suscipit nobis
+                                temporibus molestias fugiat quas possimus assumenda quod quae modi dolorem sed.</p>
+                        </div>
+                        <div class="box spacebottom5">
+                            <div class="title row jc-between">
+                                <h3 class="size2 halfwhite">Lorem ipsum ipsum?</h3>
+                                <i class="fas fa-angle-down size2 halfwhite"></i>
+                            </div>
+                            <p class="answer size2 spacetop1 ">Lorem ipsum dolor sit amet consectetur adipisicing elit.
+                                Voluptates ratione ea officiis ad quam blanditiis, dignissimos adipisci suscipit nobis
+                                temporibus molestias fugiat quas possimus assumenda quod quae modi dolorem sed.</p>
+                        </div>
+                    </div>
                 </div>
             </div>
-        </div>
-        <p class="size2 halfwhite spacetop5 ta-center">Creado por <span class="white bold">MorazZarnozaz</span> | Todos los derechos reservados</p>
-    </footer>
-    <!-- footer section ends -->
+        </section>
+        <!-- FAQ section ends -->
+
+        <!-- footer section starts -->
+        <footer class="spacer10">
+            <div class="container row jc-between flexcol-s ta-center-s">
+                <div class="row flexcol spacebottom3-s">
+                    <a href="#home" class="size2 bold white">Rasp<span class="lightpurple">Cash</span></a>
+                    <p class="size2 halfwhite spacetop2">El mejor lugar para comprar NFT <br>del mundo, sumate a la
+                        <br>experiencia de comprar y vender<br> NFT
+                    </p>
+                </div>
+                <div class="row flexcol spacebottom3-s">
+                    <a href="#about" class="bold size2 white">Sobre Nosotros</a>
+                    <a href="#" class="size2 halfwhite spacetop2">Productos</a>
+                    <a href="#" class="size2 halfwhite spacetop2">Recursos</a>
+                    <a href="#" class="size2 halfwhite spacetop2">Terminos & Condiciones</a>
+                    <a href="#faq" class="size2 halfwhite spacetop2">Preguntas Frecuentes</a>
+                </div>
+                <div class="row flexcol spacebottom3-s">
+                    <a href="#" class="bold size2 white">Empresa</a>
+                    <a href="#" class="size2 halfwhite spacetop2">Nuestro equipo</a>
+                    <a href="#" class="size2 halfwhite spacetop2">Trabaja con nosotros</a>
+                    <a href="#" class="size2 halfwhite spacetop2">Politica de Privacidad</a>
+                    <a href="#" class="size2 halfwhite spacetop2">Novedades</a>
+                </div>
+                <div class="row flexcol spacebottom3-s">
+                    <h5 class="bold size2">Contacto</h5>
+                    <a href="#" class="size2 halfwhite spacetop2">11 55559999</a>
+                    <a href="#" class="size2 halfwhite spacetop2">adorableprogrammer@gmail.com</a>
+                    <div class="row jc-around spacetop2 jc-evenly-s">
+                        <a href="#" class="fab fa-youtube size2 halfwhite spacetop2"></a>
+                        <a href="#" class="fab fa-instagram size2 halfwhite spacetop2"></a>
+                    </div>
+                </div>
+            </div>
+            <p class="size2 halfwhite spacetop5 ta-center">Creado por <span class="white bold">MorazZarnozaz</span> |
+                Todos los derechos reservados</p>
+        </footer>
+        <!-- footer section ends -->
+    </div>
+
+    <!-- SCRIPTS DE VUE, AXIOS, ETC -->
+    <script src="https://cdn.jsdelivr.net/npm/vue@2/dist/vue.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 
     <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 
 
     <!-- custom js file link -->
-    <script src="js/script.js"></script>
+    <script src="./js/DeFi.js"></script>
 
 </body>
 

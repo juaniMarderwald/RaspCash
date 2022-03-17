@@ -28,13 +28,9 @@ var appBilletera = new Vue({
                 icon: 'success',
                 confirmButtonText: 'Ok',
             }).then(response => {
-                location.reload();
+                this.obtenerBilletera();
             })
-
         }
-
+        
     }
-
-
-
 })

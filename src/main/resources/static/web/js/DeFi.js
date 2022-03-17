@@ -1,82 +1,32 @@
-var appDeFi = new Vue({
-        el: "#appDeFi",
-        data: {
-            direccionBilletera: "",
-            montoPesos: "",
-            montoEnBTC: "",
-            tipoDeSwap: "",
-
-            monto: "",
-            cuotas: "",
-            billeteraDestino: "",
-            nombrePrestamo: "",
-
-            prestamo: [],
-            cuotas: [],
-            cargarCuotas: "",
-            billeteraReceptor: []
+let app = new Vue({
+    el: "#app",
+    data: {
+        billetera: "",
+        btc: "",
+        pesos: "",
+        type: "PESOS_A_BTC"
+    },
+    created() {
+        this.cargarUsuario();
+    },
+    methods: {
+        cargarUsuario() {
+            axios.get('/api/usuarios/current').then(response => {
+                console.log(response.data)
+                this.billetera = response.data.billetera;
+            }).catch(
+                error => {
+                    Swal.fire("Inicie sesión");
+                    window.location.href = "/index.html"
+                }
+            );
         },
-        created() {
-            this.cargarCuentas()
-            this.cargarCuotas()
-        },
-
-        methods: {
-            cargarCuotas() {
-                axios.get("/api/prestamos")
-                    .then(response => {
-                        this.prestamo = response.data
-                        this.cuotas = this.cuotas.filter(cuota => cuota.nombre == this.cargarCuotas)
-                        this.cuotas = this.cuotas[0].cuotas
-                        console.log(this.payments)
-
-                        // this.payments = response.data[0].payments
-                    })
-                    .catch(error => {
-                        "error"
-                    });
-            },
-
-            cargarCuentas() {
-                axios.get("/api/usuarios/current")
-                    .then(response => {
-                        this.billeteraReceptor = response.data.billetera
-                        console.log(this.billeteraReceptor)
-                    })
-                    .catch(error => {
-                        "error"
-                    });
-            },
-
-            metodoSwap() {
-                axios.post("/api/transaccion/swap", "direccionBilletera=" + this.direccionBilletera + "&montoPesos=" + thi.montoPesos + "&montoEnBTC=" + this.montoEnBTC + "&tipoDeSwap=" + this.tipoDeSwap)
-                Swal.fire({
-                    text: 'La transacción fue un exito',
-                    icon: 'success',
-                    confirmButtonText: 'Ok',
-                }).then(response => {
-                    location.reload();
-                })
-
-            },
-            pedirPrestamo() {
-                axio.post("/api/prestamos", {
-                    "monto": this.monto,
-                    "cuotas ": this.cuotas,
-                    "billeteraDestino": this.billeteraDestino,
-                    "nombrePrestamo ": this.nombrePrestamo
-                })
-            }
+        realizarSwap() {
+            axios.post('/api/transaccion/swap', `direccionBilletera=${this.billetera.direccion}&montoEnPesos=${this.pesos}&montoEnBTC=${this.btc}&tipoDeSwap=${this.type}`)
+                .then(response => Swal.fire(response.data))
+                .catch(error => Swal.fire(error.response.data));
         }
-
     }
-
-
-
-
-
-
-
-
+}
 
 )
