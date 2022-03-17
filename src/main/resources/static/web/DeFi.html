@@ -61,7 +61,8 @@
                         <h1 class="size5 bold spacebottom1">
                             Swap Tokens y Solicitiar Prestamos
                         </h1>
-                        <p class="size2 spacebottom3 halfwhite">Intercambia Bitcoin y pesos, a la mejor cotizacion del mercado.
+                        <p class="size2 spacebottom3 halfwhite">Intercambia Bitcoin y pesos, a la mejor cotizacion del
+                            mercado.
                         </p>
                         <br>
                         <div class="row col12 col9-md jc-between spacebottom4 jc-evenly-s col12-s">
@@ -83,16 +84,16 @@
                 <div class="card-body">
                     <h1>Swap</h1>
                     <p>Una manera facil y sencilla de cambiar tus Tokens</p>
-                    <hr>   
+                    <hr>
                     <h1>Disponible en Billetera</h1>
                     <p>Mono en Pesos: ${{montoEnPesos}}</p>
                     <p>Monto en BTC: {{montoEnBTC}} BTC</p>
                     <hr>
                 </div>
                 <div class="card-footer">
-                 
+
                     <form action="">
-                        <template v-if="type == 'PESOS_A_BTC'"> 
+                        <template v-if="type == 'PESOS_A_BTC'">
                             <input type="number" placeholder="Cantidad de pesos" v-model="pesos">
                         </template>
                         <template v-if="type == 'BTC_A_PESOS'">
@@ -107,11 +108,13 @@
                     </div>
                     <template v-if="type == 'BTC_A_PESOS'">
                         <h2>Recibiras: {{btc*cotizacionBTCPesos}} pesos</h2>
-                        <button type="button" @click="realizarSwapBTCAPesos(btc*cotizacionBTCPesos)">Realizar Swap</button>
+                        <button type="button" @click="realizarSwapBTCAPesos(btc*cotizacionBTCPesos)">Realizar
+                            Swap</button>
                     </template>
                     <template v-if="type == 'PESOS_A_BTC'">
-                        <h2 >Recibiras: {{pesos/cotizacionBTCPesos}} btc </h2>
-                        <button type="button" @click="realizarSwapPesosABTC(pesos/cotizacionBTCPesos)">Realizar Swap</button>
+                        <h2>Recibiras: {{pesos/cotizacionBTCPesos}} btc </h2>
+                        <button type="button" @click="realizarSwapPesosABTC(pesos/cotizacionBTCPesos)">Realizar
+                            Swap</button>
                     </template>
                     <!-- <h2 v-show="type == 'BTC_A_PESOS'" >Recibiras: {{btc*cotizacionBTCPesos}} pesos</h2>
                     <h2 v-show="type == 'PESOS_A_BTC'" >Recibiras: {{pesos/cotizacionBTCPesos}} btc </h2> -->
@@ -122,20 +125,27 @@
 
         <!-- Loan Start -->
         <main id="loan" class="flex">
-            <!-- <article class="card">
+            <article class="card">
                 <div class="card-body">
-                    <h1>Solicitar Prestamos</h1>
-                    <p>Los mejores prestamos DeFi bajo Smart Contracts</p>
+                    <h1>Solicitar Prestamos DeFi</h1>
+                    <p>Los mejores prestamos Descentralizados bajo Smart Contracts</p>
+                    <hr>
+                    <h2>Elija un préstamo que se adapte a tus necesidades</h2>
+                    <hr>
+                    <h3>Disponible en Billetera para la garantía</h3>
+                    <hr>
+                    <p> Monto en BTC: {{montoEnBTC}} </p>
+                    <select v-model="prestamoElegido" class="form-select" name="tipoPrestamo"
+                        aria-label="Default select example">
+                        <option v-for="prestamo in prestamos" v-cloak>{{prestamo.nombre}}</option>
+                    </select>
                 </div>
                 <div class="card-footer">
-                    <form action="">
-                        <input type="number" placeholder="Cantidad de BTC" v-model="btc">
-                    </form>
+                    <button type="button" @click="">Solicitar Prestamo</button>    
                 </div>
-                <button type="button" @click="realizarSwap()">Realizar Swap</button>
-                <h2 v-show="type == 'BTC_A_PESOS'" >Recibiras: {{pesos}} pesos</h2>
-                <h2 v-show="type == 'PESOS_A_BTC'" >Recibiras: {{btc}} btc </h2>
-            </article> -->
+                
+                
+            </article>
         </main>
         <!-- Loan End -->
 

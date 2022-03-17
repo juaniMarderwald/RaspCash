@@ -5,26 +5,31 @@ let app = new Vue({
         btc: "0",
         pesos: "0",
         type: "BTC_A_PESOS",
-        montoEnPesos:"",
-        montoEnBTC:"",
-        cotizacionBTCPesos:"4000000"
+        montoEnPesos: "",
+        montoEnBTC: "",
+        cotizacionBTCPesos: "4000000",
+        prestamos:[],
+        prestamoElegido:""
     },
     created() {
         this.cargarUsuario();
+        this.cargarPrestamos();
     },
     methods: {
         cargarUsuario() {
-            axios.get('/api/usuarios/current').then(response => {
-                console.log(response.data)
-                this.billetera = response.data.billetera;
-                this.montoEnBTC=this.billetera.montoBTC;
-                this.montoEnPesos=this.billetera.montoPesos;
-            }).catch(
-                error => {
-                    Swal.fire("Inicie sesión");
-                    window.location.href = "/index.html"
-                }
-            );
+            axios.get('/api/usuarios/current')
+                .then(response => {
+                    console.log(response.data)
+                    this.billetera = response.data.billetera;
+                    this.montoEnBTC = this.billetera.montoBTC;
+                    this.montoEnPesos = this.billetera.montoPesos;
+                })
+                .catch(
+                    error => {
+                        Swal.fire("Inicie sesión");
+                        window.location.href = "/index.html"
+                    }
+                );          
         },
         realizarSwapPesosABTC(swapBTC) {
 
@@ -32,11 +37,25 @@ let app = new Vue({
                 .then(response => Swal.fire(response.data))
                 .catch(error => Swal.fire(error.response.data));
         },
-        realizarSwapBTCAPesos(swapPesos){
+        realizarSwapBTCAPesos(swapPesos) {
 
             axios.post('/api/transaccion/swap', `direccionBilletera=${this.billetera.direccion}&montoEnPesos=${swapPesos}&montoEnBTC=${this.btc}&tipoDeSwap=${this.type}`)
                 .then(response => Swal.fire(response.data))
                 .catch(error => Swal.fire(error.response.data));
+        },
+        solicitarPrestamo() {
+
+        },
+        cargarPrestamos(){
+            axios.get('/api/prestamos')
+            .then(response=>{
+                this.prestamos=response.data;
+                console.log(this.prestamos);
+                console.log(response.data);
+            })
+            .catch(
+                console.log("error")
+                )
         }
     }
 }
