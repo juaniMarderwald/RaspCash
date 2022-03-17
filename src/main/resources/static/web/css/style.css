@@ -3820,3 +3820,9 @@ footer a:hover {
 body {
   overflow-x: hidden;
 }
+
+.usuarioCentrado{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

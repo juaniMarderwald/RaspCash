@@ -25,6 +25,10 @@
     <link rel="stylesheet" href="css/estilos.css" />
     <link rel="stylesheet" href="css/normalize.css" />
 
+    <link rel="stylesheet" href="css/estiloCarrito.css">
+
+    
+
     <!--FAVICON-->
     <link rel="shortcut icon" href="img/Logoje.png">
     <title>Perfil de usuario</title>
@@ -34,12 +38,12 @@
     <!-- header section starts -->
     <header class="header bg-white10">
         <div class="container">
-            <a href="index.html" class="logo bold white">Rasp<span class="lightpurple">Cash</span></a>
+            <a href="../index.html" class="logo bold white">Rasp<span class="lightpurple">Cash</span></a>
 
             <div class="menu" id="appLogin">
 
                 <a href="NFT.html">NFT</a>
-                <a href="Crypto.html">Cripto</a>
+                <a href="Crypto.html">Billetera</a>
                 <a href="DeFi.html">DeFi</a>
                 <a href="merchandising.html">Productos</a>
                 <a href="#">Usuario <i class="fas fa-user-alt"></i></a>
@@ -62,8 +66,8 @@
     <!-- home section ends -->
 
     <!-- Datos personales start -->
-    <main id="swap" class="flex spacetop4 spacebottom9">
-        <div id="appUsuario">
+    <main class="usuarioCentrado">
+        <div id="appUsuario" >
             <article class="card">
                 <div class="card-body">
                     <img src="img/usuario.png" alt="user image" width="150" height="150">
@@ -79,7 +83,9 @@
                     </form>
                 </div>
             </article>
+        </div>
 
+        <div id="appProductosAdquiridos">
             <!-- collections section starts -->
             <section class="collections spacer10" id="collections">
                 <div class="container">
@@ -89,18 +95,20 @@
                     </p>
 
                     <div class="row box-card jc-evenly-md">
-                        <div v-for="producto in productosAdquiridos" class="col4 card collect bg-white10 col5-md col4-s" data-item="art">
+                        <div v-for="producto in productosAdquiridos" class="col4 card collect bg-white10 col5-md col4-s"
+                            data-item="art">
+                            <p>Tipo: {{producto.tipo}}</p>
                             <img v-bind:src="producto.imagen" class="img-responsive" alt="">
                             <div class="row jc-between spacetop2">
                                 <div>
                                     <p class="size2 halfwhite">
                                         {{producto.nombre}}
                                     </p>
-                                    <h5 class="size2 bold">Stock: {{producto.stock}}</h5>
+                                    <!-- <h5 class="size2 bold">Stock: {{producto.stock}}</h5> -->
                                 </div>
                                 <div>
-                                    <p class="current halfwhite">Precio actual</p>
-                                    <h5 class="size2 bold">$ {{producto.valor}} </h5>
+                                    <p class="current halfwhite">Precio abonado</p>
+                                    <h5 class="size2 bold">$ {{producto.valorPagado}} </h5>
                                 </div>
                             </div>
                         </div>
@@ -109,9 +117,8 @@
 
             </section>
             <!-- collections section ends -->
-
-
         </div>
+
     </main>
     <!-- Datos personales Ends -->
 
@@ -143,7 +150,8 @@
             <div class="row flexcol spacebottom3-s">
                 <h5 class="bold size2">Contacto</h5>
                 <a href="#" class="size2 halfwhite spacetop2">11 55559999</a>
-                <a href="mailto:adorableprogrammer@gmail.com" class="size2 halfwhite spacetop2">adorableprogrammer@gmail.com</a>
+                <a href="mailto:adorableprogrammer@gmail.com"
+                    class="size2 halfwhite spacetop2">adorableprogrammer@gmail.com</a>
                 <div class="row jc-around spacetop2 jc-evenly-s">
                     <a href="#" class="fab fa-youtube size2 halfwhite spacetop2"></a>
                     <a href="#" class="fab fa-instagram size2 halfwhite spacetop2"></a>
@@ -173,7 +181,7 @@
     <script src="js/script.js"></script>
     <script src="js/login.js"></script>
     <script src="js/usuario.js"></script>
-
+    <script src="js/productosAdquiridos.js"></script>
 </body>
 
 </html>
