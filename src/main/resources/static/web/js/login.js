@@ -10,13 +10,13 @@ var app = new Vue({
         registro: false
     },
     created() {
-        this.cargarDatos();
+       // this.cargarDatos();
     },
 
     methods: {
         cargarDatos() {
             axios.get('/api/usuarios/current')
-                .then(response => window.location.href = "/web/nft.html")
+              //  .then(response => window.location.href = "/web/nft.html")
                 .catch(error => {
                     console.log("Inicie sesión!")
 
@@ -53,6 +53,19 @@ var app = new Vue({
                  Swal.fire(error.response.data);
                 });
         },
+        cerrarSesion(){
+                axios.post(`/api/logout`)
+                    .then(response => window.alert('GRACIAS POR LA VISITA!! :D'))
+                return (window.location.href = "/index.html")  
+//            axios.post('/api/logout')
+            /* .then(response => {
+                Swal.fire(response.data); 
+                console.log('signed out!!!');
+                window.location.href = "./index.html";                
+            }).catch(error => {
+                 Swal.fire(error.response.data);
+                }); */
+        }
     }
 
 })

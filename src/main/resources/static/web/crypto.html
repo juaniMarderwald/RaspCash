@@ -32,14 +32,15 @@
             <div class="container">
                 <a href="index.html" class="logo bold white">Rasp<span class="lightpurple">Cash</span></a>
 
-                <div class="menu">
+                <div class="menu" id="appLogin">
 
                     <a href="NFT.html">NFT</a>
-                    <a href="Crypto.html">Cripto</a>
+                    <a href="Crypto.html">Billetera</a>
                     <a href="DeFi.html">DeFi</a>
                     <a href="merchandising.html">Productos</a>
                     <a href="carrito.html"><span>🛒</span></a>
-                    <div class="btn bg-purple wallet">Seleccionar Billetera</div>
+                    <a @click="cerrarSesion()"><i class="fa-solid fa-right-from-bracket"></i></a>
+                    <!-- <div class="btn bg-purple wallet">Seleccionar Billetera</div> -->
                 </div>
             </div>
             <div class="fas fa-wallet" id="wallet"></div>
@@ -264,6 +265,7 @@
     <!-- custom js file link -->
     <script src="js/script.js"></script>
     <script src="js/billetera.js"></script>
+    <script src="js/login.js"></script>
 
 
 </body>

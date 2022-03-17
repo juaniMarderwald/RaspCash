@@ -25,12 +25,29 @@ public class WebAuthorization extends WebSecurityConfigurerAdapter {
                //  .antMatchers("/rest/**").permitAll()
               //  .antMatchers("/h2-console/**").
 
+                //Permisos para el ADMIN
+                .antMatchers("/rest/**").hasAuthority("ADMIN")
+                .antMatchers("/h2-console/**").hasAuthority("ADMIN")
+
+                //Permisos para el CLIENT
+                .antMatchers("/web/carrito.html").hasAuthority("USER")
+                .antMatchers("/web/crypto.html").hasAuthority("USER")
+                .antMatchers("/web/DeFi.html").hasAuthority("USER")
+                .antMatchers("/web/nft.html").hasAuthority("USER")
+                .antMatchers("/web/merchandising.html").hasAuthority("USER")
+
+
                 .antMatchers(HttpMethod.POST, "/api/usuarios","/api/**").permitAll()
+
                 .antMatchers(HttpMethod.POST, "/api/login").permitAll()
-                .antMatchers("/web/Empleos.html").permitAll()
-                .antMatchers("/web/PoliticaPrivacidad.html").permitAll()
-                .antMatchers("/web/preguntas.html").permitAll()
-                .antMatchers("/web/Terminos.html").permitAll();
+                .antMatchers("/web/**").permitAll()
+
+                .antMatchers("/web/**").permitAll()
+                .antMatchers("/index.html").permitAll()
+                .antMatchers("/Terminos.html").permitAll()
+                .antMatchers("/preguntas.html").permitAll()
+                .antMatchers("/PoliticaPrivacidad.html").permitAll()
+                .antMatchers("/Empleos.html").permitAll();
 
         http.formLogin()
                 .usernameParameter("email")
