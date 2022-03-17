@@ -79,8 +79,6 @@ public class ImplementacionServicioUsuario implements ServicioUsuario {
 	        }
 
 
-
-
 			Usuario usuario=new Usuario(correo, passwordEncoder.encode(password), nombre, apellido, apodo);
 			Carrito carrito= new Carrito();
 		    carritoRepositorio.save(carrito);
@@ -94,7 +92,9 @@ public class ImplementacionServicioUsuario implements ServicioUsuario {
 
 			billeteraRepositorio.save(billetera);
 
-			emailSenderService.sendSimpleEmailTo(correo,"Se ha creado el usuario exitosamente","CREACION DE USUARIO EN RASPCASH");
+			if(billetera == null || carrito == null)
+				return new ResponseEntity<>("Error al implementar servicios al usuario", HttpStatus.FORBIDDEN);
+
 
 			return new ResponseEntity<>("Registro de usuario realizado con éxito", HttpStatus.CREATED);
 	}

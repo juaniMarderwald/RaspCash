@@ -16,7 +16,7 @@ var app = new Vue({
     methods: {
         cargarDatos() {
             axios.get('/api/usuarios/current')
-               .then(response => window.location.href = "/web/nft.html")
+                .then(response => window.location.href = "/web/nft.html")
                 .catch(error => {
                     console.log("Inicie sesión!")
 
@@ -42,12 +42,16 @@ var app = new Vue({
                 })
         },
         registrarse() {
-            axios.post('/api/usuarios', "correo=" + this.correo + "&password=" + this.password + "&nombre=" + this.nombre + "&apellido=" + this.apellido + "&apodo=" + this.apodo).then(response => {
-                Swal.fire(response.data),
+            axios.post('/api/usuarios', "correo=" + this.correo + "&password=" + this.password + "&nombre=" + this.nombre + "&apellido=" + this.apellido + "&apodo=" + this.apodo, {
+                headers: {
+                    'content-type': 'application/x-www-form-urlencoded'
+                }
+            }).then(response => {
                 window.location.href = "/web/nft.html";
+                Swal.fire(response.data);    
             }).catch(error => {
-                Swal.fire(error.response.data);
-            });
+                 Swal.fire(error.response.data);
+                });
         },
     }
 
