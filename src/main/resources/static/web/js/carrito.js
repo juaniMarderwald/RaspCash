@@ -38,10 +38,6 @@ var appCarrito = new Vue({
         realizarCompra() {
             axios.post('/api/carrito/realizarCompra').then(response => {
                 this.cargarDatos();
-                Swal.fire({
-                    text: response.data,
-                    icon: 'success',
-                    confirmButtonText: 'Ok',
-            })
-        })
+                Swal.fire( response.data
+            )}).catch(error => Swal.fire(error.response.data));
     }}})
