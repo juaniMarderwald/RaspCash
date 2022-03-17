@@ -88,6 +88,11 @@ public class TransaccionController {
                                                @RequestParam String montoEnBTC,
                                                @RequestParam String tipoDeSwap){
 
+        System.out.println(tipoDeSwap);
+        System.out.println(montoEnBTC);
+        System.out.println(montoEnPesos);
+        System.out.println(direccionBilletera);
+
         if(tipoDeSwap.equals("")){
             return new ResponseEntity<>("Por favor seleccione un tipo de SWAP para realizar la operacion", HttpStatus.FORBIDDEN);
         }

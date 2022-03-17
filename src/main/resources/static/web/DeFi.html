@@ -105,9 +105,16 @@
                             <option value="PESOS_A_BTC">Pesos a BTC</option>
                         </select>
                     </div>
-                    <h2 v-show="type == 'BTC_A_PESOS'" >Recibiras: {{btc*cotizacionBTCPesos}} pesos</h2>
-                    <h2 v-show="type == 'PESOS_A_BTC'" >Recibiras: {{pesos/cotizacionBTCPesos}} btc </h2>
-                    <button type="button" @click="realizarSwap()">Realizar Swap</button>
+                    <template v-if="type == 'BTC_A_PESOS'">
+                        <h2>Recibiras: {{btc*cotizacionBTCPesos}} pesos</h2>
+                        <button type="button" @click="realizarSwapBTCAPesos(btc*cotizacionBTCPesos)">Realizar Swap</button>
+                    </template>
+                    <template v-if="type == 'PESOS_A_BTC'">
+                        <h2 >Recibiras: {{pesos/cotizacionBTCPesos}} btc </h2>
+                        <button type="button" @click="realizarSwapPesosABTC(pesos/cotizacionBTCPesos)">Realizar Swap</button>
+                    </template>
+                    <!-- <h2 v-show="type == 'BTC_A_PESOS'" >Recibiras: {{btc*cotizacionBTCPesos}} pesos</h2>
+                    <h2 v-show="type == 'PESOS_A_BTC'" >Recibiras: {{pesos/cotizacionBTCPesos}} btc </h2> -->
                 </div>
             </article>
         </main>

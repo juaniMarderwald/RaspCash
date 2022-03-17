@@ -26,8 +26,15 @@ let app = new Vue({
                 }
             );
         },
-        realizarSwap() {
-            axios.post('/api/transaccion/swap', `direccionBilletera=${this.billetera.direccion}&montoEnPesos=${this.pesos}&montoEnBTC=${this.btc}&tipoDeSwap=${this.type}`)
+        realizarSwapPesosABTC(swapBTC) {
+
+            axios.post('/api/transaccion/swap', `direccionBilletera=${this.billetera.direccion}&montoEnPesos=${this.pesos}&montoEnBTC=${swapBTC}&tipoDeSwap=${this.type}`)
+                .then(response => Swal.fire(response.data))
+                .catch(error => Swal.fire(error.response.data));
+        },
+        realizarSwapBTCAPesos(swapPesos){
+
+            axios.post('/api/transaccion/swap', `direccionBilletera=${this.billetera.direccion}&montoEnPesos=${swapPesos}&montoEnBTC=${this.btc}&tipoDeSwap=${this.type}`)
                 .then(response => Swal.fire(response.data))
                 .catch(error => Swal.fire(error.response.data));
         }
