@@ -128,20 +128,29 @@
             <article class="card">
                 <div class="card-body">
                     <h1>Solicitar Prestamos DeFi</h1>
-                    <p>Los mejores prestamos Descentralizados bajo Smart Contracts</p>
                     <hr>
                     <h2>Elija un préstamo que se adapte a tus necesidades</h2>
                     <hr>
-                    <h3>Disponible en Billetera para la garantía</h3>
-                    <hr>
-                    <p> Monto en BTC: {{montoEnBTC}} </p>
+                    <h2>Disponible en Billetera para la garantía: {{montoEnBTC}} BTC</h2>
+                    <hr>                    
                     <select v-model="prestamoElegido" class="form-select" name="tipoPrestamo"
                         aria-label="Default select example">
                         <option v-for="prestamo in prestamos" v-cloak>{{prestamo.nombre}}</option>
                     </select>
+                    <hr>
+                    <h3>Cantidad de cuotas</h3>
+                    <h3>Elige una opcion de cuotas</h3>
+                    <select v-model="cuotasASolicitar" class="form-select" name="tipoPrestamo"
+                        aria-label="Default select example">
+                        <option v-for="cuota in obtenerCuotas" v-cloak>{{cuota}}</option>
+                    </select>
+                    <h2>Monto a otorgar: {{obtenerMontoPrestamo}} BTC</h2>
+                    <h2>Interés Anual del préstamo: {{obtenerInteresPrestamo}} %</h2>
+
+
                 </div>
-                <div class="card-footer">
-                    <button type="button" @click="">Solicitar Prestamo</button>    
+                <div class="card-footer">                    
+                    <button type="button" @click="solicitarPrestamo()">Solicitar Prestamo</button>    
                 </div>
                 
                 

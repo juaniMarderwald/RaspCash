@@ -9,7 +9,8 @@ let app = new Vue({
         montoEnBTC: "",
         cotizacionBTCPesos: "4000000",
         prestamos:[],
-        prestamoElegido:""
+        prestamoElegido:"",
+        cuotasASolicitar:0
     },
     created() {
         this.cargarUsuario();
@@ -44,6 +45,45 @@ let app = new Vue({
                 .catch(error => Swal.fire(error.response.data));
         },
         solicitarPrestamo() {
+            let prestamoASolicitar=this.prestamos.filter(prestamo =>prestamo.nombre==this.prestamoElegido);
+            
+            Swal.fire({
+                title: 'Estas seguro/a?',
+                text: "No se podrá volver atrás!",
+                icon: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3EBD02',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Si, realizar transacción!'
+            }).then((result) => {
+                if (result.isConfirmed) {           
+                                
+                    axios.post('/api/prestamos', {monto:`${prestamoASolicitar[0].monto}`,cuotas:`${this.cuotasASolicitar}`,billeteraDestino:`${this.billetera.direccion}`,nombrePrestamo:`${this.prestamoElegido}` } )
+                        .then(response => {
+                            Swal.fire({
+                                icon: 'success',
+                                text: 'Prestamo solicitado exitosamente!',
+                                showConfirmButton: true
+                            });
+                            this.reiniciarValores();
+                            this.cargarUsuario();
+                            this.cargarPrestamos();
+
+                            
+                        })
+                        .catch(error => {
+                            Swal.fire({
+                                icon: 'error',
+                                text: error.response.data,
+                                showConfirmButton: true
+                            });
+                            this.reiniciarValores();
+
+                            
+                        })
+
+                }
+            })
 
         },
         cargarPrestamos(){
@@ -56,8 +96,38 @@ let app = new Vue({
             .catch(
                 console.log("error")
                 )
+        },
+        reiniciarValores(){
+            this.btc= "0";
+            this.pesos= "0";
+            this.montoEnPesos= "";
+            this.montoEnBTC= "";
+            this.prestamoElegido="";
+            this.cuotasASolicitar=0;
+        }
+        
+    },
+    computed: {
+        obtenerCuotas: function () {
+            console.log(this.prestamoElegido);
+            let prestamo = "";
+            if (this.prestamoElegido != "") {
+                prestamo = this.prestamos.filter(prestamo => prestamo.nombre == this.prestamoElegido);
+                return prestamo[0].cuotas; 
+            }  
+        },
+        obtenerMontoPrestamo: function(){
+            if (this.prestamoElegido != "") {
+                prestamo = this.prestamos.filter(prestamo => prestamo.nombre == this.prestamoElegido);
+                return prestamo[0].monto; 
+            }  
+        },
+        obtenerInteresPrestamo:function () {
+            if (this.prestamoElegido != "") {
+                prestamo = this.prestamos.filter(prestamo => prestamo.nombre == this.prestamoElegido);
+                return prestamo[0].interes*100; 
+            }  
         }
     }
-}
 
-)
+})
