@@ -3817,3 +3817,6 @@ footer a:hover {
 }
 /*# sourceMappingURL=style.css.map */
 
+body {
+  overflow-x: hidden;
+}
