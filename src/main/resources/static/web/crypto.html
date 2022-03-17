@@ -83,26 +83,25 @@
         <main>
             <div class="info-data">
                 <div class="card">
-                    <div class="head">
+                    <div class="ta-center" id="head">
                         <div>
                             <h1>BALANCE DE LA CUENTA</h1>
                         </div>
                     </div>
+                    <br>
+                    <br>
+                    <br>
                     <div id="appBilletera">
                         <h1>Monto en BTC: {{billetera.montoBTC}}</h1>
                         <br>
+<<<<<<< HEAD
+                        <br>
+                        <h1>Monto en $: {{billetera.montoPesos}}</h1>
+=======
                         <h1>Monto en Pesos: ${{billetera.montoPesos}}</h1>
+>>>>>>> 59af4f8a151ace3dfba01310d89cadb3c57891c4
                     </div>
-                    <template>
-                        <div id="chart" class="container">
-                          <div class="row mt-5" v-if="arrPositive.length > 0">
-                            <div class="col">
-                              <h2>Positive</h2>
-                              <line-chart :chartData="arrPositive" :options="chartOptions" :label="Positive"></line-chart>
-                            </div>
-                          </div>
-                        </div>
-                    </template>
+
                 </div>
             </div>
 
