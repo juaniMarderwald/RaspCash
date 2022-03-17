@@ -24,9 +24,13 @@ public class WebAuthorization extends WebSecurityConfigurerAdapter {
 
                //  .antMatchers("/rest/**").permitAll()
               //  .antMatchers("/h2-console/**").
+
                 .antMatchers(HttpMethod.POST, "/api/usuarios","/api/**").permitAll()
                 .antMatchers(HttpMethod.POST, "/api/login").permitAll()
-                .antMatchers("/web/**").permitAll();
+                .antMatchers("/web/Empleos.html").permitAll()
+                .antMatchers("/web/PoliticaPrivacidad.html").permitAll()
+                .antMatchers("/web/preguntas.html").permitAll()
+                .antMatchers("/web/Terminos.html").permitAll();
 
         http.formLogin()
                 .usernameParameter("email")
