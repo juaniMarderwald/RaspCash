@@ -202,22 +202,22 @@ https://i.ibb.co/WG4Gwwf/taza1.jpg
 				https://i.ibb.co/983NqGb/TTO3-PANSYFEUXORCCYTE3-XIJMQ.webp
 				https://i.ibb.co/Dw32r9H/tweet-being-solds-millions-2021-ky-UG-656x492-Corriere-Web-Sezioni.jpg*/
 
-				Producto nft1=new Producto("Cointelegraph1",1,"https://i.ibb.co/RgTWhrZ/1434-a-HR0c-HM6-Ly9z-My5jb2lud-GVs-ZWdy-YXBo-Lm-Nvb-S91c-Gxv-YWRz-Lz-Iw-Mj-Et-MTAv-MDI1-OWY3-N2-Et-O.webp",4000000," ",TipoProducto.NFT);
-				Producto nft2=new Producto("Niña Incendio",1,"https://i.ibb.co/RSrMnd0/2021051910175571146.jpg",1000000," ",TipoProducto.NFT);
-				Producto nft3=new Producto("Gato volador",1,"https://i.ibb.co/hVsBXGp/giphy.webp",2500000," ",TipoProducto.NFT);
-				Producto nft4=new Producto("Space New York",1,"https://i.ibb.co/TKxCRFk/https-hypebeast-com-image-2021-03-First-NFT-Art-Gallery-Space-Opens-in-New-York-b.jpg",1500000," ",TipoProducto.NFT);
-				Producto nft5=new Producto("Hot Rabbit",1,"https://i.ibb.co/6R6Hm5r/itdo-nft-que-son-como-funcionan.jpg",500000," ",TipoProducto.NFT);
-				Producto nft6=new Producto("Quick Fix Woman",1,"https://i.ibb.co/Vtc89xh/IYBJLIS4-FJKF5-PEBL5-LG7-WDMP4.jpg",2500000," ",TipoProducto.NFT);
-				Producto nft7=new Producto("Monkey Crystal Eyes",1,"https://i.ibb.co/F4BXjrz/mutant-975x1024-1-1.jpg",12000000," ",TipoProducto.NFT);
-				Producto nft8=new Producto("Future moon",1,"https://i.ibb.co/tDdjb3L/NFT-jpeg-900x510.jpg",25005000," ",TipoProducto.NFT);
-				Producto nft9=new Producto("NFT Good Dollar Sir",1,"https://i.ibb.co/4WHyBDK/nft-2.jpg",15000000," ", TipoProducto.NFT);
-				Producto nft10=new Producto("Art New Men",1,"https://i.ibb.co/37ypZx5/nft-free-jpg-optimal.jpg",15000000," ", TipoProducto.NFT);
-				Producto nft11=new Producto("Fashion 2050 Girl",1,"https://i.ibb.co/Wxf2KF7/nfts.jpg",15000000," ", TipoProducto.NFT);
-				Producto nft12=new Producto("Indie Bit Cat",1,"https://i.ibb.co/Wf0dnfM/primer-nft-bitcat.jpg",15000000," ", TipoProducto.NFT);
-				Producto nft13=new Producto("Crystal Space Man",1,"https://i.ibb.co/QQpKjJX/Qu-es-un-token-no-fungible-o-NFT.jpg",15000000," ", TipoProducto.NFT);
-				Producto nft14=new Producto("Bored Apes",1,"https://i.ibb.co/2hFTcJf/sothebys-bored-apes-2.gif",15000000," ", TipoProducto.NFT);
-				Producto nft15=new Producto("Dreamscape girl",1,"https://i.ibb.co/983NqGb/TTO3-PANSYFEUXORCCYTE3-XIJMQ.webp",105000000," ", TipoProducto.NFT);
-				Producto nft16=new Producto("Jack Twitter",1,"https://i.ibb.co/Dw32r9H/tweet-being-solds-millions-2021-ky-UG-656x492-Corriere-Web-Sezioni.jpg*/",105000000," ", TipoProducto.NFT);
+				Producto nft1=new Producto("Cointelegraph1",1,"https://i.ibb.co/RgTWhrZ/1434-a-HR0c-HM6-Ly9z-My5jb2lud-GVs-ZWdy-YXBo-Lm-Nvb-S91c-Gxv-YWRz-Lz-Iw-Mj-Et-MTAv-MDI1-OWY3-N2-Et-O.webp",400000," ",TipoProducto.NFT);
+				Producto nft2=new Producto("Niña Incendio",1,"https://i.ibb.co/RSrMnd0/2021051910175571146.jpg",100000," ",TipoProducto.NFT);
+				Producto nft3=new Producto("Gato volador",1,"https://i.ibb.co/hVsBXGp/giphy.webp",250000," ",TipoProducto.NFT);
+				Producto nft4=new Producto("Space New York",1,"https://i.ibb.co/TKxCRFk/https-hypebeast-com-image-2021-03-First-NFT-Art-Gallery-Space-Opens-in-New-York-b.jpg",150000," ",TipoProducto.NFT);
+				Producto nft5=new Producto("Hot Rabbit",1,"https://i.ibb.co/6R6Hm5r/itdo-nft-que-son-como-funcionan.jpg",50000," ",TipoProducto.NFT);
+				Producto nft6=new Producto("Quick Fix Woman",1,"https://i.ibb.co/Vtc89xh/IYBJLIS4-FJKF5-PEBL5-LG7-WDMP4.jpg",250000," ",TipoProducto.NFT);
+				Producto nft7=new Producto("Monkey Crystal Eyes",1,"https://i.ibb.co/F4BXjrz/mutant-975x1024-1-1.jpg",120000," ",TipoProducto.NFT);
+				Producto nft8=new Producto("Future moon",1,"https://i.ibb.co/tDdjb3L/NFT-jpeg-900x510.jpg",250050," ",TipoProducto.NFT);
+				Producto nft9=new Producto("NFT Good Dollar Sir",1,"https://i.ibb.co/4WHyBDK/nft-2.jpg",150000," ", TipoProducto.NFT);
+				Producto nft10=new Producto("Art New Men",1,"https://i.ibb.co/37ypZx5/nft-free-jpg-optimal.jpg",150000," ", TipoProducto.NFT);
+				Producto nft11=new Producto("Fashion 2050 Girl",1,"https://i.ibb.co/Wxf2KF7/nfts.jpg",150000," ", TipoProducto.NFT);
+				Producto nft12=new Producto("Indie Bit Cat",1,"https://i.ibb.co/Wf0dnfM/primer-nft-bitcat.jpg",150000," ", TipoProducto.NFT);
+				Producto nft13=new Producto("Crystal Space Man",1,"https://i.ibb.co/QQpKjJX/Qu-es-un-token-no-fungible-o-NFT.jpg",150000," ", TipoProducto.NFT);
+				Producto nft14=new Producto("Bored Apes",1,"https://i.ibb.co/2hFTcJf/sothebys-bored-apes-2.gif",1500000," ", TipoProducto.NFT);
+				Producto nft15=new Producto("Dreamscape girl",1,"https://i.ibb.co/983NqGb/TTO3-PANSYFEUXORCCYTE3-XIJMQ.webp",1050000," ", TipoProducto.NFT);
+				Producto nft16=new Producto("Jack Twitter",1,"https://i.ibb.co/Dw32r9H/tweet-being-solds-millions-2021-ky-UG-656x492-Corriere-Web-Sezioni.jpg*/",1050000," ", TipoProducto.NFT);
 
 				productoRepositorio.save(nft1);
 				productoRepositorio.save(nft2);
