@@ -35,6 +35,8 @@ public class WebAuthorization extends WebSecurityConfigurerAdapter {
                 .antMatchers("/web/DeFi.html").hasAuthority("USER")
                 .antMatchers("/web/nft.html").hasAuthority("USER")
                 .antMatchers("/web/merchandising.html").hasAuthority("USER")
+                .antMatchers("/web/usuario.html").hasAuthority("USER")
+
 
 
                 .antMatchers(HttpMethod.POST, "/api/usuarios","/api/**").permitAll()
