@@ -3365,6 +3365,22 @@ h5 {
   cursor: pointer;
 }
 
+.input_btc{
+  border-radius: 10px;  
+
+}
+
+.input_swap{
+  padding:1.5rem;
+  width:100%;
+  height: 100%;
+  border-radius: 10px;  
+}
+
+.input_swap_space{
+  margin:1rem;
+}
+
 .btn:hover {
   background: rgba(255, 255, 255, 0.5);
 }

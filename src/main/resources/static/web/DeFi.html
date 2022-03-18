@@ -86,27 +86,27 @@
                     <p>Una manera facil y sencilla de cambiar tus Tokens</p>
                     <hr>
                     <h1>Disponible en Billetera</h1>
-                    <p>Mono en Pesos: ${{montoEnPesos}}</p>
+                    <p>Mono en Pesos: ${{currency(montoEnPesos)}}</p>
                     <p>Monto en BTC: {{montoEnBTC}} BTC</p>
                     <hr>
                 </div>
                 <div class="card-footer">
                     <form action="">
                         <template v-if="type == 'PESOS_A_BTC'">
-                            <input type="number" placeholder="Cantidad de pesos" v-model="pesos">
+                            <input class="input_btc" type="number" placeholder="Cantidad de pesos" v-model="pesos">
                         </template>
                         <template v-if="type == 'BTC_A_PESOS'">
-                            <input type="number" placeholder="Cantidad de BTC" v-model="btc">
+                            <input class="input_btc" type="number" placeholder="Cantidad de BTC" v-model="btc">
                         </template>
                     </form>
-                    <div class="spacebottom3">
-                        <select class="spacer1 size2" required v-model="type">
-                            <option value="BTC_A_PESOS">BTC a pesos</option>
-                            <option value="PESOS_A_BTC">Pesos a BTC</option>
+                   
+                        <select class="bg-purple white input_swap" class="spacer1 size2" required v-model="type">
+                            <option  value="BTC_A_PESOS">BTC a pesos</option>
+                            <option  value="PESOS_A_BTC">Pesos a BTC</option>
                         </select>
-                    </div>
+                   
                     <template v-if="type == 'BTC_A_PESOS'">
-                        <h2 class="spacebottom5">Recibiras: $ {{btc*cotizacionBTCPesos}} </h2>
+                        <h2 class="spacebottom5">Recibiras: $ {{currency(btc*cotizacionBTCPesos)}} </h2>
                         <button class="btn bg-purple size2 white nmcol12" type="button" @click="realizarSwapBTCAPesos(btc*cotizacionBTCPesos)">Realizar
                             Swap</button>
                     </template>

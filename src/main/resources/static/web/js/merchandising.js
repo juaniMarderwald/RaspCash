@@ -38,6 +38,10 @@ app = new Vue({
                     window.location.href = "login.html"
                 }
             })
+        },
+        currency:function(number){
+            return new Intl.NumberFormat().format(number);
         }
+
     }
 })

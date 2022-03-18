@@ -81,7 +81,7 @@
                             </div>
                             <div>
                                 <p class="current halfwhite">Precio</p>
-                                <h5 class="size2 bold">$ {{producto.valorPagado}} </h5>
+                                <h5 class="size2 bold">$ {{currency(producto.valorPagado)}} </h5>
                             </div>
                             <div>
                                 <p class="current halfwhite">Cantidad</p>
@@ -96,7 +96,7 @@
 
             </div>
             <div>
-                <p class="cardTotal">Total: ${{total}}</p>
+                <p class="cardTotal">Total: ${{currency(total)}}</p>
                 <div class="cardTotalBoton">
                     <a @click="realizarCompra()" class="btn bg-purple wallet">Confirmar compra</a>
                 </div>

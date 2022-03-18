@@ -34,6 +34,10 @@ var appCarrito = new Vue({
                     confirmButtonText: 'Ok'});
                 this.cargarDatos();
             })},
+            currency:function(number){
+                return new Intl.NumberFormat().format(number);
+            },
+    
         
         realizarCompra() {
             axios.post('/api/carrito/realizarCompra').then(response => {

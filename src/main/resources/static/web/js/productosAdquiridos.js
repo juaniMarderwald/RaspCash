@@ -23,5 +23,9 @@ var app = new Vue({
                     preload.style.visibility = "hidden";
                 });
         },
+        currency:function(number){
+            return new Intl.NumberFormat().format(number);
+        }
+
     }
 });

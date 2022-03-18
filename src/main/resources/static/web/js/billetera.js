@@ -30,7 +30,11 @@ var appBilletera = new Vue({
             }).then(response => {
                 this.obtenerBilletera();
             })
+        },
+        currency:function(number){
+            return new Intl.NumberFormat().format(number);
         }
+        
         
     }
 })

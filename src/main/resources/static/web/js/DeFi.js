@@ -104,7 +104,11 @@ let app = new Vue({
             this.montoEnBTC= "";
             this.prestamoElegido="";
             this.cuotasASolicitar=0;
+        },
+        currency:function(number){
+            return new Intl.NumberFormat().format(number);
         }
+
         
     },
     computed: {
@@ -134,6 +138,7 @@ let app = new Vue({
                 return prestamo[0].garantia; 
             }  
         }
+
     }
 
 })

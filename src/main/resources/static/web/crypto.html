@@ -12,9 +12,16 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta2/css/all.min.css" />
 
     <!-- google font link -->
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,400&family=Poppins:wght@400;500;700&display=swap" rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,500;0,700;1,400&family=Poppins:wght@400;500;700&display=swap"
+        rel="stylesheet" />
 
     <link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
+
+    <!--BOX ICON-->
+    <link href='https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css' rel='stylesheet'>
+
+
 
     <!-- custom css link -->
     <link rel="stylesheet" href="css/style.css" />
@@ -34,7 +41,7 @@
 
                 <div class="menu" id="appLogin">
 
-                    <a href="NFT.html">NFT</a>                    
+                    <a href="NFT.html">NFT</a>
                     <a href="Crypto.html">Billetera</a>
                     <a href="DeFi.html">DeFi</a>
                     <a href="merchandising.html">Productos</a>
@@ -58,7 +65,8 @@
                     <h1 class="size5 bold spacebottom1">
                         Billetera Virtual
                     </h1>
-                    <p class="size2 spacebottom3 halfwhite">Aqui puedes consultar tu saldo en BTC y en Pesos, y también ver las cotizaciones en tiempo real de diferentes tokens.
+                    <p class="size2 spacebottom3 halfwhite">Aqui puedes consultar tu saldo en BTC y en Pesos, y también
+                        ver las cotizaciones en tiempo real de diferentes tokens.
                     </p>
                     <br>
                     <div class="row col12 col9-md jc-between spacebottom4 jc-evenly-s col12-s">
@@ -85,19 +93,19 @@
                 <div class="card">
                     <div class="ta-center" id="head">
                         <div>
-                            <h1 class="letra_billetera">BALANCE DE LA CUENTA</h1>
+                            <h1>BALANCE DE LA CUENTA</h1>
                         </div>
                     </div>
                     <br>
                     <br>
                     <br>
                     <div id="appBilletera">
-                        <h1 class="letra_billetera">Monto en BTC: {{billetera.montoBTC}}</h1>
+                        <h1> <i class='bx bxl-bitcoin bx-tada bx-flip-vertical'></i> Monto en BTC:
+                            {{billetera.montoBTC}}</h1>
                         <br>
                         <br>
-                        <h1 class="letra_billetera">Monto en $: {{billetera.montoPesos}}</h1>
-
-                        <h1 class="letra_billetera">Monto en Pesos: ${{billetera.montoPesos}}</h1>
+                        <h1> <i class='bx bx-dollar bx-tada bx-flip-vertical'></i> Monto en $: {{currency(billetera.montoPesos)}}
+                        </h1>
                     </div>
 
                 </div>
@@ -115,18 +123,19 @@
             <div class="tradingview-widget-container">
                 <div class="tradingview-widget-container__widget"></div>
 
-                <script type="text/javascript" src="https://s3.tradingview.com/external-embedding/embed-widget-screener.js" async>
-                    {
-                        "width": 1200,
-                        "height": 490,
-                        "defaultColumn": "overview",
-                        "screener_type": "crypto_mkt",
-                        "displayCurrency": "USD",
-                        "colorTheme": "dark",
-                        "locale": "es",
-                        "isTransparent": true
-                    }
-                </script>
+                <script type="text/javascript"
+                    src="https://s3.tradingview.com/external-embedding/embed-widget-screener.js" async>
+                        {
+                            "width": 1200,
+                                "height": 490,
+                                    "defaultColumn": "overview",
+                                        "screener_type": "crypto_mkt",
+                                            "displayCurrency": "USD",
+                                                "colorTheme": "dark",
+                                                    "locale": "es",
+                                                        "isTransparent": true
+                        }
+                    </script>
             </div>
         </div>
     </section>
@@ -135,22 +144,38 @@
     <section class="spacetop5">
         <div class="container">
             <div class="row d-flex jc-between">
-                <div style="width: 250px; height:220px; background-color: #1D2330; overflow:hidden; box-sizing: border-box; border: 1px solid #282E3B; border-radius: 4px; text-align: right; line-height:14px; block-size:220px; font-size: 12px; font-feature-settings: normal; text-size-adjust: 100%; box-shadow: inset 0 -20px 0 0 #262B38;padding:1px;padding: 0px; margin: 0px;">
-                    <div style="height:200px; padding:0px; margin:0px; width: 100%;"><iframe src="https://widget.coinlib.io/widget?type=single_v2&theme=dark&coin_id=859&pref_coin_id=1505" width="250" height="196px" scrolling="auto" marginwidth="0" marginheight="0" frameborder="0" border="0" style="border:0;margin:0;padding:0;line-height:14px;"></iframe></div>
+                <div
+                    style="width: 250px; height:220px; background-color: #1D2330; overflow:hidden; box-sizing: border-box; border: 1px solid #282E3B; border-radius: 4px; text-align: right; line-height:14px; block-size:220px; font-size: 12px; font-feature-settings: normal; text-size-adjust: 100%; box-shadow: inset 0 -20px 0 0 #262B38;padding:1px;padding: 0px; margin: 0px;">
+                    <div style="height:200px; padding:0px; margin:0px; width: 100%;"><iframe
+                            src="https://widget.coinlib.io/widget?type=single_v2&theme=dark&coin_id=859&pref_coin_id=1505"
+                            width="250" height="196px" scrolling="auto" marginwidth="0" marginheight="0" frameborder="0"
+                            border="0" style="border:0;margin:0;padding:0;line-height:14px;"></iframe></div>
 
                 </div>
 
-                <div style="width: 250px; height:220px; background-color: #1D2330; overflow:hidden; box-sizing: border-box; border: 1px solid #282E3B; border-radius: 4px; text-align: right; line-height:14px; block-size:220px; font-size: 12px; font-feature-settings: normal; text-size-adjust: 100%; box-shadow: inset 0 -20px 0 0 #262B38;padding:1px;padding: 0px; margin: 0px;">
-                    <div style="height:200px; padding:0px; margin:0px; width: 100%;"><iframe src="https://widget.coinlib.io/widget?type=single_v2&theme=dark&coin_id=145&pref_coin_id=1505" width="250" height="196px" scrolling="auto" marginwidth="0" marginheight="0" frameborder="0" border="0" style="border:0;margin:0;padding:0;line-height:14px;"></iframe></div>
+                <div
+                    style="width: 250px; height:220px; background-color: #1D2330; overflow:hidden; box-sizing: border-box; border: 1px solid #282E3B; border-radius: 4px; text-align: right; line-height:14px; block-size:220px; font-size: 12px; font-feature-settings: normal; text-size-adjust: 100%; box-shadow: inset 0 -20px 0 0 #262B38;padding:1px;padding: 0px; margin: 0px;">
+                    <div style="height:200px; padding:0px; margin:0px; width: 100%;"><iframe
+                            src="https://widget.coinlib.io/widget?type=single_v2&theme=dark&coin_id=145&pref_coin_id=1505"
+                            width="250" height="196px" scrolling="auto" marginwidth="0" marginheight="0" frameborder="0"
+                            border="0" style="border:0;margin:0;padding:0;line-height:14px;"></iframe></div>
 
                 </div>
 
-                <div style="width: 250px; height:220px; background-color: #1D2330; overflow:hidden; box-sizing: border-box; border: 1px solid #282E3B; border-radius: 4px; text-align: right; line-height:14px; block-size:220px; font-size: 12px; font-feature-settings: normal; text-size-adjust: 100%; box-shadow: inset 0 -20px 0 0 #262B38;padding:1px;padding: 0px; margin: 0px;">
-                    <div style="height:200px; padding:0px; margin:0px; width: 100%;"><iframe src="https://widget.coinlib.io/widget?type=single_v2&theme=dark&coin_id=1209&pref_coin_id=1505" width="250" height="196px" scrolling="auto" marginwidth="0" marginheight="0" frameborder="0" border="0" style="border:0;margin:0;padding:0;line-height:14px;"></iframe></div>
+                <div
+                    style="width: 250px; height:220px; background-color: #1D2330; overflow:hidden; box-sizing: border-box; border: 1px solid #282E3B; border-radius: 4px; text-align: right; line-height:14px; block-size:220px; font-size: 12px; font-feature-settings: normal; text-size-adjust: 100%; box-shadow: inset 0 -20px 0 0 #262B38;padding:1px;padding: 0px; margin: 0px;">
+                    <div style="height:200px; padding:0px; margin:0px; width: 100%;"><iframe
+                            src="https://widget.coinlib.io/widget?type=single_v2&theme=dark&coin_id=1209&pref_coin_id=1505"
+                            width="250" height="196px" scrolling="auto" marginwidth="0" marginheight="0" frameborder="0"
+                            border="0" style="border:0;margin:0;padding:0;line-height:14px;"></iframe></div>
                 </div>
 
-                <div style="width: 250px; height:220px; background-color: #1D2330; overflow:hidden; box-sizing: border-box; border: 1px solid #282E3B; border-radius: 4px; text-align: right; line-height:14px; block-size:220px; font-size: 12px; font-feature-settings: normal; text-size-adjust: 100%; box-shadow: inset 0 -20px 0 0 #262B38;padding:1px;padding: 0px; margin: 0px;">
-                    <div style="height:200px; padding:0px; margin:0px; width: 100%;"><iframe src="https://widget.coinlib.io/widget?type=single_v2&theme=dark&coin_id=122882&pref_coin_id=1505" width="250" height="196px" scrolling="auto" marginwidth="0" marginheight="0" frameborder="0" border="0" style="border:0;margin:0;padding:0;line-height:14px;"></iframe></div>
+                <div
+                    style="width: 250px; height:220px; background-color: #1D2330; overflow:hidden; box-sizing: border-box; border: 1px solid #282E3B; border-radius: 4px; text-align: right; line-height:14px; block-size:220px; font-size: 12px; font-feature-settings: normal; text-size-adjust: 100%; box-shadow: inset 0 -20px 0 0 #262B38;padding:1px;padding: 0px; margin: 0px;">
+                    <div style="height:200px; padding:0px; margin:0px; width: 100%;"><iframe
+                            src="https://widget.coinlib.io/widget?type=single_v2&theme=dark&coin_id=122882&pref_coin_id=1505"
+                            width="250" height="196px" scrolling="auto" marginwidth="0" marginheight="0" frameborder="0"
+                            border="0" style="border:0;margin:0;padding:0;line-height:14px;"></iframe></div>
                 </div>
             </div>
         </div>
@@ -158,7 +183,7 @@
     <!-- panel crypto ends -->
 
     <!-- FAQ section starts -->
-<!--     <section class="spacer10" id="faq">
+    <!--     <section class="spacer10" id="faq">
         <div class="container">
             <h1 class="bold size4 ta-center">Preguntas Frecuentes</h1>
             <p class="spacebottom3 halfwhite size2 ta-center">
@@ -215,7 +240,8 @@
         </div>
 
     </section>
- -->    <!-- FAQ section ends -->
+ -->
+    <!-- FAQ section ends -->
 
     <!-- footer section starts -->
     <footer class="spacer10">
@@ -250,7 +276,8 @@
                 </div>
             </div>
         </div>
-        <p class="size2 halfwhite spacetop5 ta-center">Creado por <span class="white bold">MorazZarnozaz</span> | Todos los derechos reservados</p>
+        <p class="size2 halfwhite spacetop5 ta-center">Creado por <span class="white bold">MorazZarnozaz</span> | Todos
+            los derechos reservados</p>
     </footer>
     <!-- footer section ends -->
 

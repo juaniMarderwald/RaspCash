@@ -27,22 +27,31 @@
 
 
 /* MAIN */
+main{
+	color: white !important;	
+}
+
+#appBilletera{
+
+}
 
 main .info-data {
 	margin-top: 36px;
 	display: grid;
 	grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
 	grid-gap: 20px;
-	margin-left: 350px;
+	margin-left: 750px;
 	width: 500px;
 	height: 300px;
+	color: white;
 }
 main .info-data .card {
 	padding: 20px;
 	border-radius: 10px;
 	background: var(--dark-grey);
 	box-shadow: 4px 4px 16px rgba(0, 0, 0, .05);
-	opacity: 40%;
+	opacity: 90%;
+	color:var(--light);
 }
 main .card .head {
 	display: flex;
@@ -62,12 +71,30 @@ main .card{
 main .card .head p {
 	font-size: 14px;
 }
+
+
+main .card .head{
+	color: white;
+}
+
 main .card .head .icon {
 	font-size: 20px;
 	color: var(--green);
 }
 main .card .head .icon.down {
 	color: var(--red);
+}
+
+main .card h1{
+	color: white;
+}
+
+main div .card h1{
+	color: white;
+}
+
+.bx{
+	font-size: 36px;
 }
 
 /* MAIN */
