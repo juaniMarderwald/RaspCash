@@ -127,6 +127,12 @@ let app = new Vue({
                 prestamo = this.prestamos.filter(prestamo => prestamo.nombre == this.prestamoElegido);
                 return prestamo[0].interes*100; 
             }  
+        },
+        obtenerGarantiaPrestamo:function(){
+            if (this.prestamoElegido != "") {
+                prestamo = this.prestamos.filter(prestamo => prestamo.nombre == this.prestamoElegido);
+                return prestamo[0].garantia; 
+            }  
         }
     }
 

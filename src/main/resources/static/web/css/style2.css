@@ -57,6 +57,7 @@ main .card{
 	align-items: center;
 	font-size: 15px;
 	font-weight: 600;
+	color: white;
 }
 main .card .head p {
 	font-size: 14px;

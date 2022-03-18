@@ -79,8 +79,8 @@
         <!-- home section ends -->
 
         <!-- Swap start -->
-        <main id="swap" class="flex">
-            <article class="card">
+        <div id="swap" class="flex posicion_tarjeta_swap">
+            <div class="card ">
                 <div class="card-body spacebottom2">
                     <h1>Swap</h1>
                     <p>Una manera facil y sencilla de cambiar tus Tokens</p>
@@ -106,55 +106,61 @@
                         </select>
                     </div>
                     <template v-if="type == 'BTC_A_PESOS'">
-                        <h2 class="spacebottom5">Recibiras: {{btc*cotizacionBTCPesos}} pesos</h2>
+                        <h2 class="spacebottom5">Recibiras: $ {{btc*cotizacionBTCPesos}} </h2>
                         <button class="btn bg-purple size2 white nmcol12" type="button" @click="realizarSwapBTCAPesos(btc*cotizacionBTCPesos)">Realizar
                             Swap</button>
                     </template>
                     <template v-if="type == 'PESOS_A_BTC'">
-                        <h2 class="spacebottom5">Recibiras: {{pesos/cotizacionBTCPesos}} btc </h2>
+                        <h2 class="spacebottom5">Recibiras: {{pesos/cotizacionBTCPesos}} BTC </h2>
                         <button class="btn bg-purple size2 white nmcol12" type="button" @click="realizarSwapPesosABTC(pesos/cotizacionBTCPesos)">Realizar
                             Swap</button>
                     </template>
                     <!-- <h2 v-show="type == 'BTC_A_PESOS'" >Recibiras: {{btc*cotizacionBTCPesos}} pesos</h2>
                     <h2 v-show="type == 'PESOS_A_BTC'" >Recibiras: {{pesos/cotizacionBTCPesos}} btc </h2> -->
                 </div>
-            </article>
-        </main>
+            </div>
+        </div>
         <!-- Swap Ends -->
-
+        <div class="position_vacia"></div>
         <!-- Loan Start -->
-        <main id="loan" class="flex">
-            <article class="card">
+        <div id="loan" class="flex posicion_tarjeta_swap">
+            <div class="card posicion_tarjeta_swap">
                 <div class="card-body">
                     <h1>Solicitar Prestamos DeFi</h1>
                     <hr>
                     <h2>Elija un préstamo que se adapte a tus necesidades</h2>
                     <hr>
                     <h2>Disponible en Billetera para la garantía: {{montoEnBTC}} BTC</h2>
-                    <hr>                    
+                    <hr>
+                    <br>
+                    <div class="linea"></div>
+
+                    <label for="tipoPrestamo"><h2>Elija un tipo de prestamo</h2></label>                    
                     <select v-model="prestamoElegido" class="form-select" name="tipoPrestamo"
                         aria-label="Default select example">
                         <option v-for="prestamo in prestamos" v-cloak>{{prestamo.nombre}}</option>
                     </select>
                     <hr>
-                    <h3>Cantidad de cuotas</h3>
-                    <h3>Elige una opcion de cuotas</h3>
+                    <br>
+                    <label for="tipoPrestamo"><h2>Elige una opcion de cuotas</h2></label>
                     <select v-model="cuotasASolicitar" class="form-select" name="tipoPrestamo"
                         aria-label="Default select example">
                         <option v-for="cuota in obtenerCuotas" v-cloak>{{cuota}}</option>
                     </select>
+
+                    <h2>Garantía pedida por el préstamo: {{obtenerGarantiaPrestamo}} BTC</h2>
                     <h2>Monto a otorgar: {{obtenerMontoPrestamo}} BTC</h2>
                     <h2>Interés Anual del préstamo: {{obtenerInteresPrestamo}} %</h2>
 
-
                 </div>
-                <div class="card-footer">                    
-                    <button type="button" @click="solicitarPrestamo()">Solicitar Prestamo</button>    
+                <div class="card-footer">        
+                    <br><br>            
+                    <button class="btn bg-purple size2 white nmcol12" type="button" @click="solicitarPrestamo()">Solicitar Prestamo</button>    
                 </div>
                 
                 
-            </article>
-        </main>
+            </div>
+        </div>
         <!-- Loan End -->
 
         <!-- FAQ section starts -->

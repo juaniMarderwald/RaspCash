@@ -31,7 +31,7 @@ public class WebAuthorization extends WebSecurityConfigurerAdapter {
 
                 //Permisos para el CLIENT
                 .antMatchers("/web/carrito.html").hasAuthority("USER")
-                .antMatchers("/web/crypto.html").hasAuthority("USER")
+                .antMatchers("/web/Crypto.html").hasAuthority("USER")
                 .antMatchers("/web/DeFi.html").hasAuthority("USER")
                 .antMatchers("/web/nft.html").hasAuthority("USER")
                 .antMatchers("/web/merchandising.html").hasAuthority("USER")
